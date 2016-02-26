@@ -1,0 +1,486 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WorkBook xmlVersion="20141222" releaseVersion="8.0.0">
+<TableDataMap>
+<TableData name="数据库查询1" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="部门"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[fantest]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[select * from dbo.tec_sup where 部门='${部门}']]></Query>
+</TableData>
+</TableDataMap>
+<ReportWebAttr>
+<ServerPrinter/>
+<WebWriteContent>
+<ToolBars>
+<ToolBarManager>
+<Location>
+<Embed position="1"/>
+</Location>
+<ToolBar>
+<Widget class="com.fr.report.web.button.write.Submit">
+<WidgetAttr>
+<PrivilegeControl/>
+</WidgetAttr>
+<Text>
+<![CDATA[${i18n('Utils-Submit')}]]></Text>
+<IconName>
+<![CDATA[submit]]></IconName>
+<Verify failVerifySubmit="false"/>
+</Widget>
+<Widget class="com.fr.report.web.button.write.Verify">
+<WidgetAttr>
+<PrivilegeControl/>
+</WidgetAttr>
+<Text>
+<![CDATA[${i18n('Verify-Data_Verify')}]]></Text>
+<IconName>
+<![CDATA[verify]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.button.FlashPrint">
+<WidgetAttr>
+<PrivilegeControl/>
+</WidgetAttr>
+<Text>
+<![CDATA[${i18n('Utils-Print[Client]A')}]]></Text>
+<IconName>
+<![CDATA[flashprint]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.button.Print">
+<WidgetAttr>
+<PrivilegeControl/>
+</WidgetAttr>
+<Text>
+<![CDATA[${i18n('Print')}]]></Text>
+<IconName>
+<![CDATA[print]]></IconName>
+<PrintButtons/>
+</Widget>
+<Widget class="com.fr.report.web.button.Export">
+<WidgetAttr>
+<PrivilegeControl/>
+</WidgetAttr>
+<Text>
+<![CDATA[${i18n('Export')}]]></Text>
+<IconName>
+<![CDATA[export]]></IconName>
+<Buttons ExcelO2003="true"/>
+<Buttons ExcelP2003="true"/>
+<Buttons ExcelS2003="true"/>
+<Buttons pdf="true" excelP="true" excelO="true" excelS="true" word="true" image="true" html="true"/>
+</Widget>
+<Widget class="com.fr.report.web.button.Email">
+<WidgetAttr>
+<PrivilegeControl/>
+</WidgetAttr>
+<Text>
+<![CDATA[${i18n('Email')}]]></Text>
+<IconName>
+<![CDATA[email]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.button.write.ShowCellValue">
+<WidgetAttr>
+<PrivilegeControl/>
+</WidgetAttr>
+<widgetValue/>
+<LabelAttr verticalcenter="true" textalign="0" autoline="false"/>
+<FRFont name="SimSun" style="0" size="72"/>
+<border style="0" color="-723724"/>
+</Widget>
+<Widget class="com.fr.report.web.button.write.AppendColumnRow">
+<WidgetAttr>
+<PrivilegeControl/>
+</WidgetAttr>
+<Text>
+<![CDATA[${i18n('Add')}${i18n('Record')}]]></Text>
+<IconName>
+<![CDATA[appendcolumn]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.button.write.DeleteColumnRow">
+<WidgetAttr>
+<PrivilegeControl/>
+</WidgetAttr>
+<Text>
+<![CDATA[${i18n('Utils-Delete_Column')}${i18n('Row')}]]></Text>
+<IconName>
+<![CDATA[deletecolumn]]></IconName>
+</Widget>
+</ToolBar>
+</ToolBarManager>
+</ToolBars>
+<SelectedColor/>
+<WebWrite SheetPosition="3"/>
+<RptLocation isShowAtLeft="true"/>
+<UnloadCheck/>
+<ShowWidgets show="true"/>
+</WebWriteContent>
+</ReportWebAttr>
+<Report class="com.fr.report.worksheet.WorkSheet" name="sheet1">
+<ReportPageAttr>
+<HR/>
+<FR/>
+<HC/>
+<FC/>
+</ReportPageAttr>
+<ColumnPrivilegeControl/>
+<RowPrivilegeControl/>
+<RowHeight defaultValue="723900">
+<![CDATA[1143000,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900]]></RowHeight>
+<ColumnWidth defaultValue="2743200">
+<![CDATA[0,2743200,2743200,2743200,2743200,2743200,2743200,2743200,4572000,2743200,2743200]]></ColumnWidth>
+<CellElementList>
+<C c="0" r="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="0" s="0">
+<O>
+<![CDATA[维护编号]]></O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="2" r="0" s="0">
+<O>
+<![CDATA[开始日期]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="0" s="0">
+<O>
+<![CDATA[结束日期]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="4" r="0" s="0">
+<O>
+<![CDATA[部门]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="5" r="0" s="0">
+<O>
+<![CDATA[报修人]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="6" r="0" s="0">
+<O>
+<![CDATA[维修情况]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="7" r="0" s="1">
+<O>
+<![CDATA[维护人]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="8" r="0" s="1">
+<O>
+<![CDATA[技术支持时间]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="0" r="1">
+<O>
+<![CDATA[X]]></O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="1" r="1" s="2">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=seq(A2)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<CellPageAttr/>
+<CellInsertPolicy>
+<InsertPolicy>
+<![CDATA[copy]]></InsertPolicy>
+</CellInsertPolicy>
+<Expand dir="0" leftParentDefault="false" left="C2"/>
+</C>
+<C c="2" r="1" s="3">
+<O t="DSColumn">
+<Attributes dsName="技术支持" columnName="开始日期"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Widget class="com.fr.form.ui.DateEditor">
+<WidgetAttr>
+<PrivilegeControl/>
+</WidgetAttr>
+<DateAttr format="yyyy/MM/dd HH:mm:ss"/>
+<widgetValue/>
+</Widget>
+<Expand dir="0"/>
+</C>
+<C c="3" r="1" s="3">
+<O t="DSColumn">
+<Attributes dsName="技术支持" columnName="结束日期"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Widget class="com.fr.form.ui.DateEditor">
+<WidgetAttr>
+<PrivilegeControl/>
+</WidgetAttr>
+<DateAttr format="yyyy/MM/dd HH:mm:ss"/>
+<widgetValue/>
+</Widget>
+<Expand dir="0"/>
+</C>
+<C c="4" r="1" s="4">
+<O t="DSColumn">
+<Attributes dsName="技术支持" columnName="部门"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Widget class="com.fr.form.ui.ComboBox">
+<WidgetAttr>
+<PrivilegeControl/>
+</WidgetAttr>
+<Dictionary class="com.fr.data.impl.CustomDictionary">
+<CustomDictAttr>
+<Dict key="安装分公司" value="安装分公司"/>
+<Dict key="财务部" value="财务部"/>
+<Dict key="供水部" value="供水部"/>
+<Dict key="工程部" value="工程部"/>
+<Dict key="二次供水" value="二次供水"/>
+<Dict key="管理层" value="管理层"/>
+<Dict key="管网部" value="管网部"/>
+<Dict key="行政部" value="行政部"/>
+<Dict key="技术发展部" value="技术发展部"/>
+<Dict key="客户服务部" value="客户服务部"/>
+</CustomDictAttr>
+</Dictionary>
+<widgetValue/>
+</Widget>
+<Expand dir="0"/>
+</C>
+<C c="5" r="1" s="4">
+<O t="DSColumn">
+<Attributes dsName="技术支持" columnName="报修人"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Widget class="com.fr.form.ui.TextEditor">
+<WidgetAttr>
+<PrivilegeControl/>
+</WidgetAttr>
+<TextAttr/>
+<Reg class="com.fr.form.ui.reg.NoneReg"/>
+<widgetValue/>
+</Widget>
+<Expand dir="0"/>
+</C>
+<C c="6" r="1" s="4">
+<O t="DSColumn">
+<Attributes dsName="技术支持" columnName="维修情况"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<CellGUIAttr adjustmode="2"/>
+<CellPageAttr/>
+<Widget class="com.fr.form.ui.TextEditor">
+<WidgetAttr>
+<PrivilegeControl/>
+</WidgetAttr>
+<TextAttr/>
+<Reg class="com.fr.form.ui.reg.NoneReg"/>
+<widgetValue/>
+</Widget>
+<Expand dir="0"/>
+</C>
+<C c="7" r="1" s="4">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=$fr_username]]></Attributes>
+</O>
+<PrivilegeControl/>
+<CellPageAttr/>
+<CellInsertPolicy>
+<InsertPolicy>
+<![CDATA[copy]]></InsertPolicy>
+</CellInsertPolicy>
+<Expand/>
+</C>
+<C c="8" r="1" s="4">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=DATESUBDATE(D2, C2, "h")]]></Attributes>
+</O>
+<PrivilegeControl/>
+<CellPageAttr/>
+<CellInsertPolicy>
+<InsertPolicy>
+<![CDATA[copy]]></InsertPolicy>
+</CellInsertPolicy>
+<Expand/>
+</C>
+<C c="9" r="1">
+<PrivilegeControl/>
+<Widget class="com.fr.report.web.button.write.AppendRowButton">
+<WidgetAttr>
+<PrivilegeControl/>
+</WidgetAttr>
+<Text>
+<![CDATA[插入行]]></Text>
+<IconName>
+<![CDATA[add]]></IconName>
+<FixCell row="1" col="2"/>
+</Widget>
+<Expand/>
+</C>
+<C c="10" r="1">
+<PrivilegeControl/>
+<Widget class="com.fr.report.web.button.write.DeleteRowButton">
+<WidgetAttr>
+<PrivilegeControl/>
+</WidgetAttr>
+<Text>
+<![CDATA[删除行]]></Text>
+<IconName>
+<![CDATA[delete]]></IconName>
+<FixCell row="1" col="2"/>
+</Widget>
+<Expand/>
+</C>
+<C c="5" r="9">
+<PrivilegeControl/>
+<Expand/>
+</C>
+</CellElementList>
+<ReportAttrSet>
+<ReportSettings headerHeight="0" footerHeight="0">
+<PaperSetting/>
+</ReportSettings>
+<Header reportPageType="0">
+<Background name="NullBackground"/>
+<LeftList/>
+<CenterList/>
+<RightList/>
+</Header>
+<Footer reportPageType="0">
+<Background name="NullBackground"/>
+<LeftList/>
+<CenterList/>
+<RightList/>
+</Footer>
+</ReportAttrSet>
+<ReportWriteAttr>
+<Submiter class="com.fr.report.write.BuiltInSQLSubmiter" name="内置SQL1">
+<Attributes dsName="fantest"/>
+<DMLConfig class="com.fr.write.config.IntelliDMLConfig">
+<Table schema="" name="tec_sup"/>
+<ColumnConfig name="维护编号" isKey="true" skipUnmodified="false">
+<ColumnRow column="1" row="1"/>
+</ColumnConfig>
+<ColumnConfig name="开始日期" isKey="false" skipUnmodified="false">
+<ColumnRow column="2" row="1"/>
+</ColumnConfig>
+<ColumnConfig name="结束日期" isKey="false" skipUnmodified="false">
+<ColumnRow column="3" row="1"/>
+</ColumnConfig>
+<ColumnConfig name="部门" isKey="false" skipUnmodified="false">
+<ColumnRow column="4" row="1"/>
+</ColumnConfig>
+<ColumnConfig name="报修人" isKey="false" skipUnmodified="false">
+<ColumnRow column="5" row="1"/>
+</ColumnConfig>
+<ColumnConfig name="维修情况" isKey="false" skipUnmodified="false">
+<ColumnRow column="6" row="1"/>
+</ColumnConfig>
+<ColumnConfig name="维修人" isKey="false" skipUnmodified="false">
+<ColumnRow column="7" row="1"/>
+</ColumnConfig>
+<ColumnConfig name="维护时间" isKey="false" skipUnmodified="false">
+<ColumnRow column="8" row="1"/>
+</ColumnConfig>
+<Condition class="com.fr.data.condition.ListCondition"/>
+</DMLConfig>
+</Submiter>
+</ReportWriteAttr>
+<PrivilegeControl/>
+</Report>
+<ReportParameterAttr>
+<Attributes showWindow="true" delayPlaying="true" windowPosition="1" align="0"/>
+<PWTitle>
+<![CDATA[参数]]></PWTitle>
+</ReportParameterAttr>
+<StyleList>
+<Style horizontal_alignment="0" imageLayout="1">
+<FRFont name="SimSun" style="1" size="88"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="1"/>
+<Bottom style="1"/>
+<Left style="1"/>
+<Right style="1"/>
+</Border>
+</Style>
+<Style imageLayout="1">
+<FRFont name="SimSun" style="1" size="88"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="1"/>
+<Bottom style="1"/>
+<Left style="1"/>
+<Right style="1"/>
+</Border>
+</Style>
+<Style horizontal_alignment="0" imageLayout="1">
+<FRFont name="SimSun" style="0" size="72"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="1"/>
+<Bottom style="1"/>
+<Left style="1"/>
+<Right style="1"/>
+</Border>
+</Style>
+<Style imageLayout="1">
+<Format class="java.text.SimpleDateFormat">
+<![CDATA[yyyy/MM/dd HH:mm:ss]]></Format>
+<FRFont name="SimSun" style="0" size="72"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="1"/>
+<Bottom style="1"/>
+<Left style="1"/>
+<Right style="1"/>
+</Border>
+</Style>
+<Style imageLayout="1">
+<FRFont name="SimSun" style="0" size="72"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="1"/>
+<Bottom style="1"/>
+<Left style="1"/>
+<Right style="1"/>
+</Border>
+</Style>
+</StyleList>
+<DesignerVersion DesignerVersion="IAA"/>
+<PreviewType PreviewType="0"/>
+</WorkBook>

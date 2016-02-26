@@ -1,0 +1,469 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WorkBook xmlVersion="20141222" releaseVersion="8.0.0">
+<TableDataMap>
+<TableData name="ds1" class="com.fr.data.impl.DBTableData">
+<Parameters/>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[FR]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[SELECT [FullName]A
+      ,[LoginName]A
+      ,[Department]A
+      ,[Devision]A
+      ,[No]A
+      ,[Permission]A
+      ,[Team]A
+      ,[Post]A
+      ,[Email]A
+      ,[Lev]A
+  FROM [FR]A.[dbo]A.[CSSF_Staff]A]]></Query>
+</TableData>
+<TableData name="科室查询" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="D3"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[FR]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[SELECT [Devision]A
+      
+  FROM [FR]A.[dbo]A.[CSSF_Department]A
+  where Department= '${D3}']]></Query>
+</TableData>
+</TableDataMap>
+<ReportWebAttr>
+<ServerPrinter/>
+<WebWriteContent>
+<ToolBars>
+<ToolBarManager>
+<Location>
+<Embed position="1"/>
+</Location>
+<ToolBar>
+<Widget class="com.fr.report.web.button.write.Submit">
+<WidgetAttr>
+<PrivilegeControl/>
+</WidgetAttr>
+<Text>
+<![CDATA[${i18n('Utils-Submit')}]]></Text>
+<IconName>
+<![CDATA[submit]]></IconName>
+<Verify failVerifySubmit="false"/>
+</Widget>
+<Widget class="com.fr.report.web.button.write.Verify">
+<WidgetAttr>
+<PrivilegeControl/>
+</WidgetAttr>
+<Text>
+<![CDATA[${i18n('Verify-Data_Verify')}]]></Text>
+<IconName>
+<![CDATA[verify]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.button.FlashPrint">
+<WidgetAttr>
+<PrivilegeControl/>
+</WidgetAttr>
+<Text>
+<![CDATA[${i18n('Utils-Print[Client]A')}]]></Text>
+<IconName>
+<![CDATA[flashprint]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.button.Print">
+<WidgetAttr>
+<PrivilegeControl/>
+</WidgetAttr>
+<Text>
+<![CDATA[${i18n('Print')}]]></Text>
+<IconName>
+<![CDATA[print]]></IconName>
+<PrintButtons/>
+</Widget>
+<Widget class="com.fr.report.web.button.Export">
+<WidgetAttr>
+<PrivilegeControl/>
+</WidgetAttr>
+<Text>
+<![CDATA[${i18n('Export')}]]></Text>
+<IconName>
+<![CDATA[export]]></IconName>
+<Buttons ExcelO2003="true"/>
+<Buttons ExcelP2003="true"/>
+<Buttons ExcelS2003="true"/>
+<Buttons pdf="true" excelP="true" excelO="true" excelS="true" word="true" image="true" html="true"/>
+</Widget>
+<Widget class="com.fr.report.web.button.Email">
+<WidgetAttr>
+<PrivilegeControl/>
+</WidgetAttr>
+<Text>
+<![CDATA[${i18n('Email')}]]></Text>
+<IconName>
+<![CDATA[email]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.button.write.AppendColumnRow">
+<WidgetAttr>
+<PrivilegeControl/>
+</WidgetAttr>
+<Text>
+<![CDATA[${i18n('Add')}${i18n('Record')}]]></Text>
+<IconName>
+<![CDATA[appendcolumn]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.button.write.DeleteColumnRow">
+<WidgetAttr>
+<PrivilegeControl/>
+</WidgetAttr>
+<Text>
+<![CDATA[${i18n('Utils-Delete_Column')}${i18n('Row')}]]></Text>
+<IconName>
+<![CDATA[deletecolumn]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.button.write.ShowCellValue">
+<WidgetAttr>
+<PrivilegeControl/>
+</WidgetAttr>
+<widgetValue/>
+<LabelAttr verticalcenter="true" textalign="0" autoline="false"/>
+<FRFont name="SimSun" style="0" size="72"/>
+<border style="0" color="-723724"/>
+</Widget>
+<Widget class="com.fr.report.web.button.write.ImportExcelData">
+<WidgetAttr>
+<PrivilegeControl/>
+</WidgetAttr>
+<Text>
+<![CDATA[${i18n('Utils-Import_Excel_Data')}]]></Text>
+<IconName>
+<![CDATA[excel]]></IconName>
+</Widget>
+</ToolBar>
+</ToolBarManager>
+</ToolBars>
+<SelectedColor/>
+<WebWrite SheetPosition="3"/>
+<RptLocation isShowAtLeft="true"/>
+<UnloadCheck/>
+<ShowWidgets/>
+</WebWriteContent>
+</ReportWebAttr>
+<Report class="com.fr.report.worksheet.WorkSheet" name="sheet1">
+<ReportPageAttr>
+<HR/>
+<FR/>
+<HC/>
+<FC/>
+</ReportPageAttr>
+<ColumnPrivilegeControl/>
+<RowPrivilegeControl/>
+<RowHeight defaultValue="723900">
+<![CDATA[1257300,1066800,952500,723900,723900,723900,723900,723900,723900,723900,723900]]></RowHeight>
+<ColumnWidth defaultValue="2743200">
+<![CDATA[457200,4457700,5105400,4686300,4381500,3429000,3238500,5219700,4152900,3886200,3200400,2743200,2743200]]></ColumnWidth>
+<CellElementList>
+<C c="0" r="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="0" cs="9" s="0">
+<O>
+<![CDATA[员工帐号权限表]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="1" s="1">
+<O>
+<![CDATA[姓名]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="1" s="1">
+<O>
+<![CDATA[登录名]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="1" s="1">
+<O>
+<![CDATA[部门]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="4" r="1" s="1">
+<O>
+<![CDATA[科室]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="5" r="1" s="1">
+<O>
+<![CDATA[组]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="6" r="1" s="1">
+<O>
+<![CDATA[岗位]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="7" r="1" s="1">
+<O>
+<![CDATA[电子邮件]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="8" r="1" s="1">
+<O>
+<![CDATA[编号]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="9" r="1" s="1">
+<O>
+<![CDATA[权限]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="10" r="1" s="1">
+<O>
+<![CDATA[安全级别]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="2" s="2">
+<PrivilegeControl/>
+<Widget class="com.fr.form.ui.TextEditor">
+<WidgetAttr>
+<PrivilegeControl/>
+</WidgetAttr>
+<TextAttr/>
+<Reg class="com.fr.form.ui.reg.NoneReg"/>
+<widgetValue/>
+</Widget>
+<Expand dir="0"/>
+</C>
+<C c="2" r="2" s="2">
+<PrivilegeControl/>
+<Widget class="com.fr.form.ui.TextEditor">
+<WidgetAttr>
+<PrivilegeControl/>
+</WidgetAttr>
+<TextAttr/>
+<Reg class="com.fr.form.ui.reg.NoneReg"/>
+<widgetValue/>
+</Widget>
+<Expand dir="0"/>
+</C>
+<C c="3" r="2" s="2">
+<PrivilegeControl/>
+<Widget class="com.fr.form.ui.ComboBox">
+<WidgetAttr>
+<PrivilegeControl/>
+</WidgetAttr>
+<Dictionary class="com.fr.data.impl.DatabaseDictionary">
+<FormulaDictAttr kiName="Department" viName="Department"/>
+<DBDictAttr tableName="CSSF_Department" schemaName="" ki="-1" vi="-1" kiName="Department" viName="Department"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[FR]]></DatabaseName>
+</Connection>
+</Dictionary>
+<widgetValue/>
+</Widget>
+<Expand dir="0"/>
+</C>
+<C c="4" r="2" s="2">
+<PrivilegeControl/>
+<Widget class="com.fr.form.ui.ComboBox">
+<WidgetAttr>
+<PrivilegeControl/>
+</WidgetAttr>
+<Dictionary class="com.fr.data.impl.TableDataDictionary">
+<FormulaDictAttr kiName="Devision" viName="Devision"/>
+<TableDataDictAttr>
+<TableData class="com.fr.data.impl.NameTableData">
+<Name>
+<![CDATA[科室查询]]></Name>
+</TableData>
+</TableDataDictAttr>
+</Dictionary>
+<widgetValue/>
+</Widget>
+<Expand dir="0"/>
+</C>
+<C c="5" r="2" s="2">
+<PrivilegeControl/>
+<Widget class="com.fr.form.ui.TextEditor">
+<WidgetAttr>
+<PrivilegeControl/>
+</WidgetAttr>
+<TextAttr/>
+<Reg class="com.fr.form.ui.reg.NoneReg"/>
+<widgetValue/>
+</Widget>
+<Expand dir="0"/>
+</C>
+<C c="6" r="2" s="2">
+<PrivilegeControl/>
+<Widget class="com.fr.form.ui.TextEditor">
+<WidgetAttr>
+<PrivilegeControl/>
+</WidgetAttr>
+<TextAttr/>
+<Reg class="com.fr.form.ui.reg.NoneReg"/>
+<widgetValue/>
+</Widget>
+<Expand dir="0"/>
+</C>
+<C c="7" r="2" s="2">
+<PrivilegeControl/>
+<Widget class="com.fr.form.ui.TextEditor">
+<WidgetAttr>
+<PrivilegeControl/>
+</WidgetAttr>
+<TextAttr/>
+<Reg class="com.fr.form.ui.reg.NoneReg"/>
+<widgetValue/>
+</Widget>
+<Expand dir="0"/>
+</C>
+<C c="8" r="2" s="2">
+<PrivilegeControl/>
+<Widget class="com.fr.form.ui.TextEditor">
+<WidgetAttr>
+<PrivilegeControl/>
+</WidgetAttr>
+<TextAttr/>
+<Reg class="com.fr.form.ui.reg.NoneReg"/>
+<widgetValue/>
+</Widget>
+<Expand dir="0"/>
+</C>
+<C c="9" r="2" s="2">
+<PrivilegeControl/>
+<Widget class="com.fr.form.ui.TextEditor">
+<WidgetAttr>
+<PrivilegeControl/>
+</WidgetAttr>
+<TextAttr/>
+<Reg class="com.fr.form.ui.reg.NoneReg"/>
+<widgetValue/>
+</Widget>
+<Expand dir="0"/>
+</C>
+<C c="10" r="2" s="2">
+<PrivilegeControl/>
+<Widget class="com.fr.form.ui.NumberEditor">
+<WidgetAttr>
+<PrivilegeControl/>
+</WidgetAttr>
+<NumberAttr allowDecimals="false" allowNegative="false">
+<widgetValue/>
+</NumberAttr>
+</Widget>
+<Expand dir="0"/>
+</C>
+</CellElementList>
+<ReportAttrSet>
+<ReportSettings headerHeight="0" footerHeight="0">
+<PaperSetting/>
+</ReportSettings>
+<Header reportPageType="0">
+<Background name="NullBackground"/>
+<LeftList/>
+<CenterList/>
+<RightList/>
+</Header>
+<Footer reportPageType="0">
+<Background name="NullBackground"/>
+<LeftList/>
+<CenterList/>
+<RightList/>
+</Footer>
+</ReportAttrSet>
+<ReportWriteAttr>
+<Submiter class="com.fr.report.write.BuiltInSQLSubmiter" name="内置SQL1">
+<Attributes dsName="FR"/>
+<DMLConfig class="com.fr.write.config.IntelliDMLConfig">
+<Table schema="" name="CSSF_Staff"/>
+<ColumnConfig name="FullName" isKey="false" skipUnmodified="false">
+<ColumnRow column="1" row="2"/>
+</ColumnConfig>
+<ColumnConfig name="LoginName" isKey="false" skipUnmodified="false">
+<ColumnRow column="2" row="2"/>
+</ColumnConfig>
+<ColumnConfig name="Department" isKey="false" skipUnmodified="false">
+<ColumnRow column="3" row="2"/>
+</ColumnConfig>
+<ColumnConfig name="Devision" isKey="false" skipUnmodified="false">
+<ColumnRow column="4" row="2"/>
+</ColumnConfig>
+<ColumnConfig name="No" isKey="true" skipUnmodified="false">
+<ColumnRow column="8" row="2"/>
+</ColumnConfig>
+<ColumnConfig name="Permission" isKey="false" skipUnmodified="false">
+<ColumnRow column="9" row="2"/>
+</ColumnConfig>
+<ColumnConfig name="Team" isKey="false" skipUnmodified="false">
+<ColumnRow column="5" row="2"/>
+</ColumnConfig>
+<ColumnConfig name="Post" isKey="false" skipUnmodified="false">
+<ColumnRow column="6" row="2"/>
+</ColumnConfig>
+<ColumnConfig name="Email" isKey="false" skipUnmodified="false">
+<ColumnRow column="7" row="2"/>
+</ColumnConfig>
+<ColumnConfig name="Lev" isKey="false" skipUnmodified="false">
+<ColumnRow column="10" row="2"/>
+</ColumnConfig>
+<Condition class="com.fr.data.condition.ListCondition"/>
+</DMLConfig>
+</Submiter>
+</ReportWriteAttr>
+<PrivilegeControl/>
+</Report>
+<ReportParameterAttr>
+<Attributes showWindow="true" delayPlaying="true" windowPosition="1" align="0"/>
+<PWTitle>
+<![CDATA[参数]]></PWTitle>
+</ReportParameterAttr>
+<StyleList>
+<Style horizontal_alignment="0" imageLayout="1">
+<FRFont name="微软雅黑" style="0" size="144"/>
+<Background name="NullBackground"/>
+<Border/>
+</Style>
+<Style horizontal_alignment="0" imageLayout="1" paddingLeft="1" paddingRight="1">
+<FRFont name="微软雅黑" style="0" size="80" foreground="-1"/>
+<Background name="ColorBackground" color="-16737895"/>
+<Border>
+<Top color="-1"/>
+<Bottom color="-1"/>
+<Left style="6" color="-1"/>
+<Right color="-1"/>
+</Border>
+</Style>
+<Style horizontal_alignment="0" imageLayout="1" paddingLeft="1" paddingRight="1">
+<FRFont name="微软雅黑" style="0" size="72"/>
+<Background name="ColorBackground" color="-1313291"/>
+<Border>
+<Top style="1" color="-1"/>
+<Bottom style="1" color="-1"/>
+<Left style="5" color="-1"/>
+<Right style="5" color="-1"/>
+</Border>
+</Style>
+</StyleList>
+<DesignerVersion DesignerVersion="IAA"/>
+<PreviewType PreviewType="1"/>
+</WorkBook>

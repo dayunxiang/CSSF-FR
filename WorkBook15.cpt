@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WorkBook xmlVersion="20141222" releaseVersion="8.0.0">
+<TableDataMap>
+<TableData name="ds1" class="com.fr.data.impl.DBTableData">
+<Parameters/>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[FR]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[select year(date) as year ,MONTH(date) as month,section_office, SUM(amount) as eq_per_month from dbo.WSD_equipment_maintenance_funds group by year(date),month(date),section_office order by month(date)]]></Query>
+</TableData>
+<TableData name="ds2" class="com.fr.data.impl.DBTableData">
+<Parameters/>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[FR]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[select year(date) as year,month(date) as month, section_office , sum(expense) as cons_per_month from dbo.WSD_consumptive_products_fee   group by year(date),month(date),section_office order by month(date)]]></Query>
+</TableData>
+<TableData name="ds3" class="com.fr.data.impl.DBTableData">
+<Parameters/>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[FR]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[select * from (select YEAR(DATE)as eq_year,MONTH(date) as eq_month,section_office, SUM(amount) as eq_per_month from dbo.WSD_equipment_maintenance_funds group by year(date),month(date),section_office) as eq FULL OUTER JOIN (select year(date) as cons_year,month(date) as cons_month, section_office , sum(expense) as cons_per_month from dbo.WSD_consumptive_products_fee   group by year(date),month(date),section_office)  as cons on eq.eq_year=cons.cons_year and eq.eq_month=cons.cons_month AND eq.section_office=cons.section_office]]></Query>
+</TableData>
+<TableData name="ds4" class="com.fr.data.impl.DBTableData">
+<Parameters/>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[FR]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[select 'YEAR'= CASE WHEN eq_year is null THEN cons_year
+				WHEN eq_year is not null THEN eq_year 
+				END,
+'MONTH'= CASE WHEN eq_month is null THEN cons_month
+				WHEN eq_month is not null THEN eq_month 
+				END,
+'SECTION_OFFICE'= CASE WHEN eq_section_office  is null THEN cons_section_office
+				WHEN eq_section_office is not null THEN eq_section_office 
+				END,
+eq_per_month,cons_per_month
+				from dbo.WSD_maintenance_fee_analysis]]></Query>
+</TableData>
+</TableDataMap>
+<Report class="com.fr.report.worksheet.WorkSheet" name="sheet1">
+<ReportPageAttr>
+<HR/>
+<FR/>
+<HC/>
+<FC/>
+</ReportPageAttr>
+<ColumnPrivilegeControl/>
+<RowPrivilegeControl/>
+<RowHeight defaultValue="723900">
+<![CDATA[723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900]]></RowHeight>
+<ColumnWidth defaultValue="2743200">
+<![CDATA[4953000,4229100,7048500,2743200,2743200,2743200,2743200,2743200,2743200,2743200,2743200]]></ColumnWidth>
+<CellElementList>
+<C c="0" r="0" s="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="0" s="0">
+<O>
+<![CDATA[月份]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="0" s="0">
+<O t="DSColumn">
+<Attributes dsName="ds3" columnName="month"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="1"/>
+</C>
+<C c="0" r="1" rs="2" s="0">
+<O t="DSColumn">
+<Attributes dsName="ds3" columnName="section_office"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="1" r="1" s="0">
+<O>
+<![CDATA[外包维修]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="1" s="0">
+<O t="DSColumn">
+<Attributes dsName="ds3" columnName="eq_per_month"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="2" s="0">
+<O>
+<![CDATA[物料]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="2" s="0">
+<O t="DSColumn">
+<Attributes dsName="ds3" columnName="cons_per_month"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+</CellElementList>
+<ReportAttrSet>
+<ReportSettings headerHeight="0" footerHeight="0">
+<PaperSetting/>
+</ReportSettings>
+<Header reportPageType="0">
+<Background name="NullBackground"/>
+<LeftList/>
+<CenterList/>
+<RightList/>
+</Header>
+<Footer reportPageType="0">
+<Background name="NullBackground"/>
+<LeftList/>
+<CenterList/>
+<RightList/>
+</Footer>
+</ReportAttrSet>
+<PrivilegeControl/>
+</Report>
+<ReportParameterAttr>
+<Attributes showWindow="true" delayPlaying="true" windowPosition="1" align="0"/>
+<PWTitle>
+<![CDATA[参数]]></PWTitle>
+</ReportParameterAttr>
+<StyleList>
+<Style imageLayout="1">
+<FRFont name="SimSun" style="0" size="72"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="1"/>
+<Bottom style="1"/>
+<Left style="1"/>
+<Right style="1"/>
+</Border>
+</Style>
+</StyleList>
+<DesignerVersion DesignerVersion="IAA"/>
+<PreviewType PreviewType="2"/>
+</WorkBook>
