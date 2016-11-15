@@ -47,7 +47,7 @@
 <![CDATA[FR]]></DatabaseName>
 </Connection>
 <Query>
-<![CDATA[select b.year,b.section_office,a.all_actually,b.section_office_budget,b.department_budget from (select YEAR,SECTION_OFFICE,(SUM(eq_per_month)+SUM(cons_per_month)) as all_actually  from dbo.WSD_maintenance_fee_analysis_lv2 where YEAR='${year}' group by YEAR,SECTION_OFFICE) a full outer join (select year,section_office,section_office_budget,department_budget  from dbo.WSD_maintenance_budget) b on a.section_office=b.section_office WHERE a.year='${year}' and b.year='${year}' order by CHARINDEX(b.section_office,'二水厂,三水厂,滨江水厂,滨江水厂排泥水,藕渠增压站,城区增压站,行政科,自动化仪表科,生技科,调度中心,应急水库')]]></Query>
+<![CDATA[select b.year,b.section_office,a.all_actually,b.section_office_budget,b.department_budget from (select YEAR,SECTION_OFFICE,(SUM(eq_per_month)+SUM(cons_per_month)) as all_actually  from dbo.WSD_maintenance_fee_analysis_lv2 where YEAR='${year}' group by YEAR,SECTION_OFFICE) a full outer join (select year,section_office,section_office_budget,department_budget  from dbo.WSD_maintenance_budget) b on a.section_office=b.section_office WHERE a.year='${year}' and b.year='${year}' order by CHARINDEX(b.section_office,'二水厂,三水厂,滨江水厂,滨江水厂排泥水,藕渠增压站,城区增压站,行政科,自动化仪表科,生技科,调度中心')]]></Query>
 </TableData>
 <TableData name="ds2" class="com.fr.data.impl.DBTableData">
 <Parameters>
@@ -944,16 +944,6 @@
 <C c="1" r="2" s="3">
 <O t="DSColumn">
 <Attributes dsName="ds1" columnName="section_office"/>
-<Condition class="com.fr.data.condition.CommonCondition">
-<CNUMBER>
-<![CDATA[0]]></CNUMBER>
-<CNAME>
-<![CDATA[section_office]]></CNAME>
-<Compare op="1">
-<O>
-<![CDATA[应急水库]]></O>
-</Compare>
-</Condition>
 <Complex/>
 <RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
 <Parameters/>
@@ -1198,51 +1188,19 @@
 <Expand/>
 </C>
 <C c="1" r="4" s="3">
-<O t="DSColumn">
-<Attributes dsName="actual" columnName="SECTION_OFFICE"/>
-<Condition class="com.fr.data.condition.CommonCondition">
-<CNUMBER>
-<![CDATA[0]]></CNUMBER>
-<CNAME>
-<![CDATA[SECTION_OFFICE]]></CNAME>
-<Compare op="0">
 <O>
 <![CDATA[应急水库]]></O>
-</Compare>
-</Condition>
-<Complex/>
-<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
-<Parameters/>
-</O>
 <PrivilegeControl/>
-<Expand dir="0"/>
+<Expand/>
 </C>
 <C c="2" r="4" s="3">
 <O t="DSColumn">
-<Attributes dsName="actual" columnName="ALL"/>
+<Attributes dsName="ds3" columnName="expense"/>
 <Complex/>
 <RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
 <Parameters/>
 </O>
 <PrivilegeControl/>
-<HighlightList>
-<Highlight class="com.fr.report.cell.cellattr.highlight.DefaultHighlight">
-<Name>
-<![CDATA[条件属性1]]></Name>
-<Condition class="com.fr.data.condition.ObjectCondition">
-<Compare op="0">
-<O t="Formula" class="Formula">
-<Attributes>
-<![CDATA[=NULL]]></Attributes>
-</O>
-</Compare>
-</Condition>
-<HighlightAction class="com.fr.report.cell.cellattr.highlight.ValueHighlightAction">
-<O>
-<![CDATA[-]]></O>
-</HighlightAction>
-</Highlight>
-</HighlightList>
 <Expand dir="0"/>
 </C>
 <C c="3" r="4" s="3">
@@ -1316,7 +1274,7 @@
 </WidgetAttr>
 <widgetValue>
 <O>
-<![CDATA[年：]]></O>
+<![CDATA[年份:]]></O>
 </widgetValue>
 <LabelAttr verticalcenter="true" textalign="0" autoline="true"/>
 <FRFont name="SimSun" style="0" size="72"/>
@@ -1393,7 +1351,7 @@
 </Style>
 <Style horizontal_alignment="0" imageLayout="1">
 <FRFont name="SimSun" style="0" size="80"/>
-<Background name="ColorBackground" color="-13531493"/>
+<Background name="ColorBackground" color="-16724737"/>
 <Border>
 <Top style="1"/>
 <Bottom style="1"/>

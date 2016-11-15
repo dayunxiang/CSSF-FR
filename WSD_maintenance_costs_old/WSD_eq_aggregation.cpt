@@ -42,7 +42,7 @@ group by month(date),sub_category, category,controllable order by charindex(cate
 <![CDATA[FR]]></DatabaseName>
 </Connection>
 <Query>
-<![CDATA[select category, sum(expense) as total_expense from dbo.WSD_maintenance_fee_allinone  where 1=1 and  year(date)='${year}' ${if(len(sec)==0,"","and section_office='"+sec+"'")}  and sub_category<>'应急水库' group by category ]]></Query>
+<![CDATA[select category,sum(expense) as total_expense from dbo.WSD_maintenance_fee_allinone where 1=1 and  year(date)='${year}' ${if(len(sec)==0,"","and section_office='"+sec+"'")} group by category]]></Query>
 </TableData>
 <TableData name="可控" class="com.fr.data.impl.DBTableData">
 <Parameters>
@@ -63,7 +63,7 @@ group by month(date),sub_category, category,controllable order by charindex(cate
 <![CDATA[FR]]></DatabaseName>
 </Connection>
 <Query>
-<![CDATA[select sub_category,sum(expense) as total,controllable from dbo.WSD_maintenance_fee_allinone where 1=1 and  year(date)='${year}'and controllable='可控' ${if(len(sec)==0,"","and section_office='"+sec+"'")} and sub_category<>'应急水库' group by sub_category,controllable]]></Query>
+<![CDATA[select sub_category,sum(expense) as total,controllable from dbo.WSD_maintenance_fee_allinone where 1=1 and  year(date)='${year}'and controllable='可控' ${if(len(sec)==0,"","and section_office='"+sec+"'")}  group by sub_category,controllable]]></Query>
 </TableData>
 <TableData name="不可控" class="com.fr.data.impl.DBTableData">
 <Parameters>
@@ -84,7 +84,7 @@ group by month(date),sub_category, category,controllable order by charindex(cate
 <![CDATA[FR]]></DatabaseName>
 </Connection>
 <Query>
-<![CDATA[select sub_category,sum(expense) as total,controllable from dbo.WSD_maintenance_fee_allinone where 1=1 and year(date)='${year}'and controllable='不可控' ${if(len(sec)==0,"","and section_office='"+sec+"'")} and sub_category<>'应急水库' group by sub_category,controllable]]></Query>
+<![CDATA[select sub_category,sum(expense) as total,controllable from dbo.WSD_maintenance_fee_allinone where 1=1 and year(date)='${year}'and controllable='不可控' ${if(len(sec)==0,"","and section_office='"+sec+"'")} group by sub_category,controllable]]></Query>
 </TableData>
 <TableData name="ds3" class="com.fr.data.impl.DBTableData">
 <Parameters>
@@ -106,7 +106,7 @@ group by month(date),sub_category, category,controllable order by charindex(cate
 </Connection>
 <Query>
 <![CDATA[select month(date) as yue,category,sub_category,sum(expense) as total_expense,controllable from dbo.WSD_maintenance_fee_allinone where 1=1 and year(date)='${year}' ${if(len(sec)==0,"","and section_office='"+sec+"'")}
-group by month(date),sub_category, category,controllable order by charindex(category,'劳务,职安健,年度检测,系统维护,技防,外围站,仪表,自动控制,配电系统,工艺管路系统,沉淀系统,过滤系统,加矾系统,加氯系统,水泵机组,一二级泵房,取水系统,回用泵房,污水泵房,排泥水系统,水库,物料,环境,应急系统')]]></Query>
+group by month(date),sub_category, category,controllable order by charindex(category,'劳务,职安健,年度检测,系统维护,技防,外围站,仪表,自动控制,配电系统,工艺管路系统,沉淀系统,过滤系统,加矾系统,加氯系统,水泵机组,回用泵房,污水泵房,排泥水系统,水库,物料,环境,应急系统')]]></Query>
 </TableData>
 </TableDataMap>
 <Report class="com.fr.report.poly.PolyWorkSheet" name="sheet1">
@@ -173,19 +173,9 @@ group by month(date),sub_category, category,controllable order by charindex(cate
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="0" r="2" s="2">
+<C c="0" r="2" s="1">
 <O t="DSColumn">
 <Attributes dsName="ds3" columnName="category"/>
-<Condition class="com.fr.data.condition.CommonCondition">
-<CNUMBER>
-<![CDATA[0]]></CNUMBER>
-<CNAME>
-<![CDATA[sub_category]]></CNAME>
-<Compare op="1">
-<O>
-<![CDATA[应急水库]]></O>
-</Compare>
-</Condition>
 <Complex/>
 <RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
 <Parameters/>
@@ -193,7 +183,7 @@ group by month(date),sub_category, category,controllable order by charindex(cate
 <PrivilegeControl/>
 <Expand dir="0"/>
 </C>
-<C c="1" r="2" s="2">
+<C c="1" r="2" s="1">
 <O t="DSColumn">
 <Attributes dsName="ds3" columnName="sub_category"/>
 <Complex/>
@@ -203,7 +193,7 @@ group by month(date),sub_category, category,controllable order by charindex(cate
 <PrivilegeControl/>
 <Expand dir="0"/>
 </C>
-<C c="2" r="2" s="2">
+<C c="2" r="2" s="1">
 <O t="DSColumn">
 <Attributes dsName="ds3" columnName="total_expense"/>
 <Complex/>
@@ -257,7 +247,7 @@ group by month(date),sub_category, category,controllable order by charindex(cate
 </HighlightList>
 <Expand dir="0"/>
 </C>
-<C c="3" r="2" s="2">
+<C c="3" r="2" s="1">
 <O t="Formula" class="Formula">
 <Attributes>
 <![CDATA[=sum(C3)]]></Attributes>
@@ -265,7 +255,7 @@ group by month(date),sub_category, category,controllable order by charindex(cate
 <PrivilegeControl/>
 <Expand leftParentDefault="false" left="B3"/>
 </C>
-<C c="4" r="2" s="2">
+<C c="4" r="2" s="1">
 <O t="Formula" class="Formula">
 <Attributes>
 <![CDATA[=sum(D3)]]></Attributes>
@@ -273,7 +263,7 @@ group by month(date),sub_category, category,controllable order by charindex(cate
 <PrivilegeControl/>
 <Expand leftParentDefault="false" left="A3"/>
 </C>
-<C c="5" r="2" s="2">
+<C c="5" r="2" s="1">
 <O t="DSColumn">
 <Attributes dsName="ds3" columnName="controllable"/>
 <Complex/>
@@ -283,17 +273,17 @@ group by month(date),sub_category, category,controllable order by charindex(cate
 <PrivilegeControl/>
 <Expand dir="0" leftParentDefault="false" left="B3"/>
 </C>
-<C c="0" r="3" s="3">
+<C c="0" r="3" s="2">
 <O>
 <![CDATA[总和]]></O>
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="1" r="3" s="3">
+<C c="1" r="3" s="2">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="2" r="3" s="3">
+<C c="2" r="3" s="2">
 <O t="Formula" class="Formula">
 <Attributes>
 <![CDATA[=sum(C3)]]></Attributes>
@@ -301,11 +291,11 @@ group by month(date),sub_category, category,controllable order by charindex(cate
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="3" r="3" s="3">
+<C c="3" r="3" s="2">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="4" r="3" s="3">
+<C c="4" r="3" s="2">
 <O t="Formula" class="Formula">
 <Attributes>
 <![CDATA[=sum(E3)]]></Attributes>
@@ -313,11 +303,11 @@ group by month(date),sub_category, category,controllable order by charindex(cate
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="5" r="3" s="3">
+<C c="5" r="3" s="2">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="0" r="5" cs="6" rs="2">
+<C c="0" r="5" cs="3" rs="2">
 <O t="CC">
 <LayoutAttr selectedIndex="0"/>
 <Chart name="默认" chartClass="com.fr.chart.chartattr.Chart">
@@ -352,7 +342,7 @@ group by month(date),sub_category, category,controllable order by charindex(cate
 </GI>
 <O t="Formula" class="Formula">
 <Attributes>
-<![CDATA[=$year+"年"+$sec+"设备维修费分月明细"]]></Attributes>
+<![CDATA[=$year + "年" + "" + $sec + "设备维修费分月明细"]]></Attributes>
 </O>
 <TextAttr>
 <Attr alignText="0">
@@ -513,7 +503,7 @@ group by month(date),sub_category, category,controllable order by charindex(cate
 <C c="0" r="0" cs="3" s="0">
 <O t="Formula" class="Formula">
 <Attributes>
-<![CDATA[=$year+"年"+""+$sec+"设备维修费项目分类"]]></Attributes>
+<![CDATA[=$year+'年设备维修费项目分类']]></Attributes>
 </O>
 <PrivilegeControl/>
 <Expand leftParentDefault="false" upParentDefault="false"/>
@@ -553,7 +543,7 @@ group by month(date),sub_category, category,controllable order by charindex(cate
 </GI>
 <O t="Formula" class="Formula">
 <Attributes>
-<![CDATA[=$year+"年"+""+$sec+"设备维修费分项支出排行"]]></Attributes>
+<![CDATA[=$year+'年设备维修费分项支出排行']]></Attributes>
 </O>
 <TextAttr>
 <Attr alignText="0">
@@ -733,25 +723,25 @@ group by month(date),sub_category, category,controllable order by charindex(cate
 <PrivilegeControl/>
 <Expand leftParentDefault="false" upParentDefault="false"/>
 </C>
-<C c="0" r="1" s="2">
+<C c="0" r="1" s="1">
 <O>
 <![CDATA[项目]]></O>
 <PrivilegeControl/>
 <Expand leftParentDefault="false" upParentDefault="false"/>
 </C>
-<C c="1" r="1" s="2">
+<C c="1" r="1" s="1">
 <O>
 <![CDATA[金额]]></O>
 <PrivilegeControl/>
 <Expand leftParentDefault="false" upParentDefault="false"/>
 </C>
-<C c="2" r="1" s="2">
+<C c="2" r="1" s="1">
 <O>
 <![CDATA[占比]]></O>
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="0" r="2" s="4">
+<C c="0" r="2" s="3">
 <O t="DSColumn">
 <Attributes dsName="ds2" columnName="category"/>
 <Complex/>
@@ -761,9 +751,9 @@ group by month(date),sub_category, category,controllable order by charindex(cate
 <PrivilegeControl/>
 <CellGUIAttr adjustmode="1"/>
 <CellPageAttr/>
-<Expand dir="0" leftParentDefault="false" left="B3"/>
+<Expand dir="0" leftParentDefault="false" left="J17"/>
 </C>
-<C c="1" r="2" s="4">
+<C c="1" r="2" s="3">
 <O t="DSColumn">
 <Attributes dsName="ds2" columnName="total_expense"/>
 <Complex order="2"/>
@@ -775,7 +765,7 @@ group by month(date),sub_category, category,controllable order by charindex(cate
 <PrivilegeControl/>
 <Expand dir="0" leftParentDefault="false" upParentDefault="false"/>
 </C>
-<C c="2" r="2" s="4">
+<C c="2" r="2" s="3">
 <O t="Formula" class="Formula">
 <Attributes>
 <![CDATA[=round(B3/B4,4)*100+"%"]]></Attributes>
@@ -783,13 +773,13 @@ group by month(date),sub_category, category,controllable order by charindex(cate
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="0" r="3" s="5">
+<C c="0" r="3" s="2">
 <O>
 <![CDATA[合计]]></O>
 <PrivilegeControl/>
 <Expand leftParentDefault="false" upParentDefault="false"/>
 </C>
-<C c="1" r="3" s="5">
+<C c="1" r="3" s="2">
 <O t="Formula" class="Formula">
 <Attributes>
 <![CDATA[=sum(B3)]]></Attributes>
@@ -797,12 +787,12 @@ group by month(date),sub_category, category,controllable order by charindex(cate
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="2" r="3" s="5">
+<C c="2" r="3" s="2">
 <PrivilegeControl/>
 <Expand/>
 </C>
 </CellElementList>
-<PECBAttr blockName="block2" x="4076700" y="21564600" width="39090600" height="5067300"/>
+<PECBAttr blockName="block2" x="3086100" y="20764500" width="39090600" height="5067300"/>
 </Block>
 <Block class="com.fr.report.poly.PolyECBlock">
 <ReportPageAttr>
@@ -818,45 +808,45 @@ group by month(date),sub_category, category,controllable order by charindex(cate
 <ColumnWidth defaultValue="2743200">
 <![CDATA[4305300,2743200,2743200,2743200,4953000,2743200,2743200,2743200,15049500,2743200,2743200]]></ColumnWidth>
 <CellElementList>
-<C c="0" r="0" cs="2" s="6">
+<C c="0" r="0" cs="2" s="4">
 <O t="Formula" class="Formula">
 <Attributes>
-<![CDATA[=$year+"年"+""+$sec+"可控费用"]]></Attributes>
+<![CDATA[=$year+'年可控费用']]></Attributes>
 </O>
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="4" r="0" cs="2" s="6">
+<C c="4" r="0" cs="2" s="4">
 <O t="Formula" class="Formula">
 <Attributes>
-<![CDATA[=$year+"年"+""+$sec+"不可控费用"]]></Attributes>
+<![CDATA[=$year+'年不可控费用']]></Attributes>
 </O>
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="0" r="1" s="2">
+<C c="0" r="1" s="1">
 <O>
 <![CDATA[项目]]></O>
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="1" r="1" s="2">
+<C c="1" r="1" s="1">
 <O>
 <![CDATA[金额]]></O>
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="3" r="1" s="7">
+<C c="3" r="1" s="5">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="4" r="1" s="2">
+<C c="4" r="1" s="1">
 <O>
 <![CDATA[项目]]></O>
 <PrivilegeControl/>
 <Expand leftParentDefault="false" upParentDefault="false"/>
 </C>
-<C c="5" r="1" s="2">
+<C c="5" r="1" s="1">
 <O>
 <![CDATA[金额]]></O>
 <PrivilegeControl/>
@@ -897,7 +887,7 @@ group by month(date),sub_category, category,controllable order by charindex(cate
 </GI>
 <O t="Formula" class="Formula">
 <Attributes>
-<![CDATA[=$year+"年"+""+$sec+"设备维修费属性比率"]]></Attributes>
+<![CDATA[=$year + "年设备维修费属性比率"]]></Attributes>
 </O>
 <TextAttr>
 <Attr alignText="0">
@@ -1060,7 +1050,7 @@ group by month(date),sub_category, category,controllable order by charindex(cate
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="0" r="2" s="4">
+<C c="0" r="2" s="3">
 <O t="DSColumn">
 <Attributes dsName="可控" columnName="sub_category"/>
 <Complex/>
@@ -1068,25 +1058,25 @@ group by month(date),sub_category, category,controllable order by charindex(cate
 <Parameters/>
 </O>
 <PrivilegeControl/>
-<Expand dir="0" leftParentDefault="false" left="B3"/>
+<Expand dir="0"/>
 </C>
-<C c="1" r="2" s="4">
+<C c="1" r="2" s="3">
 <O t="DSColumn">
 <Attributes dsName="可控" columnName="total"/>
-<Complex order="2"/>
+<Complex/>
 <RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
 <Result>
 <![CDATA[round($$$,0)]]></Result>
 <Parameters/>
 </O>
 <PrivilegeControl/>
-<Expand dir="0" leftParentDefault="false"/>
+<Expand dir="0"/>
 </C>
-<C c="3" r="2" s="7">
+<C c="3" r="2" s="5">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="4" r="2" s="4">
+<C c="4" r="2" s="3">
 <O t="DSColumn">
 <Attributes dsName="不可控" columnName="sub_category"/>
 <Complex/>
@@ -1094,27 +1084,27 @@ group by month(date),sub_category, category,controllable order by charindex(cate
 <Parameters/>
 </O>
 <PrivilegeControl/>
-<Expand dir="0" leftParentDefault="false" left="F3" upParentDefault="false"/>
+<Expand dir="0" leftParentDefault="false" upParentDefault="false"/>
 </C>
-<C c="5" r="2" s="4">
+<C c="5" r="2" s="3">
 <O t="DSColumn">
 <Attributes dsName="不可控" columnName="total"/>
-<Complex order="2"/>
+<Complex/>
 <RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
 <Result>
 <![CDATA[round($$$,0)]]></Result>
 <Parameters/>
 </O>
 <PrivilegeControl/>
-<Expand dir="0" leftParentDefault="false"/>
+<Expand dir="0"/>
 </C>
-<C c="0" r="3" s="5">
+<C c="0" r="3" s="2">
 <O>
 <![CDATA[合计]]></O>
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="1" r="3" s="5">
+<C c="1" r="3" s="2">
 <O t="Formula" class="Formula">
 <Attributes>
 <![CDATA[=sum(B3)]]></Attributes>
@@ -1122,17 +1112,17 @@ group by month(date),sub_category, category,controllable order by charindex(cate
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="3" r="3" s="7">
+<C c="3" r="3" s="5">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="4" r="3" s="5">
+<C c="4" r="3" s="2">
 <O>
 <![CDATA[合计]]></O>
 <PrivilegeControl/>
 <Expand leftParentDefault="false" upParentDefault="false"/>
 </C>
-<C c="5" r="3" s="5">
+<C c="5" r="3" s="2">
 <O t="Formula" class="Formula">
 <Attributes>
 <![CDATA[=sum(F3)]]></Attributes>
@@ -1308,10 +1298,8 @@ group by month(date),sub_category, category,controllable order by charindex(cate
 </Connection>
 </Dictionary>
 <widgetValue>
-<O t="Formula" class="Formula">
-<Attributes>
-<![CDATA[=year(today())]]></Attributes>
-</O>
+<O>
+<![CDATA[]]></O>
 </widgetValue>
 </InnerWidget>
 <BoundsAttr x="120" y="25" width="80" height="21"/>
@@ -1359,42 +1347,12 @@ group by month(date),sub_category, category,controllable order by charindex(cate
 </Style>
 <Style horizontal_alignment="2" imageLayout="1">
 <FRFont name="SimSun" style="0" size="72"/>
-<Background name="ColorBackground" color="-13531493"/>
-<Border>
-<Top style="1"/>
-<Bottom style="1"/>
-<Left style="1"/>
-<Right style="1"/>
-</Border>
-</Style>
-<Style horizontal_alignment="2" imageLayout="1">
-<FRFont name="SimSun" style="0" size="72"/>
 <Background name="NullBackground"/>
 <Border>
 <Top style="1"/>
 <Bottom style="1"/>
 <Left style="1"/>
 <Right style="1"/>
-</Border>
-</Style>
-<Style horizontal_alignment="2" imageLayout="1">
-<FRFont name="SimSun" style="0" size="72"/>
-<Background name="ColorBackground" color="-16711936"/>
-<Border>
-<Top style="1"/>
-<Bottom style="1"/>
-<Left style="1"/>
-<Right style="1"/>
-</Border>
-</Style>
-<Style horizontal_alignment="2" imageLayout="1">
-<FRFont name="SimSun" style="0" size="72"/>
-<Background name="ColorBackground" color="-10053121"/>
-<Border>
-<Top style="1" color="-16777216"/>
-<Bottom style="1" color="-16777216"/>
-<Left style="1" color="-16777216"/>
-<Right style="1" color="-16777216"/>
 </Border>
 </Style>
 <Style horizontal_alignment="2" imageLayout="1">
@@ -1407,8 +1365,18 @@ group by month(date),sub_category, category,controllable order by charindex(cate
 <Right style="1"/>
 </Border>
 </Style>
+<Style horizontal_alignment="2" imageLayout="1">
+<FRFont name="SimSun" style="0" size="72"/>
+<Background name="ColorBackground" color="-10053121"/>
+<Border>
+<Top style="1"/>
+<Bottom style="1"/>
+<Left style="1"/>
+<Right style="1"/>
+</Border>
+</Style>
 <Style imageLayout="1">
-<FRFont name="SimSun" style="1" size="72"/>
+<FRFont name="SimSun" style="0" size="72"/>
 <Background name="NullBackground"/>
 <Border>
 <Top style="1"/>
