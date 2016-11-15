@@ -1,0 +1,3049 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WorkBook xmlVersion="20151125" releaseVersion="8.0.0">
+<TableDataMap>
+<TableData name="二厂城区线" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="endtime"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+<Parameter>
+<Attributes name="starttime"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[FR]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[select * from dbo.CSD_cz_daily where 1=1  ${if(len(starttime)==0,"","and Date>='"+ starttime + "'")} ${if(len(endtime)==0,"","and Date <='"+ endtime  +"'")} and tagname='ec_ebf_total_outflow1_diff']]></Query>
+</TableData>
+<TableData name="二水厂西部线" class="com.fr.data.impl.DBTableData">
+<Parameters/>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[FR]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[select * from dbo.CSD_cz_daily where 1=1  ${if(len(starttime)==0,"","and Date>='"+ starttime + "'")} ${if(len(endtime)==0,"","and Date <='"+ endtime  +"'")} and tagname='ec_ebf_total_outflow2_diff']]></Query>
+</TableData>
+<TableData name="三水厂1号线" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="endtime"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+<Parameter>
+<Attributes name="starttime"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[FR]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[select * from dbo.CSD_cz_daily where 1=1  ${if(len(starttime)==0,"","and Date>='"+ starttime + "'")} ${if(len(endtime)==0,"","and Date <='"+ endtime  +"'")} and  tagname='sc_ebf_total_outflow2_diff']]></Query>
+</TableData>
+<TableData name="三水厂2号线" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="endtime"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+<Parameter>
+<Attributes name="starttime"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[FR]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[select * from dbo.CSD_cz_daily where 1=1  ${if(len(starttime)==0,"","and Date>='"+ starttime + "'")} ${if(len(endtime)==0,"","and Date <='"+ endtime  +"'")} and  tagname='sc_ebf_total_outflow1_diff']]></Query>
+</TableData>
+<TableData name="三水厂3号线" class="com.fr.data.impl.DBTableData">
+<Parameters/>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[FR]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[select * from dbo.CSD_cz_daily where 1=1  ${if(len(starttime)==0,"","and Date>='"+ starttime + "'")} ${if(len(endtime)==0,"","and Date <='"+ endtime  +"'")} and  tagname='sc_ebf_total_outflow4_diff']]></Query>
+</TableData>
+<TableData name="三水厂港区" class="com.fr.data.impl.DBTableData">
+<Parameters/>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[FR]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[select * from dbo.CSD_cz_daily where 1=1  ${if(len(starttime)==0,"","and Date>='"+ starttime + "'")} ${if(len(endtime)==0,"","and Date <='"+ endtime  +"'")} and  tagname='sc_ebf_total_outflow3_diff']]></Query>
+</TableData>
+<TableData name="滨江总水量" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="endtime"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+<Parameter>
+<Attributes name="starttime"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[FR]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[SELECT date,sum([value]A) as day_sum FROM [FR]A.[dbo]A.[CSD_cz_daily]A 
+where 1=1  ${if(len(starttime)==0,"","and Date>='"+ starttime + "'")} ${if(len(endtime)==0,"","and Date <='"+ endtime  +"'")} and tagname in ('bj_gsl1_diff', 'bj2q_beng1_flow_lj_diff', 'bj2q_beng2_flow_lj_diff', 'bj2q_beng3_flow_lj_diff', 'bj2q_beng4_flow_lj_diff') group by date]]></Query>
+</TableData>
+<TableData name="滨江西部线" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="endtime"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+<Parameter>
+<Attributes name="starttime"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[FR]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[select wwz.date,wwz_sum-cz_sum  as xibu from (select date,sum(value) as wwz_sum from dbo.CSD_wwz_daily where tagname in ('cs115_ljll','cs118_ljll','cs114_ljll') group by date) as wwz,(select date,sum(value) as cz_sum from dbo.CSD_cz_daily where tagname in ('sc_ebf_total_outflow3_diff') group by date ) as cz   where 1=1  ${if(len(starttime)==0,"","and wwz.Date>='"+ starttime + "'")} ${if(len(endtime)==0,"","and wwz.Date <='"+ endtime  +"'")} and wwz.date=cz.date]]></Query>
+</TableData>
+<TableData name="西部DMA" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="endtime"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+<Parameter>
+<Attributes name="starttime"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[FR]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[select sum(value) as xb_dma,date from dbo.CSD_wwz_daily where 1=1  ${if(len(starttime)==0,"","and Date>='"+ starttime + "'")} ${if(len(endtime)==0,"","and Date <='"+ endtime  +"'")} and  tagname in ('cs87_ljll','cs86_ljll') group by date]]></Query>
+</TableData>
+<TableData name="西南DMA" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="endtime"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+<Parameter>
+<Attributes name="starttime"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[FR]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[select sum(value) as xn_dma,date from dbo.CSD_wwz_daily where 1=1  ${if(len(starttime)==0,"","and Date>='"+ starttime + "'")} ${if(len(endtime)==0,"","and Date <='"+ endtime  +"'")} and  tagname in ('cs41_ljll','cs92_ljll','cs94_ljll') group by date]]></Query>
+</TableData>
+<TableData name="练塘流量" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="endtime"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+<Parameter>
+<Attributes name="starttime"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[FR]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[select * from dbo.CSD_wwz_daily where 1=1  ${if(len(starttime)==0,"","and Date>='"+ starttime + "'")} ${if(len(endtime)==0,"","and Date <='"+ endtime  +"'")} and tagname in ('JCD_D74')]]></Query>
+</TableData>
+<TableData name="张桥流量" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="endtime"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+<Parameter>
+<Attributes name="starttime"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[FR]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[select * from dbo.CSD_wwz_daily where 1=1  ${if(len(starttime)==0,"","and Date>='"+ starttime + "'")} ${if(len(endtime)==0,"","and Date <='"+ endtime  +"'")} and tagname in ('cs64_ljll')]]></Query>
+</TableData>
+<TableData name="东南DMA" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="endtime"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+<Parameter>
+<Attributes name="starttime"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[FR]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[select a.date,(a_sum+b_sum) as dndma from (select date,sum(value) as a_sum from dbo.CSD_cz_daily where tagname in ('oq_st_pt_gsl','oq_st_d_gsl','oq_dn_pt_gsl','oq_dn_d_gsl') group by date) as a ,(select date,sum(value) as b_sum from dbo.CSD_wwz_daily where tagname in ('cs106_ljll','cs69_ljll') group by date) as b  where 1=1  ${if(len(starttime)==0,"","and a.Date>='"+ starttime + "'")} ${if(len(endtime)==0,"","and a.Date <='"+ endtime  +"'")} and  a.date=b.date]]></Query>
+</TableData>
+<TableData name="白雪路流量" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="endtime"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+<Parameter>
+<Attributes name="starttime"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[FR]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[select * from dbo.CSD_wwz_daily where 1=1  ${if(len(starttime)==0,"","and Date>='"+ starttime + "'")} ${if(len(endtime)==0,"","and Date <='"+ endtime  +"'")} and tagname='cs13_ljll']]></Query>
+</TableData>
+<TableData name="沙家浜南桥流量" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="endtime"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+<Parameter>
+<Attributes name="starttime"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[FR]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[select * from dbo.CSD_wwz_daily where 1=1  ${if(len(starttime)==0,"","and Date>='"+ starttime + "'")} ${if(len(endtime)==0,"","and Date <='"+ endtime  +"'")} and tagname='cs61_ljll']]></Query>
+</TableData>
+<TableData name="梅北DMA" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="endtime"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+<Parameter>
+<Attributes name="starttime"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[FR]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[select date,sum(value) as mb_dma from dbo.CSD_wwz_daily where 1=1  ${if(len(starttime)==0,"","and Date>='"+ starttime + "'")} ${if(len(endtime)==0,"","and Date <='"+ endtime  +"'")} and  tagname in ('cs112_ljll','cs116_ljll') group by date]]></Query>
+</TableData>
+<TableData name="王市河口流量" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="endtime"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+<Parameter>
+<Attributes name="starttime"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[FR]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[select * from dbo.CSD_wwz_daily where 1=1  ${if(len(starttime)==0,"","and Date>='"+ starttime + "'")} ${if(len(endtime)==0,"","and Date <='"+ endtime  +"'")} and tagname='JCD_D4']]></Query>
+</TableData>
+<TableData name="海虞人民路流量" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="endtime"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+<Parameter>
+<Attributes name="starttime"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[FR]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[select * from dbo.CSD_wwz_daily where 1=1  ${if(len(starttime)==0,"","and Date>='"+ starttime + "'")} ${if(len(endtime)==0,"","and Date <='"+ endtime  +"'")} and tagname='cs105_ljll']]></Query>
+</TableData>
+<TableData name="福山聚福" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="endtime"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+<Parameter>
+<Attributes name="starttime"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[FR]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[select * from dbo.CSD_wwz_daily where 1=1  ${if(len(starttime)==0,"","and Date>='"+ starttime + "'")} ${if(len(endtime)==0,"","and Date <='"+ endtime  +"'")} and tagname='JCD_D200']]></Query>
+</TableData>
+<TableData name="富春江路" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="endtime"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+<Parameter>
+<Attributes name="starttime"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[FR]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[select z.date,abs(z.value-f.value) as fcj from (select date,value from dbo.CSD_wwz_daily where tagname='cs58_ljll') as z , (select date,value from dbo.CSD_wwz_daily where tagname='cs58_fljll') as f  where 1=1  ${if(len(starttime)==0,"","and z.Date>='"+ starttime + "'")} ${if(len(endtime)==0,"","and z.Date <='"+ endtime  +"'")} and z.date=f.date]]></Query>
+</TableData>
+<TableData name="白茆周家村" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="endtime"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+<Parameter>
+<Attributes name="starttime"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[FR]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[select z.date,abs(z.value-f.value) as zjc from (select date,value from dbo.CSD_wwz_daily where tagname='cs60_ljll') as z , (select date,value from dbo.CSD_wwz_daily where tagname='cs60_fljll') as f where 1=1  ${if(len(starttime)==0,"","and z.Date>='"+ starttime + "'")} ${if(len(endtime)==0,"","and z.Date <='"+ endtime  +"'")} and z.date=f.date]]></Query>
+</TableData>
+<TableData name="城区DMA(除了二水厂,富春江,沙唐线,四环路)" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="endtime"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+<Parameter>
+<Attributes name="starttime"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[FR]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[select a.date,a_sum+b_sum as result from (select date,sum(value) as a_sum from dbo.CSD_wwz_daily where tagname in ('cs75_ljll','cs107_ljll','cs108_ljll') group by date) as a , (select date,-sum(value) as b_sum  from dbo.CSD_wwz_daily where tagname in ('cs87_ljll','cs92_ljll','cs41_ljll','cs94_ljll','cs106_ljll','cs86_ljll') group by date) as b where 1=1  ${if(len(starttime)==0,"","and a.Date>='"+ starttime + "'")} ${if(len(endtime)==0,"","and a.Date <='"+ endtime  +"'")} and  a.date=b.date]]></Query>
+</TableData>
+<TableData name="沙唐线" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="endtime"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+<Parameter>
+<Attributes name="starttime"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[FR]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[select date,sum(value) as st from dbo.CSD_cz_daily where 1=1  ${if(len(starttime)==0,"","and Date>='"+ starttime + "'")} ${if(len(endtime)==0,"","and Date <='"+ endtime  +"'")} and  tagname in ('oq_st_pt_gsl','oq_st_d_gsl','oq_dn_pt_gsl','oq_dn_d_gsl') group by date]]></Query>
+</TableData>
+<TableData name="东部DMA除滨江线" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="endtime"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+<Parameter>
+<Attributes name="starttime"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[FR]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[select date,sum(value) as result from dbo.CSD_wwz_daily where 1=1  ${if(len(starttime)==0,"","and Date>='"+ starttime + "'")} ${if(len(endtime)==0,"","and Date <='"+ endtime  +"'")} and tagname in ('cs60_ljll','cs115_ljll','cs65_ljll') group by date]]></Query>
+</TableData>
+<TableData name="徐市曹家桥" class="com.fr.data.impl.DBTableData">
+<Parameters/>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[FR]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[select * from dbo.CSD_wwz_daily where tagname='cs113_ljll']]></Query>
+</TableData>
+<TableData name="东2DMA" class="com.fr.data.impl.DBTableData">
+<Parameters/>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[FR]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[select date,sum(value) as result from dbo.CSD_wwz_daily where tagname in ('cs113_ljll','cs115_ljll','cs93_ljll') group by date]]></Query>
+</TableData>
+<TableData name="支东流量" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="endtime"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+<Parameter>
+<Attributes name="starttime"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[FR]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[select * from dbo.CSD_wwz_daily where 1=1  ${if(len(starttime)==0,"","and Date>='"+ starttime + "'")} ${if(len(endtime)==0,"","and Date <='"+ endtime  +"'")} and  tagname='cs84_ljll']]></Query>
+</TableData>
+<TableData name="东3DMA" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="endtime"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+<Parameter>
+<Attributes name="starttime"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[FR]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[select a.date,(a_sum-b_sum) as result from (select date,sum(value) as a_sum from dbo.CSD_wwz_daily where tagname in ('cs60_ljll','cs65_ljll') group by date) as a, (select date,value as b_sum from dbo.CSD_wwz_daily where tagname='cs93_ljll') as b where 1=1  ${if(len(starttime)==0,"","and a.Date>='"+ starttime + "'")} ${if(len(endtime)==0,"","and a.Date <='"+ endtime  +"'")} and  a.date=b.date]]></Query>
+</TableData>
+<TableData name="任阳陈泾" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="endtime"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+<Parameter>
+<Attributes name="starttime"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[FR]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[select * from dbo.CSD_wwz_daily where 1=1  ${if(len(starttime)==0,"","and Date>='"+ starttime + "'")} ${if(len(endtime)==0,"","and Date <='"+ endtime  +"'")} and  tagname='JCD_D109']]></Query>
+</TableData>
+<TableData name="紫芙流量" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="endtime"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+<Parameter>
+<Attributes name="starttime"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[FR]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[select * from dbo.CSD_wwz_daily where 1=1  ${if(len(starttime)==0,"","and Date>='"+ starttime + "'")} ${if(len(endtime)==0,"","and Date <='"+ endtime  +"'")} and  tagname='cs71_ljll']]></Query>
+</TableData>
+<TableData name="康诺流量" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="endtime"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+<Parameter>
+<Attributes name="starttime"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[FR]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[select * from dbo.CSD_wwz_daily where 1=1  ${if(len(starttime)==0,"","and Date>='"+ starttime + "'")} ${if(len(endtime)==0,"","and Date <='"+ endtime  +"'")} and  tagname='cs59_ljll']]></Query>
+</TableData>
+<TableData name="梅古线" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="endtime"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+<Parameter>
+<Attributes name="starttime"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[FR]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[select a.date,(a_sum-b_sum) as result from (select date,sum(value) as a_sum from dbo.CSD_wwz_daily where tagname in ('cs114_ljll','cs118_ljll') group by date) as a, (select date,sum(value) as b_sum from dbo.CSD_wwz_daily where tagname in ('cs65_ljll','cs75_ljll','cs69_ljll') group by date) as b where 1=1  ${if(len(starttime)==0,"","and a.Date>='"+ starttime + "'")} ${if(len(endtime)==0,"","and a.Date <='"+ endtime  +"'")} and  a.date=b.date]]></Query>
+</TableData>
+<TableData name="淼泉流量" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="endtime"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+<Parameter>
+<Attributes name="starttime"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[FR]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[select * from dbo.CSD_wwz_daily where 1=1  ${if(len(starttime)==0,"","and Date>='"+ starttime + "'")} ${if(len(endtime)==0,"","and Date <='"+ endtime  +"'")} and tagname='JCD_D123']]></Query>
+</TableData>
+<TableData name="通港DMA(除三水厂)" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="endtime"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+<Parameter>
+<Attributes name="starttime"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[FR]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[select date,sum(value) as result from dbo.CSD_wwz_daily where 1=1  ${if(len(starttime)==0,"","and Date>='"+ starttime + "'")} ${if(len(endtime)==0,"","and Date <='"+ endtime  +"'")} and  tagname in ('cs107_ljll','cs108_ljll','cs112_ljll','cs116_ljll') group by date]]></Query>
+</TableData>
+<TableData name="东南大表" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="endtime"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+<Parameter>
+<Attributes name="starttime"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[FR]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[select * from dbo.CSD_seck_dma_daily where 1=1  ${if(len(starttime)==0,"","and Date>='"+ starttime + "'")} ${if(len(endtime)==0,"","and Date <='"+ endtime  +"'")} and tagname='seck_dndb']]></Query>
+</TableData>
+<TableData name="城区大表" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="endtime"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+<Parameter>
+<Attributes name="starttime"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[FR]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[select * from dbo.CSD_seck_dma_daily where 1=1  ${if(len(starttime)==0,"","and Date>='"+ starttime + "'")} ${if(len(endtime)==0,"","and Date <='"+ endtime  +"'")} and tagname='seck_cqdb']]></Query>
+</TableData>
+<TableData name="城区住宅" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="endtime"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+<Parameter>
+<Attributes name="starttime"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[FR]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[select * from dbo.CSD_seck_dma_daily where 1=1  ${if(len(starttime)==0,"","and Date>='"+ starttime + "'")} ${if(len(endtime)==0,"","and Date <='"+ endtime  +"'")} and tagname='seck_cqzz']]></Query>
+</TableData>
+<TableData name="港区大表" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="endtime"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+<Parameter>
+<Attributes name="starttime"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[FR]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[select * from dbo.CSD_seck_dma_daily where 1=1  ${if(len(starttime)==0,"","and Date>='"+ starttime + "'")} ${if(len(endtime)==0,"","and Date <='"+ endtime  +"'")} and tagname='seck_gqdb']]></Query>
+</TableData>
+<TableData name="淼泉考核" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="endtime"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+<Parameter>
+<Attributes name="starttime"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[FR]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[select * from dbo.CSD_seck_dma_daily where 1=1  ${if(len(starttime)==0,"","and Date>='"+ starttime + "'")} ${if(len(endtime)==0,"","and Date <='"+ endtime  +"'")} and tagname='seck_mqkh']]></Query>
+</TableData>
+</TableDataMap>
+<Report class="com.fr.report.worksheet.WorkSheet" name="sheet1">
+<ReportPageAttr>
+<HR F="0" T="1"/>
+<FR/>
+<HC F="0" T="2"/>
+<FC/>
+<UPFCR COLUMN="true" ROW="true"/>
+</ReportPageAttr>
+<ColumnPrivilegeControl/>
+<RowPrivilegeControl/>
+<RowHeight defaultValue="723900">
+<![CDATA[723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,876300,0,0,0,0,723900,1143000,723900,723900,723900,723900,723900,723900,723900,723900,723900,0,0,723900,723900,723900,723900,0,723900,0,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,0,723900]]></RowHeight>
+<ColumnWidth defaultValue="2743200">
+<![CDATA[4076700,3429000,2743200,3733800,2743200,2743200,2743200,2743200,2743200,2743200,2743200]]></ColumnWidth>
+<CellElementList>
+<C c="0" r="0" cs="3" s="0">
+<O>
+<![CDATA[dma计量分级]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="0" s="1">
+<O t="DSColumn">
+<Attributes dsName="白雪路流量" columnName="date"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="1"/>
+</C>
+<C c="0" r="1" s="2">
+<O>
+<![CDATA[一级计量]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="1" s="2">
+<O>
+<![CDATA[二级计量]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="1" s="2">
+<O>
+<![CDATA[三级计量]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="1" s="1">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="0" r="2" s="2">
+<O>
+<![CDATA[总水量]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="2" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="2" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="2" s="1">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=D6+D7+D10+D11+D12+D13+D15]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand dir="1"/>
+</C>
+<C c="0" r="3" s="3">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="3" s="3">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="3" s="3">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="0" r="4" s="2">
+<O>
+<![CDATA[二厂]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="4" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="4" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="4" s="1">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=D6 + D7]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand dir="1"/>
+</C>
+<C c="0" r="5" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="5" s="2">
+<O>
+<![CDATA[城区线]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="5" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="5" s="1">
+<O t="DSColumn">
+<Attributes dsName="二厂城区线" columnName="value"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[date]]></CNAME>
+<Compare op="0">
+<ColumnRow column="3" row="0"/>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="1" upParentDefault="false" up="D1"/>
+</C>
+<C c="0" r="6" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="6" s="2">
+<O>
+<![CDATA[西部线]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="6" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="6" s="1">
+<O t="DSColumn">
+<Attributes dsName="二水厂西部线" columnName="value"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[0]]></CNUMBER>
+<CNAME>
+<![CDATA[date]]></CNAME>
+<Compare op="0">
+<ColumnRow column="3" row="0"/>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="1"/>
+</C>
+<C c="0" r="7" s="3">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="7" s="3">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="7" s="3">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="0" r="8" s="2">
+<O>
+<![CDATA[三厂]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="8" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="8" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="8" s="1">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=D10 + D11 + D12 + D13]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand dir="1" upParentDefault="false"/>
+</C>
+<C c="0" r="9" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="9" s="2">
+<O>
+<![CDATA[一号线]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="9" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="9" s="1">
+<O t="DSColumn">
+<Attributes dsName="三水厂1号线" columnName="value"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[0]]></CNUMBER>
+<CNAME>
+<![CDATA[date]]></CNAME>
+<Compare op="0">
+<ColumnRow column="3" row="0"/>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="1" upParentDefault="false" up="D1"/>
+</C>
+<C c="0" r="10" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="10" s="2">
+<O>
+<![CDATA[二号线]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="10" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="10" s="1">
+<O t="DSColumn">
+<Attributes dsName="三水厂2号线" columnName="value"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[0]]></CNUMBER>
+<CNAME>
+<![CDATA[date]]></CNAME>
+<Compare op="0">
+<ColumnRow column="3" row="0"/>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="1"/>
+</C>
+<C c="0" r="11" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="11" s="2">
+<O>
+<![CDATA[三号线]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="11" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="11" s="1">
+<O t="DSColumn">
+<Attributes dsName="三水厂3号线" columnName="value"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[0]]></CNUMBER>
+<CNAME>
+<![CDATA[date]]></CNAME>
+<Compare op="0">
+<ColumnRow column="3" row="0"/>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="1"/>
+</C>
+<C c="0" r="12" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="12" s="2">
+<O>
+<![CDATA[港区线]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="12" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="12" s="1">
+<O t="DSColumn">
+<Attributes dsName="三水厂港区" columnName="value"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[0]]></CNUMBER>
+<CNAME>
+<![CDATA[date]]></CNAME>
+<Compare op="0">
+<ColumnRow column="3" row="0"/>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="1"/>
+</C>
+<C c="0" r="13" s="3">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="13" s="3">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="13" s="3">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="13">
+<PrivilegeControl/>
+<Expand upParentDefault="false"/>
+</C>
+<C c="0" r="14" s="2">
+<O>
+<![CDATA[滨江]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="14" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="14" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="14" s="1">
+<O t="DSColumn">
+<Attributes dsName="滨江总水量" columnName="day_sum"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[0]]></CNUMBER>
+<CNAME>
+<![CDATA[date]]></CNAME>
+<Compare op="0">
+<ColumnRow column="3" row="0"/>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="1" upParentDefault="false" up="D1"/>
+</C>
+<C c="0" r="15" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="15" s="2">
+<O>
+<![CDATA[港区线]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="15" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="15" s="1">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=D15 - D17]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="0" r="16" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="16" s="2">
+<O>
+<![CDATA[西部线]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="16" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="16" s="1">
+<O t="DSColumn">
+<Attributes dsName="滨江西部线" columnName="xibu"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[0]]></CNUMBER>
+<CNAME>
+<![CDATA[date]]></CNAME>
+<Compare op="0">
+<ColumnRow column="3" row="0"/>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="1" upParentDefault="false" up="D1"/>
+</C>
+<C c="0" r="17" s="3">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="17" s="3">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="17" s="3">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="0" r="18" s="2">
+<O>
+<![CDATA[西部DMA]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="18" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="18" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="18" s="1">
+<O t="DSColumn">
+<Attributes dsName="西部DMA" columnName="xb_dma"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[0]]></CNUMBER>
+<CNAME>
+<![CDATA[date]]></CNAME>
+<Compare op="0">
+<ColumnRow column="3" row="0"/>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="1" upParentDefault="false" up="D1"/>
+</C>
+<C c="6" r="18" s="4">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="11" r="18">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="0" r="19" s="3">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="19" s="3">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="19" s="3">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="8" r="19">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="0" r="20" s="2">
+<O>
+<![CDATA[西南DMA]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="20" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="20" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="20" s="1">
+<O t="DSColumn">
+<Attributes dsName="西南DMA" columnName="xn_dma"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[0]]></CNUMBER>
+<CNAME>
+<![CDATA[date]]></CNAME>
+<Compare op="0">
+<ColumnRow column="3" row="0"/>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="1" upParentDefault="false" up="D1"/>
+</C>
+<C c="7" r="20">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="0" r="21" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="21" s="2">
+<O>
+<![CDATA[练塘流量]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="21" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="21" s="1">
+<O t="DSColumn">
+<Attributes dsName="练塘流量" columnName="value"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[0]]></CNUMBER>
+<CNAME>
+<![CDATA[date]]></CNAME>
+<Compare op="0">
+<ColumnRow column="3" row="0"/>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="1" upParentDefault="false" up="D1"/>
+</C>
+<C c="0" r="22" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="22" s="2">
+<O>
+<![CDATA[张桥流量]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="22" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="22" s="1">
+<O t="DSColumn">
+<Attributes dsName="张桥流量" columnName="value"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[0]]></CNUMBER>
+<CNAME>
+<![CDATA[date]]></CNAME>
+<Compare op="0">
+<ColumnRow column="3" row="0"/>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="1" upParentDefault="false" up="D1"/>
+</C>
+<C c="0" r="23" s="3">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="23" s="3">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="23" s="3">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="0" r="24" s="5">
+<O>
+<![CDATA[东南DMA]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="24" s="5">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="24" s="5">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="24" s="6">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=D27 - D28 - D29]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand dir="1"/>
+</C>
+<C c="15" r="24">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="0" r="25" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="25" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="25" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="25" s="6">
+<O t="DSColumn">
+<Attributes dsName="沙唐线" columnName="st"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[0]]></CNUMBER>
+<CNAME>
+<![CDATA[date]]></CNAME>
+<Compare op="0">
+<ColumnRow column="3" row="0"/>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="1"/>
+</C>
+<C c="0" r="26" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="26" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="26" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="26" s="7">
+<O t="DSColumn">
+<Attributes dsName="东南DMA" columnName="dndma"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[0]]></CNUMBER>
+<CNAME>
+<![CDATA[date]]></CNAME>
+<Compare op="0">
+<ColumnRow column="3" row="0"/>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="1" upParentDefault="false" up="D1"/>
+</C>
+<C c="0" r="27" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="27" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="27" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="27" s="6">
+<O t="DSColumn">
+<Attributes dsName="富春江路" columnName="fcj"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[0]]></CNUMBER>
+<CNAME>
+<![CDATA[date]]></CNAME>
+<Compare op="0">
+<ColumnRow column="3" row="0"/>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="1"/>
+</C>
+<C c="0" r="28" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="28" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="28" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="28" s="6">
+<O t="DSColumn">
+<Attributes dsName="白茆周家村" columnName="zjc"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[0]]></CNUMBER>
+<CNAME>
+<![CDATA[date]]></CNAME>
+<Compare op="0">
+<ColumnRow column="3" row="0"/>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="1"/>
+</C>
+<C c="5" r="28">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="0" r="29" s="5">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="29" s="5">
+<O>
+<![CDATA[白雪路流量]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="29" s="5">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="29" s="7">
+<O t="DSColumn">
+<Attributes dsName="白雪路流量" columnName="value"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[0]]></CNUMBER>
+<CNAME>
+<![CDATA[date]]></CNAME>
+<Compare op="0">
+<ColumnRow column="3" row="0"/>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="1"/>
+</C>
+<C c="0" r="30" s="5">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="30" s="5">
+<O>
+<![CDATA[沙家浜南桥流量]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="30" s="5">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="30" s="7">
+<O t="DSColumn">
+<Attributes dsName="沙家浜南桥流量" columnName="value"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[0]]></CNUMBER>
+<CNAME>
+<![CDATA[date]]></CNAME>
+<Compare op="0">
+<ColumnRow column="3" row="0"/>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="1"/>
+</C>
+<C c="12" r="30">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="13" r="30">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="14" r="30">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="0" r="31" s="5">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="31" s="5">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="31" s="5">
+<O>
+<![CDATA[东南住宅DMA]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="31" s="7">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="0" r="32" s="5">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="32" s="5">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="32" s="5">
+<O>
+<![CDATA[东南大表]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="32" s="7">
+<O t="DSColumn">
+<Attributes dsName="东南大表" columnName="value"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[0]]></CNUMBER>
+<CNAME>
+<![CDATA[date]]></CNAME>
+<Compare op="0">
+<ColumnRow column="3" row="0"/>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="1" upParentDefault="false" up="D1"/>
+</C>
+<C c="6" r="32">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="0" r="33" s="3">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="33" s="3">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="33" s="3">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="33" s="8">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="0" r="34" s="2">
+<O>
+<![CDATA[梅北DMA]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="34" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="34" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="34" s="6">
+<O t="DSColumn">
+<Attributes dsName="梅北DMA" columnName="mb_dma"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[0]]></CNUMBER>
+<CNAME>
+<![CDATA[date]]></CNAME>
+<Compare op="0">
+<ColumnRow column="3" row="0"/>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="1" upParentDefault="false" up="D1"/>
+</C>
+<C c="0" r="35" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="35" s="2">
+<O>
+<![CDATA[王市河口流量]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="35" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="35" s="6">
+<O t="DSColumn">
+<Attributes dsName="王市河口流量" columnName="value"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[0]]></CNUMBER>
+<CNAME>
+<![CDATA[date]]></CNAME>
+<Compare op="0">
+<ColumnRow column="3" row="0"/>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="1"/>
+</C>
+<C c="8" r="35">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="0" r="36" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="36" s="2">
+<O>
+<![CDATA[海虞人民路流量]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="36" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="36" s="6">
+<O t="DSColumn">
+<Attributes dsName="海虞人民路流量" columnName="value"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[0]]></CNUMBER>
+<CNAME>
+<![CDATA[date]]></CNAME>
+<Compare op="0">
+<ColumnRow column="3" row="0"/>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="1"/>
+</C>
+<C c="0" r="37" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="37" s="2">
+<O>
+<![CDATA[福山流量]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="37" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="37" s="6">
+<O t="DSColumn">
+<Attributes dsName="福山聚福" columnName="value"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[0]]></CNUMBER>
+<CNAME>
+<![CDATA[date]]></CNAME>
+<Compare op="0">
+<ColumnRow column="3" row="0"/>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="1"/>
+</C>
+<C c="13" r="37">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="0" r="38" s="3">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="38" s="3">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="38" s="3">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="38" s="8">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="0" r="39" s="2">
+<O>
+<![CDATA[城区DMA]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="39" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="39" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="39" s="6">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=D41 + D5 + D28 - D42 - D26]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand dir="1" upParentDefault="false" up="D1"/>
+</C>
+<C c="0" r="40" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="40" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="40" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="40" s="6">
+<O t="DSColumn">
+<Attributes dsName="城区DMA(除了二水厂,富春江,沙唐线,四环路)" columnName="result"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[0]]></CNUMBER>
+<CNAME>
+<![CDATA[date]]></CNAME>
+<Compare op="0">
+<ColumnRow column="3" row="0"/>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="1" upParentDefault="false" up="D1"/>
+</C>
+<C c="0" r="41" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="41" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="41" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="41" s="6">
+<O t="I">
+<![CDATA[5000]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="5" r="41">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="0" r="42" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="42" s="2">
+<O>
+<![CDATA[城区大表]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="42" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="42" s="6">
+<O t="DSColumn">
+<Attributes dsName="城区大表" columnName="value"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[0]]></CNUMBER>
+<CNAME>
+<![CDATA[date]]></CNAME>
+<Compare op="0">
+<ColumnRow column="3" row="0"/>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="1" upParentDefault="false" up="D1"/>
+</C>
+<C c="5" r="42">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="0" r="43" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="43" s="2">
+<O>
+<![CDATA[城区住宅DMA]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="43" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="43" s="6">
+<O t="DSColumn">
+<Attributes dsName="城区住宅" columnName="value"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[0]]></CNUMBER>
+<CNAME>
+<![CDATA[date]]></CNAME>
+<Compare op="0">
+<ColumnRow column="3" row="0"/>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="1"/>
+</C>
+<C c="0" r="44" s="3">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="44" s="3">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="44" s="3">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="44" s="8">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="0" r="45" s="2">
+<O>
+<![CDATA[东部DMA]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="45" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="45" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="45" s="6">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=D47 + D16]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand dir="1" upParentDefault="false" up="D1"/>
+</C>
+<C c="0" r="46" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="46" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="46" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="46" s="6">
+<O t="DSColumn">
+<Attributes dsName="东部DMA除滨江线" columnName="result"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[0]]></CNUMBER>
+<CNAME>
+<![CDATA[date]]></CNAME>
+<Compare op="0">
+<ColumnRow column="3" row="0"/>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="1" upParentDefault="false" up="D1"/>
+</C>
+<C c="0" r="47" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="47" s="2">
+<O>
+<![CDATA[东1DMA]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="47" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="47" s="6">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=D16 - D49]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand dir="1" upParentDefault="false" up="D1"/>
+</C>
+<C c="0" r="48" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="48" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="48" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="48" s="6">
+<O t="DSColumn">
+<Attributes dsName="徐市曹家桥" columnName="value"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[0]]></CNUMBER>
+<CNAME>
+<![CDATA[date]]></CNAME>
+<Compare op="0">
+<ColumnRow column="3" row="0"/>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="1" upParentDefault="false" up="D1"/>
+</C>
+<C c="4" r="48">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="5" r="48">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="6" r="48">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="7" r="48">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="8" r="48">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="9" r="48">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="10" r="48">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="11" r="48">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="12" r="48">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="13" r="48">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="14" r="48">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="15" r="48">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="0" r="49" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="49" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="49" s="2">
+<O>
+<![CDATA[港区住宅DMA]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="49" s="6">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="12" r="49">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="0" r="50" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="50" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="50" s="2">
+<O>
+<![CDATA[港区大表]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="50" s="6">
+<O t="DSColumn">
+<Attributes dsName="港区大表" columnName="value"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[0]]></CNUMBER>
+<CNAME>
+<![CDATA[date]]></CNAME>
+<Compare op="0">
+<ColumnRow column="3" row="0"/>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="1" upParentDefault="false" up="D1"/>
+</C>
+<C c="13" r="50">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="0" r="51" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="51" s="2">
+<O>
+<![CDATA[东2DMA]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="51" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="51" s="6">
+<O t="DSColumn">
+<Attributes dsName="东2DMA" columnName="result"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[0]]></CNUMBER>
+<CNAME>
+<![CDATA[date]]></CNAME>
+<Compare op="0">
+<ColumnRow column="3" row="0"/>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="1" upParentDefault="false" up="D1"/>
+</C>
+<C c="0" r="52" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="52" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="52" s="2">
+<O>
+<![CDATA[支东流量]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="52" s="6">
+<O t="DSColumn">
+<Attributes dsName="支东流量" columnName="value"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[0]]></CNUMBER>
+<CNAME>
+<![CDATA[date]]></CNAME>
+<Compare op="0">
+<ColumnRow column="3" row="0"/>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="1"/>
+</C>
+<C c="4" r="52">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="14" r="52">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="0" r="53" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="53" s="2">
+<O>
+<![CDATA[东3DMA]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="53" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="53" s="6">
+<O t="DSColumn">
+<Attributes dsName="东3DMA" columnName="result"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[0]]></CNUMBER>
+<CNAME>
+<![CDATA[date]]></CNAME>
+<Compare op="0">
+<ColumnRow column="3" row="0"/>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="1" upParentDefault="false" up="D1"/>
+</C>
+<C c="0" r="54" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="54" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="54" s="2">
+<O>
+<![CDATA[任阳DMA]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="54" s="6">
+<O t="DSColumn">
+<Attributes dsName="任阳陈泾" columnName="value"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[0]]></CNUMBER>
+<CNAME>
+<![CDATA[date]]></CNAME>
+<Compare op="0">
+<ColumnRow column="3" row="0"/>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="1"/>
+</C>
+<C c="0" r="55" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="55" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="55" s="2">
+<O>
+<![CDATA[紫芙流量]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="55" s="6">
+<O t="DSColumn">
+<Attributes dsName="紫芙流量" columnName="value"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[0]]></CNUMBER>
+<CNAME>
+<![CDATA[date]]></CNAME>
+<Compare op="0">
+<ColumnRow column="3" row="0"/>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="1"/>
+</C>
+<C c="0" r="56" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="56" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="56" s="2">
+<O>
+<![CDATA[康诺流量]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="56" s="6">
+<O t="DSColumn">
+<Attributes dsName="康诺流量" columnName="value"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[0]]></CNUMBER>
+<CNAME>
+<![CDATA[date]]></CNAME>
+<Compare op="0">
+<ColumnRow column="3" row="0"/>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="1"/>
+</C>
+<C c="0" r="57" s="3">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="57" s="3">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="57" s="3">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="57" s="8">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="0" r="58" s="2">
+<O>
+<![CDATA[梅古线剩余]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="58" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="58" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="58" s="6">
+<O t="DSColumn">
+<Attributes dsName="梅古线" columnName="result"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[0]]></CNUMBER>
+<CNAME>
+<![CDATA[date]]></CNAME>
+<Compare op="0">
+<ColumnRow column="3" row="0"/>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="1" upParentDefault="false" up="D1"/>
+</C>
+<C c="0" r="59" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="59" s="2">
+<O>
+<![CDATA[淼泉大表]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="59" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="59" s="6">
+<O t="DSColumn">
+<Attributes dsName="淼泉考核" columnName="value"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[0]]></CNUMBER>
+<CNAME>
+<![CDATA[date]]></CNAME>
+<Compare op="0">
+<ColumnRow column="3" row="0"/>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="1"/>
+</C>
+<C c="13" r="59">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="0" r="60" s="3">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="60" s="3">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="60" s="3">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="60" s="8">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="4" r="60">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="10" r="60">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="0" r="61" s="2">
+<O>
+<![CDATA[通港DMA]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="61" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="61" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="61" s="6">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=D10+D11+D12-D63]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand dir="1" upParentDefault="false" up="D1"/>
+</C>
+<C c="12" r="61">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="0" r="62" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="62" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="62" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="62" s="6">
+<O t="DSColumn">
+<Attributes dsName="通港DMA(除三水厂)" columnName="result"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[0]]></CNUMBER>
+<CNAME>
+<![CDATA[date]]></CNAME>
+<Compare op="0">
+<ColumnRow column="3" row="0"/>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="1" upParentDefault="false" up="D1"/>
+</C>
+<C c="0" r="63" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="63" s="2">
+<O>
+<![CDATA[淼泉流量]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="63" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="63" s="6">
+<O t="DSColumn">
+<Attributes dsName="淼泉流量" columnName="value"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[0]]></CNUMBER>
+<CNAME>
+<![CDATA[date]]></CNAME>
+<Compare op="0">
+<ColumnRow column="3" row="0"/>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="1"/>
+</C>
+<C c="0" r="64" s="3">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="64" s="3">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="64" s="3">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="64" s="8">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="0" r="65" s="2">
+<O>
+<![CDATA[通港区剩余]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="65" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="65" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="65" s="6">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=D3-D19-D21-D25-D35-D40-D46-D62]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand dir="1" upParentDefault="false" up="D1"/>
+</C>
+<C c="0" r="66" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="66" s="2">
+<O>
+<![CDATA[一级NRW]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="66" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="66" s="6">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=round(D66/D3,4)*100+'%']]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand dir="1"/>
+</C>
+</CellElementList>
+<ReportAttrSet>
+<ReportSettings headerHeight="0" footerHeight="0">
+<FrozenColumnRow columnrow="D3"/>
+<PaperSetting/>
+</ReportSettings>
+<Header reportPageType="0">
+<Background name="NullBackground"/>
+<LeftList/>
+<CenterList/>
+<RightList/>
+</Header>
+<Footer reportPageType="0">
+<Background name="NullBackground"/>
+<LeftList/>
+<CenterList/>
+<RightList/>
+</Footer>
+</ReportAttrSet>
+<PrivilegeControl/>
+</Report>
+<ReportParameterAttr>
+<Attributes showWindow="true" delayPlaying="true" windowPosition="1" align="0"/>
+<PWTitle>
+<![CDATA[参数]]></PWTitle>
+<ParameterUI class="com.fr.form.main.parameter.FormParameterUI">
+<Parameters/>
+<Layout class="com.fr.form.ui.container.WParameterLayout">
+<WidgetName name="para"/>
+<WidgetAttr>
+<PrivilegeControl/>
+</WidgetAttr>
+<Margin top="0" left="0" bottom="0" right="0"/>
+<Border>
+<border style="0" color="-723724" type="0" borderStyle="0"/>
+<WidgetTitle>
+<O>
+<![CDATA[新建标题]]></O>
+<FRFont name="SimSun" style="0" size="72"/>
+<Position pos="0"/>
+</WidgetTitle>
+<Alpha alpha="1.0"/>
+</Border>
+<Background name="ColorBackground" color="-1118482"/>
+<LCAttr vgap="0" hgap="0" compInterval="0"/>
+<Widget class="com.fr.form.ui.container.WAbsoluteLayout$BoundsWidget">
+<InnerWidget class="com.fr.form.ui.Label">
+<WidgetName name="Labelendtime"/>
+<WidgetAttr>
+<PrivilegeControl/>
+</WidgetAttr>
+<widgetValue>
+<O>
+<![CDATA[终止时间:]]></O>
+</widgetValue>
+<LabelAttr verticalcenter="true" textalign="0" autoline="true"/>
+<FRFont name="SimSun" style="0" size="72"/>
+<border style="0" color="-723724"/>
+</InnerWidget>
+<BoundsAttr x="270" y="25" width="80" height="21"/>
+</Widget>
+<Widget class="com.fr.form.ui.container.WAbsoluteLayout$BoundsWidget">
+<InnerWidget class="com.fr.form.ui.DateEditor">
+<WidgetName name="endtime"/>
+<WidgetAttr>
+<PrivilegeControl/>
+</WidgetAttr>
+<DateAttr format="yyyy-MM-dd HH:mm:ss"/>
+<widgetValue>
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=format(today(),"yyyy-MM-dd 08:00:00")]]></Attributes>
+</O>
+</widgetValue>
+</InnerWidget>
+<BoundsAttr x="350" y="25" width="109" height="21"/>
+</Widget>
+<Widget class="com.fr.form.ui.container.WAbsoluteLayout$BoundsWidget">
+<InnerWidget class="com.fr.form.ui.Label">
+<WidgetName name="Labelstarttime"/>
+<WidgetAttr>
+<PrivilegeControl/>
+</WidgetAttr>
+<widgetValue>
+<O>
+<![CDATA[起始时间:]]></O>
+</widgetValue>
+<LabelAttr verticalcenter="true" textalign="0" autoline="true"/>
+<FRFont name="SimSun" style="0" size="72"/>
+<border style="0" color="-723724"/>
+</InnerWidget>
+<BoundsAttr x="54" y="25" width="80" height="21"/>
+</Widget>
+<Widget class="com.fr.form.ui.container.WAbsoluteLayout$BoundsWidget">
+<InnerWidget class="com.fr.form.ui.DateEditor">
+<WidgetName name="starttime"/>
+<WidgetAttr>
+<PrivilegeControl/>
+</WidgetAttr>
+<DateAttr format="yyyy-MM-dd HH:mm:ss"/>
+<widgetValue>
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=format(today(),"yyyy-MM-dd 08:00:00")]]></Attributes>
+</O>
+</widgetValue>
+</InnerWidget>
+<BoundsAttr x="134" y="25" width="109" height="21"/>
+</Widget>
+<Widget class="com.fr.form.ui.container.WAbsoluteLayout$BoundsWidget">
+<InnerWidget class="com.fr.form.parameter.FormSubmitButton">
+<WidgetName name="Search"/>
+<WidgetAttr>
+<PrivilegeControl/>
+</WidgetAttr>
+<Text>
+<![CDATA[查询]]></Text>
+<Hotkeys>
+<![CDATA[enter]]></Hotkeys>
+</InnerWidget>
+<BoundsAttr x="475" y="25" width="80" height="21"/>
+</Widget>
+<Widget class="com.fr.form.ui.container.WAbsoluteLayout$BoundsWidget">
+<InnerWidget class="com.fr.form.ui.FreeButton">
+<Listener event="click">
+<JavaScript class="com.fr.js.JavaScriptImpl">
+<Parameters/>
+<Content>
+<![CDATA[window.parent.FS.tabPane.addItem({title:"厂站导入",src:"${servletURL}?reportlet=CSSF_FR/CSD/CSD_DMA/cz_query_submit.cpt&op=write"})]]></Content>
+</JavaScript>
+</Listener>
+<WidgetName name="button0"/>
+<WidgetAttr>
+<PrivilegeControl/>
+</WidgetAttr>
+<Text>
+<![CDATA[厂站导入]]></Text>
+</InnerWidget>
+<BoundsAttr x="620" y="25" width="85" height="21"/>
+</Widget>
+<Widget class="com.fr.form.ui.container.WAbsoluteLayout$BoundsWidget">
+<InnerWidget class="com.fr.form.ui.FreeButton">
+<Listener event="click">
+<JavaScript class="com.fr.js.JavaScriptImpl">
+<Parameters/>
+<Content>
+<![CDATA[window.parent.FS.tabPane.addItem({title:"外围站导入",src:"${servletURL}?reportlet=CSSF_FR/CSD/CSD_DMA/wwz_query_submit.cpt&op=write"})]]></Content>
+</JavaScript>
+</Listener>
+<WidgetName name="button1"/>
+<WidgetAttr>
+<PrivilegeControl/>
+</WidgetAttr>
+<Text>
+<![CDATA[外围站导入]]></Text>
+</InnerWidget>
+<BoundsAttr x="726" y="25" width="84" height="21"/>
+</Widget>
+<Widget class="com.fr.form.ui.container.WAbsoluteLayout$BoundsWidget">
+<InnerWidget class="com.fr.form.ui.FreeButton">
+<Listener event="click">
+<JavaScript class="com.fr.js.JavaScriptImpl">
+<Parameters/>
+<Content>
+<![CDATA[window.parent.FS.tabPane.addItem({title:"山科DMA导入",src:"${servletURL}?reportlet=CSSF_FR/CSD/CSD_DMA/seck_dma_import.cpt&op=write"})]]></Content>
+</JavaScript>
+</Listener>
+<WidgetName name="button2"/>
+<WidgetAttr>
+<PrivilegeControl/>
+</WidgetAttr>
+<Text>
+<![CDATA[山科DMA导入]]></Text>
+</InnerWidget>
+<BoundsAttr x="831" y="25" width="86" height="21"/>
+</Widget>
+<Sorted sorted="false"/>
+<Display display="true"/>
+<DelayDisplayContent delay="true"/>
+<Position position="0"/>
+<Design_Width design_width="960"/>
+<MobileWidgetList>
+<Widget widgetName="starttime"/>
+<Widget widgetName="endtime"/>
+<Widget widgetName="button0"/>
+<Widget widgetName="button1"/>
+<Widget widgetName="button2"/>
+</MobileWidgetList>
+<WidgetNameTagMap>
+<NameTag name="endtime" tag="终止时间:"/>
+<NameTag name="starttime" tag="起始时间:"/>
+</WidgetNameTagMap>
+</Layout>
+<DesignAttr width="960" height="80"/>
+</ParameterUI>
+</ReportParameterAttr>
+<StyleList>
+<Style horizontal_alignment="0" imageLayout="1">
+<FRFont name="SimSun" style="0" size="72"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="1"/>
+<Bottom style="1"/>
+<Left style="1"/>
+<Right style="1"/>
+</Border>
+</Style>
+<Style imageLayout="1">
+<FRFont name="SimSun" style="0" size="72"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="1"/>
+<Bottom style="1"/>
+<Left style="1"/>
+<Right style="1"/>
+</Border>
+</Style>
+<Style horizontal_alignment="2" imageLayout="1">
+<FRFont name="SimSun" style="0" size="72"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="1"/>
+<Bottom style="1"/>
+<Left style="1"/>
+<Right style="1"/>
+</Border>
+</Style>
+<Style horizontal_alignment="2" imageLayout="1">
+<FRFont name="SimSun" style="0" size="72"/>
+<Background name="NullBackground"/>
+<Border/>
+</Style>
+<Style imageLayout="1">
+<FRFont name="SimSun" style="0" size="72"/>
+<Background name="ColorBackground" color="-1"/>
+<Border/>
+</Style>
+<Style horizontal_alignment="2" imageLayout="1">
+<FRFont name="SimSun" style="0" size="72"/>
+<Background name="ColorBackground" color="-1"/>
+<Border>
+<Top style="1"/>
+<Bottom style="1"/>
+<Left style="1"/>
+<Right style="1"/>
+</Border>
+</Style>
+<Style horizontal_alignment="4" imageLayout="1">
+<FRFont name="SimSun" style="0" size="72"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="1"/>
+<Bottom style="1"/>
+<Left style="1"/>
+<Right style="1"/>
+</Border>
+</Style>
+<Style horizontal_alignment="4" imageLayout="1">
+<FRFont name="SimSun" style="0" size="72"/>
+<Background name="ColorBackground" color="-1"/>
+<Border>
+<Top style="1"/>
+<Bottom style="1"/>
+<Left style="1"/>
+<Right style="1"/>
+</Border>
+</Style>
+<Style horizontal_alignment="4" imageLayout="1">
+<FRFont name="SimSun" style="0" size="72"/>
+<Background name="NullBackground"/>
+<Border/>
+</Style>
+</StyleList>
+<DesignerVersion DesignerVersion="IAA"/>
+<PreviewType PreviewType="2"/>
+</WorkBook>
