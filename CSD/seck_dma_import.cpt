@@ -114,9 +114,9 @@
 <ColumnPrivilegeControl/>
 <RowPrivilegeControl/>
 <RowHeight defaultValue="723900">
-<![CDATA[723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900]]></RowHeight>
+<![CDATA[723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900]]></RowHeight>
 <ColumnWidth defaultValue="2743200">
-<![CDATA[2743200,2743200,2743200,2514600,0,2743200,2743200,2743200,2743200,2743200,2743200,2743200,2743200,2743200,2743200,2743200,2743200,2743200,2743200,2743200,2743200]]></ColumnWidth>
+<![CDATA[2743200,2743200,2743200,2514600,0,2743200,2743200,2743200,2743200,2743200,2743200]]></ColumnWidth>
 <CellElementList>
 <C c="0" r="0" s="0">
 <O>
@@ -167,6 +167,7 @@
 <![CDATA[=sql("FR", "select tagname from dbo.WSD_tagname_description where description='" + A2 + "'", 1, 1)]]></Attributes>
 </O>
 <PrivilegeControl/>
+<CellPageAttr/>
 <Widget class="com.fr.form.ui.TextEditor">
 <WidgetAttr>
 <PrivilegeControl/>
@@ -175,6 +176,10 @@
 <Reg class="com.fr.form.ui.reg.NoneReg"/>
 <widgetValue/>
 </Widget>
+<CellInsertPolicy>
+<InsertPolicy>
+<![CDATA[copy]]></InsertPolicy>
+</CellInsertPolicy>
 <Expand dir="0"/>
 </C>
 <C c="2" r="1" s="1">
@@ -254,6 +259,7 @@
 <ColumnConfig name="value" isKey="false" skipUnmodified="false">
 <ColumnRow column="3" row="1"/>
 </ColumnConfig>
+<Condition class="com.fr.data.condition.ListCondition"/>
 </DMLConfig>
 </SubmitVisitor>
 </ReportWriteAttr>

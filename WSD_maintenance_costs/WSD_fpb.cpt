@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<WorkBook xmlVersion="20141222" releaseVersion="8.0.0">
+<WorkBook xmlVersion="20151125" releaseVersion="8.0.0">
 <TableDataMap>
 <TableData name="actual" class="com.fr.data.impl.DBTableData">
 <Parameters>
@@ -113,7 +113,7 @@
 <O t="CC">
 <LayoutAttr selectedIndex="0"/>
 <Chart name="默认" chartClass="com.fr.chart.chartattr.Chart">
-<Chart class="com.fr.chart.chartattr.Chart" wrapperName="FineChart" requiredJS="" chartImagePath="">
+<Chart class="com.fr.chart.chartattr.Chart">
 <GI>
 <AttrBackground>
 <Background name="NullBackground"/>
@@ -196,7 +196,7 @@
 <Attr showLine="true" position="6" isWhiteBackground="true" isShowMutiSeries="false" seriesLabel="${SERIES},${PERCENT}"/>
 <TextAttr>
 <Attr alignText="0">
-<FRFont name="宋体" style="0" size="72"/>
+<FRFont name="微软雅黑" style="0" size="72"/>
 </Attr>
 </TextAttr>
 <PercentFormat>
@@ -224,7 +224,7 @@
 </AttrAlpha>
 </GI>
 <Attr position="4" visible="true"/>
-<FRFont name="SimSun" style="0" size="72"/>
+<FRFont name="微软雅黑" style="0" size="80"/>
 </Legend>
 <DataSheet>
 <GI>
@@ -246,6 +246,7 @@
 <AttrFillStyle>
 <AFStyle colorStyle="0"/>
 <FillStyleName fillStyleName=""/>
+<isCustomFillStyle isCustomFillStyle="false"/>
 </AttrFillStyle>
 </newPlotFillStyle>
 <PieAttr subType="1" smallPercent="0.05"/>
@@ -254,6 +255,7 @@
 <Projection mode="2" elevation="25" rotation="0" focus="800"/>
 </Plot>
 </Plot>
+<DataProcessor class="com.fr.base.chart.chartdata.model.NormalDataModel"/>
 <ChartDefinition>
 <OneValueCDDefinition seriesName="section_office" valueName="section_office_budget" function="com.fr.data.util.function.NoneFunction">
 <Top topCate="-1" topValue="-1" isDiscardOtherCate="false" isDiscardOtherSeries="false" isDiscardNullCate="false" isDiscardNullSeries="false"/>
@@ -272,11 +274,11 @@
 <com.fr.report.cell.FloatElement>
 <FloatElementName name="Float23"/>
 <PrivilegeControl/>
-<Location leftDistance="23660100" topDistance="5676900" width="18630900" height="12954000"/>
+<Location leftDistance="24460200" topDistance="5753100" width="18630900" height="12954000"/>
 <O t="CC">
 <LayoutAttr selectedIndex="0"/>
 <Chart name="默认" chartClass="com.fr.chart.chartattr.Chart">
-<Chart class="com.fr.chart.chartattr.Chart" wrapperName="FineChart" requiredJS="" chartImagePath="">
+<Chart class="com.fr.chart.chartattr.Chart">
 <GI>
 <AttrBackground>
 <Background name="NullBackground"/>
@@ -359,7 +361,7 @@
 <Attr showLine="true" position="6" isWhiteBackground="true" isShowMutiSeries="false" seriesLabel="${SERIES},${PERCENT}"/>
 <TextAttr>
 <Attr alignText="0">
-<FRFont name="宋体" style="0" size="72"/>
+<FRFont name="微软雅黑" style="0" size="72"/>
 </Attr>
 </TextAttr>
 <PercentFormat>
@@ -387,7 +389,7 @@
 </AttrAlpha>
 </GI>
 <Attr position="4" visible="true"/>
-<FRFont name="SimSun" style="0" size="72"/>
+<FRFont name="微软雅黑" style="0" size="80"/>
 </Legend>
 <DataSheet>
 <GI>
@@ -409,6 +411,7 @@
 <AttrFillStyle>
 <AFStyle colorStyle="0"/>
 <FillStyleName fillStyleName=""/>
+<isCustomFillStyle isCustomFillStyle="false"/>
 </AttrFillStyle>
 </newPlotFillStyle>
 <PieAttr subType="1" smallPercent="0.05"/>
@@ -417,6 +420,7 @@
 <Projection mode="2" elevation="25" rotation="0" focus="800"/>
 </Plot>
 </Plot>
+<DataProcessor class="com.fr.base.chart.chartdata.model.NormalDataModel"/>
 <ChartDefinition>
 <OneValueCDDefinition seriesName="section_office" valueName="all_actually" function="com.fr.data.util.function.NoneFunction">
 <Top topCate="-1" topValue="-1" isDiscardOtherCate="false" isDiscardOtherSeries="false" isDiscardNullCate="false" isDiscardNullSeries="false"/>
@@ -439,7 +443,7 @@
 <O t="CC">
 <LayoutAttr selectedIndex="0"/>
 <Chart name="默认" chartClass="com.fr.chart.chartattr.Chart">
-<Chart class="com.fr.chart.chartattr.Chart" wrapperName="FineChart" requiredJS="" chartImagePath="">
+<Chart class="com.fr.chart.chartattr.Chart">
 <GI>
 <AttrBackground>
 <Background name="NullBackground"/>
@@ -526,7 +530,7 @@
 </AttrAlpha>
 </GI>
 <Attr position="4" visible="true"/>
-<FRFont name="SimSun" style="0" size="72"/>
+<FRFont name="微软雅黑" style="0" size="80"/>
 </Legend>
 <DataSheet>
 <GI>
@@ -543,7 +547,7 @@
 </AttrAlpha>
 </GI>
 <Attr isVisible="true"/>
-<FRFont name="宋体" style="0" size="72"/>
+<FRFont name="微软雅黑" style="0" size="72"/>
 <Format class="com.fr.base.CoreDecimalFormat">
 <![CDATA[#0]]></Format>
 </DataSheet>
@@ -551,6 +555,7 @@
 <AttrFillStyle>
 <AFStyle colorStyle="0"/>
 <FillStyleName fillStyleName=""/>
+<isCustomFillStyle isCustomFillStyle="false"/>
 </AttrFillStyle>
 </newPlotFillStyle>
 <RectanglePlotAttr interactiveAxisTooltip="false"/>
@@ -622,6 +627,7 @@
 <Projection mode="2" elevation="15" rotation="20" focus="800"/>
 </CategoryPlot>
 </Plot>
+<DataProcessor class="com.fr.base.chart.chartdata.model.NormalDataModel"/>
 <ChartDefinition>
 <MoreNameCDDefinition>
 <Top topCate="-1" topValue="-1" isDiscardOtherCate="false" isDiscardOtherSeries="false" isDiscardNullCate="false" isDiscardNullSeries="false"/>
@@ -646,7 +652,7 @@
 <O t="CC">
 <LayoutAttr selectedIndex="0"/>
 <Chart name="默认" chartClass="com.fr.chart.chartattr.Chart">
-<Chart class="com.fr.chart.chartattr.Chart" wrapperName="FineChart" requiredJS="" chartImagePath="">
+<Chart class="com.fr.chart.chartattr.Chart">
 <GI>
 <AttrBackground>
 <Background name="NullBackground"/>
@@ -722,7 +728,7 @@
 <Attr showLine="false" position="5" isWhiteBackground="true" isShowMutiSeries="false" seriesLabel="${VALUE}"/>
 <TextAttr>
 <Attr alignText="0">
-<FRFont name="宋体" style="0" size="72"/>
+<FRFont name="微软雅黑" style="0" size="72" foreground="-1"/>
 </Attr>
 </TextAttr>
 <Format class="com.fr.base.CoreDecimalFormat">
@@ -752,7 +758,7 @@
 </AttrAlpha>
 </GI>
 <Attr position="4" visible="true"/>
-<FRFont name="SimSun" style="0" size="72"/>
+<FRFont name="微软雅黑" style="0" size="80"/>
 </Legend>
 <DataSheet>
 <GI>
@@ -769,7 +775,7 @@
 </AttrAlpha>
 </GI>
 <Attr isVisible="true"/>
-<FRFont name="宋体" style="0" size="72"/>
+<FRFont name="微软雅黑" style="0" size="72"/>
 <Format class="com.fr.base.CoreDecimalFormat">
 <![CDATA[#0%]]></Format>
 </DataSheet>
@@ -777,6 +783,7 @@
 <AttrFillStyle>
 <AFStyle colorStyle="0"/>
 <FillStyleName fillStyleName=""/>
+<isCustomFillStyle isCustomFillStyle="false"/>
 </AttrFillStyle>
 </newPlotFillStyle>
 <RectanglePlotAttr interactiveAxisTooltip="false"/>
@@ -847,6 +854,7 @@
 <Bar2DAttr isSimulation3D="false"/>
 </CategoryPlot>
 </Plot>
+<DataProcessor class="com.fr.base.chart.chartdata.model.NormalDataModel"/>
 <ChartDefinition>
 <NormalReportDataDefinition>
 <Series>
@@ -959,9 +967,23 @@
 <Parameters/>
 </O>
 <PrivilegeControl/>
+<HighlightList>
+<Highlight class="com.fr.report.cell.cellattr.highlight.DefaultHighlight">
+<Name>
+<![CDATA[颜色]]></Name>
+<Condition class="com.fr.data.condition.FormulaCondition">
+<Formula>
+<![CDATA[row()%2 != 0]]></Formula>
+</Condition>
+<HighlightAction class="com.fr.report.cell.cellattr.highlight.BackgroundHighlightAction">
+<Scope val="1"/>
+<Background name="ColorBackground" color="-1179649"/>
+</HighlightAction>
+</Highlight>
+</HighlightList>
 <Expand dir="0"/>
 </C>
-<C c="2" r="2" s="3">
+<C c="2" r="2" s="4">
 <O t="DSColumn">
 <Attributes dsName="ds1" columnName="all_actually"/>
 <Complex/>
@@ -991,7 +1013,7 @@
 </HighlightList>
 <Expand dir="0"/>
 </C>
-<C c="3" r="2" s="3">
+<C c="3" r="2" s="4">
 <O t="DSColumn">
 <Attributes dsName="ds1" columnName="section_office_budget"/>
 <Complex/>
@@ -1019,7 +1041,7 @@
 </HighlightList>
 <Expand dir="0"/>
 </C>
-<C c="4" r="2" s="3">
+<C c="4" r="2" s="4">
 <O t="Formula" class="Formula">
 <Attributes>
 <![CDATA[=round(D3 - C3, 2)]]></Attributes>
@@ -1125,13 +1147,13 @@
 </HighlightList>
 <Expand/>
 </C>
-<C c="1" r="3" s="4">
+<C c="1" r="3" s="5">
 <O>
 <![CDATA[供水部总和]]></O>
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="2" r="3" s="4">
+<C c="2" r="3" s="6">
 <O t="Formula" class="Formula">
 <Attributes>
 <![CDATA[=sum(C3)]]></Attributes>
@@ -1139,7 +1161,7 @@
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="3" r="3" s="4">
+<C c="3" r="3" s="6">
 <O t="DSColumn">
 <Attributes dsName="ds2" columnName="department_budget"/>
 <Complex/>
@@ -1149,7 +1171,7 @@
 <PrivilegeControl/>
 <Expand dir="0"/>
 </C>
-<C c="4" r="3" s="4">
+<C c="4" r="3" s="6">
 <O t="Formula" class="Formula">
 <Attributes>
 <![CDATA[=D4 - C4]]></Attributes>
@@ -1157,7 +1179,7 @@
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="5" r="3" s="4">
+<C c="5" r="3" s="5">
 <O t="Formula" class="Formula">
 <Attributes>
 <![CDATA[=round(C4 / D4, 4)]]></Attributes>
@@ -1165,7 +1187,7 @@
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="6" r="3" s="4">
+<C c="6" r="3" s="5">
 <O t="Formula" class="Formula">
 <Attributes>
 <![CDATA[=round(C4 / D4, 4)]]></Attributes>
@@ -1193,7 +1215,7 @@
 </HighlightList>
 <Expand/>
 </C>
-<C c="7" r="3" s="4">
+<C c="7" r="3" s="5">
 <PrivilegeControl/>
 <Expand/>
 </C>
@@ -1217,7 +1239,7 @@
 <PrivilegeControl/>
 <Expand dir="0"/>
 </C>
-<C c="2" r="4" s="3">
+<C c="2" r="4" s="4">
 <O t="DSColumn">
 <Attributes dsName="actual" columnName="ALL"/>
 <Complex/>
@@ -1245,11 +1267,11 @@
 </HighlightList>
 <Expand dir="0"/>
 </C>
-<C c="3" r="4" s="3">
+<C c="3" r="4" s="4">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="4" r="4" s="3">
+<C c="4" r="4" s="4">
 <PrivilegeControl/>
 <Expand/>
 </C>
@@ -1286,10 +1308,11 @@
 <PrivilegeControl/>
 </Report>
 <ReportParameterAttr>
-<Attributes showWindow="true" delayPlaying="true" windowPosition="1" align="0"/>
+<Attributes showWindow="true" delayPlaying="false" windowPosition="1" align="0"/>
 <PWTitle>
 <![CDATA[参数]]></PWTitle>
 <ParameterUI class="com.fr.form.main.parameter.FormParameterUI">
+<Parameters/>
 <Layout class="com.fr.form.ui.container.WParameterLayout">
 <WidgetName name="para"/>
 <WidgetAttr>
@@ -1316,13 +1339,13 @@
 </WidgetAttr>
 <widgetValue>
 <O>
-<![CDATA[年：]]></O>
+<![CDATA[年   份：]]></O>
 </widgetValue>
 <LabelAttr verticalcenter="true" textalign="0" autoline="true"/>
 <FRFont name="SimSun" style="0" size="72"/>
 <border style="0" color="-723724"/>
 </InnerWidget>
-<BoundsAttr x="50" y="25" width="80" height="21"/>
+<BoundsAttr x="49" y="16" width="80" height="21"/>
 </Widget>
 <Widget class="com.fr.form.ui.container.WAbsoluteLayout$BoundsWidget">
 <InnerWidget class="com.fr.form.ui.ComboBox">
@@ -1345,7 +1368,7 @@
 </O>
 </widgetValue>
 </InnerWidget>
-<BoundsAttr x="130" y="25" width="80" height="21"/>
+<BoundsAttr x="129" y="16" width="80" height="21"/>
 </Widget>
 <Widget class="com.fr.form.ui.container.WAbsoluteLayout$BoundsWidget">
 <InnerWidget class="com.fr.form.parameter.FormSubmitButton">
@@ -1358,21 +1381,21 @@
 <Hotkeys>
 <![CDATA[enter]]></Hotkeys>
 </InnerWidget>
-<BoundsAttr x="560" y="25" width="80" height="21"/>
+<BoundsAttr x="220" y="16" width="80" height="21"/>
 </Widget>
 <Sorted sorted="false"/>
 <Display display="true"/>
-<DelayDisplayContent delay="true"/>
+<DelayDisplayContent delay="false"/>
 <Position position="0"/>
 <Design_Width design_width="960"/>
 <MobileWidgetList>
 <Widget widgetName="year"/>
 </MobileWidgetList>
 <WidgetNameTagMap>
-<NameTag name="year" tag="年份:"/>
+<NameTag name="year" tag="年   份："/>
 </WidgetNameTagMap>
 </Layout>
-<DesignAttr width="960" height="80"/>
+<DesignAttr width="960" height="54"/>
 </ParameterUI>
 </ReportParameterAttr>
 <StyleList>
@@ -1382,43 +1405,62 @@
 <Border/>
 </Style>
 <Style horizontal_alignment="0" imageLayout="1">
-<FRFont name="SimSun" style="0" size="80"/>
-<Background name="ColorBackground" color="-256"/>
-<Border>
-<Top style="1"/>
-<Bottom style="1"/>
-<Left style="1"/>
-<Right style="1"/>
-</Border>
+<FRFont name="微软雅黑" style="0" size="120"/>
+<Background name="NullBackground"/>
+<Border/>
 </Style>
 <Style horizontal_alignment="0" imageLayout="1">
-<FRFont name="SimSun" style="0" size="80"/>
+<FRFont name="微软雅黑" style="0" size="80" foreground="-1"/>
 <Background name="ColorBackground" color="-13531493"/>
 <Border>
-<Top style="1"/>
-<Bottom style="1"/>
-<Left style="1"/>
-<Right style="1"/>
+<Top style="1" color="-2171170"/>
+<Bottom style="1" color="-2171170"/>
+<Left style="1" color="-2171170"/>
+<Right style="1" color="-2171170"/>
 </Border>
 </Style>
 <Style horizontal_alignment="0" imageLayout="1">
-<FRFont name="SimSun" style="0" size="80"/>
-<Background name="ColorBackground" color="-13159"/>
+<FRFont name="微软雅黑" style="0" size="80"/>
+<Background name="NullBackground"/>
 <Border>
-<Top style="1"/>
-<Bottom style="1"/>
-<Left style="1"/>
-<Right style="1"/>
+<Top style="1" color="-2171170"/>
+<Bottom style="1" color="-2171170"/>
+<Left style="1" color="-2171170"/>
+<Right style="1" color="-2171170"/>
+</Border>
+</Style>
+<Style horizontal_alignment="4" imageLayout="1" paddingRight="4">
+<Format class="com.fr.base.CoreDecimalFormat">
+<![CDATA[#,##0]]></Format>
+<FRFont name="微软雅黑" style="0" size="80"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="1" color="-2171170"/>
+<Bottom style="1" color="-2171170"/>
+<Left style="1" color="-2171170"/>
+<Right style="1" color="-2171170"/>
 </Border>
 </Style>
 <Style horizontal_alignment="0" imageLayout="1">
-<FRFont name="SimSun" style="0" size="80"/>
-<Background name="ColorBackground" color="-16711936"/>
+<FRFont name="微软雅黑" style="0" size="80"/>
+<Background name="ColorBackground" color="-5141"/>
 <Border>
-<Top style="1"/>
-<Bottom style="1"/>
-<Left style="1"/>
-<Right style="1"/>
+<Top style="1" color="-2171170"/>
+<Bottom style="1" color="-2171170"/>
+<Left style="1" color="-2171170"/>
+<Right style="1" color="-2171170"/>
+</Border>
+</Style>
+<Style horizontal_alignment="4" imageLayout="1" paddingRight="4">
+<Format class="com.fr.base.CoreDecimalFormat">
+<![CDATA[#,##0]]></Format>
+<FRFont name="微软雅黑" style="0" size="80"/>
+<Background name="ColorBackground" color="-5141"/>
+<Border>
+<Top style="1" color="-2171170"/>
+<Bottom style="1" color="-2171170"/>
+<Left style="1" color="-2171170"/>
+<Right style="1" color="-2171170"/>
 </Border>
 </Style>
 </StyleList>
