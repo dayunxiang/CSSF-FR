@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<WorkBook xmlVersion="20141222" releaseVersion="8.0.0">
+<WorkBook xmlVersion="20151125" releaseVersion="8.0.0">
 <TableDataMap>
 <TableData name="ds1" class="com.fr.data.impl.DBTableData">
 <Parameters/>
@@ -39,7 +39,7 @@
 <![CDATA[${i18n('Utils-Submit')}]]></Text>
 <IconName>
 <![CDATA[submit]]></IconName>
-<Verify failVerifySubmit="false"/>
+<Verify isVerify="true" failVerifySubmit="false"/>
 </Widget>
 <Widget class="com.fr.report.web.button.write.Verify">
 <WidgetAttr>
@@ -77,9 +77,6 @@
 <![CDATA[${i18n('Export')}]]></Text>
 <IconName>
 <![CDATA[export]]></IconName>
-<Buttons ExcelO2003="true"/>
-<Buttons ExcelP2003="true"/>
-<Buttons ExcelS2003="true"/>
 <Buttons pdf="true" excelP="true" excelO="true" excelS="true" word="true" image="true" html="true"/>
 </Widget>
 <Widget class="com.fr.report.web.button.Email">
@@ -125,7 +122,8 @@
 <WebWrite SheetPosition="3"/>
 <RptLocation isShowAtLeft="true"/>
 <UnloadCheck/>
-<ShowWidgets show="true"/>
+<ShowWidgets/>
+<OtherAttr isAutoStash="false"/>
 </WebWriteContent>
 </ReportWebAttr>
 <Report class="com.fr.report.worksheet.WorkSheet" name="sheet1">
@@ -341,6 +339,7 @@
 </Dictionary>
 </TreeNodeAttr>
 <isAutoBuild autoBuild="false"/>
+<isPerformanceFirst performanceFirst="false"/>
 <widgetValue/>
 </Widget>
 <Expand/>
@@ -429,7 +428,9 @@
 </Footer>
 </ReportAttrSet>
 <ReportWriteAttr>
-<Submiter class="com.fr.report.write.BuiltInSQLSubmiter" name="内置SQL1">
+<SubmitVisitor class="com.fr.report.write.BuiltInSQLSubmiter">
+<Name>
+<![CDATA[内置SQL1]]></Name>
 <Attributes dsName="FR"/>
 <DMLConfig class="com.fr.write.config.IntelliDMLConfig">
 <Table schema="" name="WSD_consumptive_products_fee"/>
@@ -471,7 +472,7 @@
 </ColumnConfig>
 <Condition class="com.fr.data.condition.ListCondition"/>
 </DMLConfig>
-</Submiter>
+</SubmitVisitor>
 </ReportWriteAttr>
 <PrivilegeControl/>
 </Report>

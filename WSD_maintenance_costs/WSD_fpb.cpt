@@ -92,6 +92,9 @@
 <![CDATA[select b.year,b.section_office,a.all_actually,b.section_office_budget,b.department_budget from (select YEAR,SECTION_OFFICE,(SUM(eq_per_month)+SUM(cons_per_month)) as all_actually  from dbo.WSD_maintenance_fee_analysis_lv2  group by YEAR,SECTION_OFFICE) a full outer join (select year,section_office,section_office_budget,department_budget  from dbo.WSD_maintenance_budget) b on a.section_office=b.section_office]]></Query>
 </TableData>
 </TableDataMap>
+<ElementCaseMobileAttr>
+<ElementCaseMobileAttrProvider horizontal="1" vertical="0" zoom="true" isUseHTML="true"/>
+</ElementCaseMobileAttr>
 <Report class="com.fr.report.worksheet.WorkSheet" name="sheet1">
 <ReportPageAttr>
 <HR/>
