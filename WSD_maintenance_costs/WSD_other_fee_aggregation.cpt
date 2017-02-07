@@ -15,7 +15,7 @@
 <![CDATA[FR]]></DatabaseName>
 </Connection>
 <Query>
-<![CDATA[select b.section_office,isnull(a.actually,0) as actually ,b.section_office_budget from ((select section_office,sum(amount) as actually from wsd_other_maintenance_funds where year='${year}' group by section_office) a full outer join (select section_office,section_office_budget from wsd_other_maintenance_budget where year='${year}') b on a.section_office=b.section_office)]]></Query>
+<![CDATA[select b.section_office,isnull(a.actually,0) as actually ,b.section_office_budget from ((select section_office,sum(amount) as actually from wsd_other_maintenance_funds where year='${year}' group by section_office) a full outer join (select section_office,section_office_budget from wsd_other_maintenance_budget where year='${year}') b on a.section_office=b.section_office) order by  CHARINDEX(b.section_office,'二水厂,二水厂排泥水,增压站,三水厂,滨江水厂,滨江水厂排泥水,自动化仪表科,生技科,行政科,调度中心')]]></Query>
 </TableData>
 <TableData name="other maintenance actually" class="com.fr.data.impl.DBTableData">
 <Parameters>
@@ -47,7 +47,7 @@
 <![CDATA[FR]]></DatabaseName>
 </Connection>
 <Query>
-<![CDATA[select * from dbo.WSD_other_maintenance_budget where year=${year}]]></Query>
+<![CDATA[select * from dbo.WSD_other_maintenance_budget where year=${year} order by  CHARINDEX(section_office,'二水厂,二水厂排泥水,增压站,三水厂,滨江水厂,滨江水厂排泥水,自动化仪表科,生技科,行政科,调度中心')]]></Query>
 </TableData>
 </TableDataMap>
 <Report class="com.fr.report.poly.PolyWorkSheet" name="sheet1">
@@ -764,10 +764,7 @@
 <Attr alpha="1.0"/>
 </AttrAlpha>
 </GI>
-<Attr isVisible="true"/>
-<FRFont name="微软雅黑" style="0" size="80"/>
-<Format class="com.fr.base.CoreDecimalFormat">
-<![CDATA[#0]]></Format>
+<Attr isVisible="false"/>
 </DataSheet>
 <newPlotFillStyle>
 <AttrFillStyle>
