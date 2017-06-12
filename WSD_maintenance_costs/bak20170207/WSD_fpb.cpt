@@ -47,7 +47,7 @@
 <![CDATA[FR]]></DatabaseName>
 </Connection>
 <Query>
-<![CDATA[select b.year,b.section_office,a.all_actually,b.section_office_budget,b.department_budget from (select YEAR,SECTION_OFFICE,(SUM(eq_per_month)+SUM(cons_per_month)) as all_actually  from dbo.WSD_maintenance_fee_analysis_lv2 where YEAR='${year}' group by YEAR,SECTION_OFFICE) a full outer join (select year,section_office,section_office_budget,department_budget  from dbo.WSD_maintenance_budget) b on a.section_office=b.section_office WHERE a.year='${year}' and b.year='${year}' order by CHARINDEX(b.section_office,'二水厂,二水厂排泥水,增压站,三水厂,滨江水厂,滨江水厂排泥水,自动化仪表科,生技科,行政科,调度中心')]]></Query>
+<![CDATA[select b.year,b.section_office,a.all_actually,b.section_office_budget,b.department_budget from (select YEAR,SECTION_OFFICE,(SUM(eq_per_month)+SUM(cons_per_month)) as all_actually  from dbo.WSD_maintenance_fee_analysis_lv2 where YEAR='${year}' group by YEAR,SECTION_OFFICE) a full outer join (select year,section_office,section_office_budget,department_budget  from dbo.WSD_maintenance_budget) b on a.section_office=b.section_office WHERE a.year='${year}' and b.year='${year}' order by CHARINDEX(b.section_office,'二水厂,三水厂,滨江水厂,滨江水厂排泥水,藕渠增压站,城区增压站,行政科,自动化仪表科,生技科,调度中心,应急水库')]]></Query>
 </TableData>
 <TableData name="ds2" class="com.fr.data.impl.DBTableData">
 <Parameters>

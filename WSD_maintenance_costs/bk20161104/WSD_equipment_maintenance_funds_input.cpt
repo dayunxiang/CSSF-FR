@@ -38,7 +38,7 @@
 </Location>
 <ToolBar>
 <Widget class="com.fr.report.web.button.write.Submit">
-<WidgetAttr description="">
+<WidgetAttr>
 <PrivilegeControl/>
 </WidgetAttr>
 <Text>
@@ -46,10 +46,9 @@
 <IconName>
 <![CDATA[submit]]></IconName>
 <Verify failVerifySubmit="false"/>
-<Sheet onlySubmitSelect="false"/>
 </Widget>
 <Widget class="com.fr.report.web.button.write.Verify">
-<WidgetAttr description="">
+<WidgetAttr>
 <PrivilegeControl/>
 </WidgetAttr>
 <Text>
@@ -58,7 +57,7 @@
 <![CDATA[verify]]></IconName>
 </Widget>
 <Widget class="com.fr.report.web.button.FlashPrint">
-<WidgetAttr description="">
+<WidgetAttr>
 <PrivilegeControl/>
 </WidgetAttr>
 <Text>
@@ -67,7 +66,7 @@
 <![CDATA[flashprint]]></IconName>
 </Widget>
 <Widget class="com.fr.report.web.button.Print">
-<WidgetAttr description="">
+<WidgetAttr>
 <PrivilegeControl/>
 </WidgetAttr>
 <Text>
@@ -77,7 +76,7 @@
 <PrintButtons/>
 </Widget>
 <Widget class="com.fr.report.web.button.Export">
-<WidgetAttr description="">
+<WidgetAttr>
 <PrivilegeControl/>
 </WidgetAttr>
 <Text>
@@ -87,7 +86,7 @@
 <Buttons pdf="true" excelP="true" excelO="true" excelS="true" word="true" image="true" html="true"/>
 </Widget>
 <Widget class="com.fr.report.web.button.Email">
-<WidgetAttr description="">
+<WidgetAttr>
 <PrivilegeControl/>
 </WidgetAttr>
 <Text>
@@ -96,7 +95,7 @@
 <![CDATA[email]]></IconName>
 </Widget>
 <Widget class="com.fr.report.web.button.write.AppendColumnRow">
-<WidgetAttr description="">
+<WidgetAttr>
 <PrivilegeControl/>
 </WidgetAttr>
 <Text>
@@ -105,7 +104,7 @@
 <![CDATA[appendcolumn]]></IconName>
 </Widget>
 <Widget class="com.fr.report.web.button.write.ShowCellValue">
-<WidgetAttr description="">
+<WidgetAttr>
 <PrivilegeControl/>
 </WidgetAttr>
 <widgetValue/>
@@ -114,7 +113,7 @@
 <border style="0" color="-723724"/>
 </Widget>
 <Widget class="com.fr.report.web.button.write.ImportExcelData">
-<WidgetAttr description="">
+<WidgetAttr>
 <PrivilegeControl/>
 </WidgetAttr>
 <Text>
@@ -216,7 +215,7 @@
 <C c="0" r="1" s="1">
 <PrivilegeControl/>
 <Widget class="com.fr.form.ui.TextEditor">
-<WidgetAttr description="">
+<WidgetAttr>
 <PrivilegeControl/>
 </WidgetAttr>
 <TextAttr/>
@@ -228,7 +227,7 @@
 <C c="1" r="1" s="1">
 <PrivilegeControl/>
 <Widget class="com.fr.form.ui.TextEditor">
-<WidgetAttr description="">
+<WidgetAttr>
 <PrivilegeControl/>
 </WidgetAttr>
 <TextAttr/>
@@ -240,7 +239,7 @@
 <C c="2" r="1" s="1">
 <PrivilegeControl/>
 <Widget class="com.fr.form.ui.TextEditor">
-<WidgetAttr description="">
+<WidgetAttr>
 <PrivilegeControl/>
 </WidgetAttr>
 <TextAttr/>
@@ -252,7 +251,7 @@
 <C c="3" r="1" s="1">
 <PrivilegeControl/>
 <Widget class="com.fr.form.ui.TextEditor">
-<WidgetAttr description="">
+<WidgetAttr>
 <PrivilegeControl/>
 </WidgetAttr>
 <TextAttr/>
@@ -264,7 +263,7 @@
 <C c="4" r="1" s="1">
 <PrivilegeControl/>
 <Widget class="com.fr.form.ui.TextEditor">
-<WidgetAttr description="">
+<WidgetAttr>
 <PrivilegeControl/>
 </WidgetAttr>
 <TextAttr/>
@@ -289,7 +288,7 @@
 <C c="6" r="1" s="1">
 <PrivilegeControl/>
 <Widget class="com.fr.form.ui.TextEditor">
-<WidgetAttr description="">
+<WidgetAttr>
 <PrivilegeControl/>
 </WidgetAttr>
 <TextAttr/>
@@ -301,7 +300,7 @@
 <C c="7" r="1" s="1">
 <PrivilegeControl/>
 <Widget class="com.fr.form.ui.TextEditor">
-<WidgetAttr description="">
+<WidgetAttr>
 <PrivilegeControl/>
 </WidgetAttr>
 <TextAttr/>
@@ -314,7 +313,7 @@
 <PrivilegeControl/>
 <CellPageAttr/>
 <Widget class="com.fr.form.ui.TextEditor">
-<WidgetAttr description="">
+<WidgetAttr>
 <PrivilegeControl/>
 </WidgetAttr>
 <TextAttr/>
@@ -348,7 +347,7 @@
 <PrivilegeControl/>
 <CellPageAttr/>
 <Widget class="com.fr.form.ui.TextEditor">
-<WidgetAttr description="">
+<WidgetAttr>
 <PrivilegeControl/>
 </WidgetAttr>
 <TextAttr/>
@@ -380,9 +379,7 @@
 </Footer>
 </ReportAttrSet>
 <ReportWriteAttr>
-<SubmitVisitor class="com.fr.report.write.BuiltInSQLSubmiter">
-<Name>
-<![CDATA[内置SQL1]]></Name>
+<Submiter class="com.fr.report.write.BuiltInSQLSubmiter" name="内置SQL1">
 <Attributes dsName="FR"/>
 <DMLConfig class="com.fr.write.config.IntelliDMLConfig">
 <Table schema="" name="WSD_equipment_maintenance_funds"/>
@@ -421,7 +418,7 @@
 </ColumnConfig>
 <Condition class="com.fr.data.condition.ListCondition"/>
 </DMLConfig>
-</SubmitVisitor>
+</Submiter>
 </ReportWriteAttr>
 <PrivilegeControl/>
 </Report>
