@@ -86,7 +86,7 @@
 <FRFont name="SimSun" style="0" size="72"/>
 <border style="0" color="-723724"/>
 </InnerWidget>
-<BoundsAttr x="204" y="25" width="80" height="21"/>
+<BoundsAttr x="194" y="25" width="80" height="21"/>
 </Widget>
 <Widget class="com.fr.form.ui.container.WAbsoluteLayout$BoundsWidget">
 <InnerWidget class="com.fr.form.ui.DateEditor">
@@ -102,7 +102,7 @@
 </O>
 </widgetValue>
 </InnerWidget>
-<BoundsAttr x="284" y="25" width="80" height="21"/>
+<BoundsAttr x="274" y="25" width="80" height="21"/>
 </Widget>
 <Widget class="com.fr.form.ui.container.WAbsoluteLayout$BoundsWidget">
 <InnerWidget class="com.fr.form.ui.Label">
@@ -147,7 +147,7 @@
 <Hotkeys>
 <![CDATA[enter]]></Hotkeys>
 </InnerWidget>
-<BoundsAttr x="796" y="25" width="80" height="21"/>
+<BoundsAttr x="726" y="25" width="80" height="21"/>
 </Widget>
 <Widget class="com.fr.form.ui.container.WAbsoluteLayout$BoundsWidget">
 <InnerWidget class="com.fr.form.ui.Label">
@@ -163,7 +163,7 @@
 <FRFont name="SimSun" style="0" size="72"/>
 <border style="0" color="-723724"/>
 </InnerWidget>
-<BoundsAttr x="415" y="25" width="80" height="21"/>
+<BoundsAttr x="369" y="25" width="80" height="21"/>
 </Widget>
 <Widget class="com.fr.form.ui.container.WAbsoluteLayout$BoundsWidget">
 <InnerWidget class="com.fr.form.ui.ComboBox">
@@ -184,7 +184,7 @@
 <![CDATA[]]></O>
 </widgetValue>
 </InnerWidget>
-<BoundsAttr x="495" y="25" width="80" height="21"/>
+<BoundsAttr x="449" y="25" width="80" height="21"/>
 </Widget>
 <Widget class="com.fr.form.ui.container.WAbsoluteLayout$BoundsWidget">
 <InnerWidget class="com.fr.form.ui.Label">
@@ -200,7 +200,7 @@
 <FRFont name="SimSun" style="0" size="72"/>
 <border style="0" color="-723724"/>
 </InnerWidget>
-<BoundsAttr x="595" y="25" width="80" height="21"/>
+<BoundsAttr x="547" y="25" width="80" height="21"/>
 </Widget>
 <Widget class="com.fr.form.ui.container.WAbsoluteLayout$BoundsWidget">
 <InnerWidget class="com.fr.form.ui.TextEditor">
@@ -214,7 +214,25 @@
 <![CDATA[]]></O>
 </widgetValue>
 </InnerWidget>
-<BoundsAttr x="675" y="25" width="80" height="21"/>
+<BoundsAttr x="627" y="25" width="80" height="21"/>
+</Widget>
+<Widget class="com.fr.form.ui.container.WAbsoluteLayout$BoundsWidget">
+<InnerWidget class="com.fr.form.ui.FreeButton">
+<Listener event="click">
+<JavaScript class="com.fr.js.JavaScriptImpl">
+<Parameters/>
+<Content>
+<![CDATA[window.parent.FS.tabPane.addItem({title:"小区列表维护",src:"${servletURL}?reportlet=CSSF_FR/CSD/CSD_NightFlow/CSD_communityList_modify.cpt&op=write"})]]></Content>
+</JavaScript>
+</Listener>
+<WidgetName name="button0"/>
+<WidgetAttr description="">
+<PrivilegeControl/>
+</WidgetAttr>
+<Text>
+<![CDATA[小区列表维护]]></Text>
+</InnerWidget>
+<BoundsAttr x="851" y="25" width="80" height="21"/>
 </Widget>
 <Sorted sorted="false"/>
 <MobileWidgetList>
@@ -223,6 +241,7 @@
 <Widget widgetName="district"/>
 <Widget widgetName="threshold"/>
 <Widget widgetName="Search"/>
+<Widget widgetName="button0"/>
 </MobileWidgetList>
 <Display display="true"/>
 <DelayDisplayContent delay="true"/>
