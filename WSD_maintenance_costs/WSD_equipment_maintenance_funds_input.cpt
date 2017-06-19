@@ -422,6 +422,18 @@
 <Condition class="com.fr.data.condition.ListCondition"/>
 </DMLConfig>
 </SubmitVisitor>
+<TopVerifier class="com.fr.report.write.ValueVerifier">
+<name>
+<![CDATA[内置校验1]]></name>
+<VerifyItem class="com.fr.data.VerifyItem">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=F2 || J2 == NULL]]></Attributes>
+</O>
+<message>
+<![CDATA[="存在空值，请检查！"]]></message>
+</VerifyItem>
+</TopVerifier>
 </ReportWriteAttr>
 <PrivilegeControl/>
 </Report>

@@ -21,6 +21,13 @@
 <ReportWebAttr>
 <ServerPrinter/>
 <WebWriteContent>
+<Listener event="afterload">
+<JavaScript class="com.fr.js.JavaScriptImpl">
+<Parameters/>
+<Content>
+<![CDATA[FR.Msg.alert("警告","这里的操作将影响数据库表，请确定你知道自己正在做什么！");]]></Content>
+</JavaScript>
+</Listener>
 <ToolBars>
 <ToolBarManager>
 <Location>
