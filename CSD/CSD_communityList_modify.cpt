@@ -279,11 +279,27 @@
 </Widget>
 <Expand/>
 </C>
+<C c="6" r="1">
+<PrivilegeControl/>
+<Expand/>
+</C>
 </CellElementList>
 <ReportAttrSet>
 <ReportSettings headerHeight="0" footerHeight="0">
 <PaperSetting/>
 </ReportSettings>
+<Header reportPageType="0">
+<Background name="NullBackground"/>
+<LeftList/>
+<CenterList/>
+<RightList/>
+</Header>
+<Footer reportPageType="0">
+<Background name="NullBackground"/>
+<LeftList/>
+<CenterList/>
+<RightList/>
+</Footer>
 </ReportAttrSet>
 <ReportWriteAttr>
 <SubmitVisitor class="com.fr.report.write.BuiltInSQLSubmiter">
@@ -292,7 +308,7 @@
 <Attributes dsName="FR"/>
 <DMLConfig class="com.fr.write.config.IntelliDMLConfig">
 <Table schema="" name="CSD_communityList"/>
-<ColumnConfig name="communityNumber" isKey="true" skipUnmodified="false">
+<ColumnConfig name="communityNumber" isKey="false" skipUnmodified="false">
 <ColumnRow column="0" row="1"/>
 </ColumnConfig>
 <ColumnConfig name="districtBelongedTo" isKey="false" skipUnmodified="false">
@@ -301,7 +317,7 @@
 <ColumnConfig name="communityName" isKey="false" skipUnmodified="false">
 <ColumnRow column="2" row="1"/>
 </ColumnConfig>
-<ColumnConfig name="meterNumber" isKey="false" skipUnmodified="false">
+<ColumnConfig name="meterNumber" isKey="true" skipUnmodified="false">
 <ColumnRow column="3" row="1"/>
 </ColumnConfig>
 <Condition class="com.fr.data.condition.ListCondition"/>

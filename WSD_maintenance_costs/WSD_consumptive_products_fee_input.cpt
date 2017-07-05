@@ -481,10 +481,18 @@
 <VerifyItem class="com.fr.data.VerifyItem">
 <O t="Formula" class="Formula">
 <Attributes>
-<![CDATA[=H2 || L2 == NULL]]></Attributes>
+<![CDATA[=H2 != NULL]]></Attributes>
 </O>
 <message>
-<![CDATA[="导入数据有空值，请检查！"]]></message>
+<![CDATA[="存在空值，请检查！"]]></message>
+</VerifyItem>
+<VerifyItem class="com.fr.data.VerifyItem">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=L2 != NULL]]></Attributes>
+</O>
+<message>
+<![CDATA[="存在空值，请检查！"]]></message>
 </VerifyItem>
 </TopVerifier>
 </ReportWriteAttr>

@@ -309,10 +309,11 @@
 </Border>
 <FormElementCase>
 <ReportPageAttr>
-<HR/>
+<HR F="0" T="0"/>
 <FR/>
 <HC/>
 <FC/>
+<UPFCR COLUMN="false" ROW="true"/>
 </ReportPageAttr>
 <ColumnPrivilegeControl/>
 <RowPrivilegeControl/>

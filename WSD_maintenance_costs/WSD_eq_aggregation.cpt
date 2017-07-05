@@ -106,7 +106,7 @@ group by month(date),sub_category, category,controllable order by charindex(cate
 </Connection>
 <Query>
 <![CDATA[select month(date) as yue,category,sub_category,sum(expense) as total_expense,controllable from dbo.WSD_maintenance_fee_allinone where 1=1 and year(date)='${year}' ${if(len(sec)==0,"","and section_office='"+sec+"'")}
-group by month(date),sub_category, category,controllable order by charindex(category,'劳务,职安健,年度检测,系统维护,技防,外围站,仪表,自动控制,配电系统,工艺管路系统,沉淀系统,过滤系统,加矾系统,加氯系统,水泵机组,一二级泵房,取水系统,回用泵房,污水泵房,排泥水系统,水库,物料,环境,应急系统')]]></Query>
+group by month(date),sub_category, category,controllable order by charindex(category,'劳务,职安健,年度检测,系统维护,技防,外围站,仪表,自动控制,配电系统,工艺管路系统,沉淀系统,过滤系统,加矾系统,加氯系统,水泵机组,一二级泵房,取水系统,回用泵房,污水泵房,排泥水系统,水库,物料,环境,深度处理,应急系统')]]></Query>
 </TableData>
 </TableDataMap>
 <Report class="com.fr.report.poly.PolyWorkSheet" name="sheet1">
@@ -308,6 +308,11 @@ group by month(date),sub_category, category,controllable order by charindex(cate
 <C c="0" r="5" cs="6" rs="2">
 <O t="CC">
 <LayoutAttr selectedIndex="0"/>
+<ChangeAttr enable="false" changeType="button" timeInterval="5" buttonColor="-8421505" carouselColor="-8421505">
+<TextAttr>
+<Attr alignText="0"/>
+</TextAttr>
+</ChangeAttr>
 <Chart name="默认" chartClass="com.fr.chart.chartattr.Chart">
 <Chart class="com.fr.chart.chartattr.Chart">
 <GI>
@@ -511,6 +516,11 @@ group by month(date),sub_category, category,controllable order by charindex(cate
 <C c="4" r="0" cs="2" rs="7">
 <O t="CC">
 <LayoutAttr selectedIndex="0"/>
+<ChangeAttr enable="false" changeType="button" timeInterval="5" buttonColor="-8421505" carouselColor="-8421505">
+<TextAttr>
+<Attr alignText="0"/>
+</TextAttr>
+</ChangeAttr>
 <Chart name="默认" chartClass="com.fr.chart.chartattr.Chart">
 <Chart class="com.fr.chart.chartattr.Chart">
 <GI>
@@ -857,6 +867,11 @@ group by month(date),sub_category, category,controllable order by charindex(cate
 <C c="8" r="1" rs="2">
 <O t="CC">
 <LayoutAttr selectedIndex="0"/>
+<ChangeAttr enable="false" changeType="button" timeInterval="5" buttonColor="-8421505" carouselColor="-8421505">
+<TextAttr>
+<Attr alignText="0"/>
+</TextAttr>
+</ChangeAttr>
 <Chart name="默认" chartClass="com.fr.chart.chartattr.Chart">
 <Chart class="com.fr.chart.chartattr.Chart">
 <GI>
@@ -1222,12 +1237,12 @@ group by month(date),sub_category, category,controllable order by charindex(cate
 <Parameters/>
 <Layout class="com.fr.form.ui.container.WParameterLayout">
 <WidgetName name="para"/>
-<WidgetAttr>
+<WidgetAttr description="">
 <PrivilegeControl/>
 </WidgetAttr>
 <Margin top="1" left="1" bottom="1" right="1"/>
 <Border>
-<border style="0" color="-723724" type="0" borderStyle="0"/>
+<border style="0" color="-723724" borderRadius="0" type="0" borderStyle="0"/>
 <WidgetTitle>
 <O>
 <![CDATA[新建标题]]></O>
@@ -1241,7 +1256,7 @@ group by month(date),sub_category, category,controllable order by charindex(cate
 <Widget class="com.fr.form.ui.container.WAbsoluteLayout$BoundsWidget">
 <InnerWidget class="com.fr.form.ui.Label">
 <WidgetName name="Labelsec"/>
-<WidgetAttr>
+<WidgetAttr description="">
 <PrivilegeControl/>
 </WidgetAttr>
 <widgetValue>
@@ -1257,7 +1272,7 @@ group by month(date),sub_category, category,controllable order by charindex(cate
 <Widget class="com.fr.form.ui.container.WAbsoluteLayout$BoundsWidget">
 <InnerWidget class="com.fr.form.ui.ComboBox">
 <WidgetName name="sec"/>
-<WidgetAttr>
+<WidgetAttr description="">
 <PrivilegeControl/>
 </WidgetAttr>
 <Dictionary class="com.fr.data.impl.DatabaseDictionary">
@@ -1278,7 +1293,7 @@ group by month(date),sub_category, category,controllable order by charindex(cate
 <Widget class="com.fr.form.ui.container.WAbsoluteLayout$BoundsWidget">
 <InnerWidget class="com.fr.form.ui.Label">
 <WidgetName name="Labelyear"/>
-<WidgetAttr>
+<WidgetAttr description="">
 <PrivilegeControl/>
 </WidgetAttr>
 <widgetValue>
@@ -1294,7 +1309,7 @@ group by month(date),sub_category, category,controllable order by charindex(cate
 <Widget class="com.fr.form.ui.container.WAbsoluteLayout$BoundsWidget">
 <InnerWidget class="com.fr.form.ui.ComboBox">
 <WidgetName name="year"/>
-<WidgetAttr>
+<WidgetAttr description="">
 <PrivilegeControl/>
 </WidgetAttr>
 <Dictionary class="com.fr.data.impl.DatabaseDictionary">
@@ -1317,7 +1332,7 @@ group by month(date),sub_category, category,controllable order by charindex(cate
 <Widget class="com.fr.form.ui.container.WAbsoluteLayout$BoundsWidget">
 <InnerWidget class="com.fr.form.parameter.FormSubmitButton">
 <WidgetName name="Search"/>
-<WidgetAttr>
+<WidgetAttr description="">
 <PrivilegeControl/>
 </WidgetAttr>
 <Text>
@@ -1328,14 +1343,14 @@ group by month(date),sub_category, category,controllable order by charindex(cate
 <BoundsAttr x="378" y="25" width="80" height="21"/>
 </Widget>
 <Sorted sorted="false"/>
-<Display display="true"/>
-<DelayDisplayContent delay="false"/>
-<Position position="0"/>
-<Design_Width design_width="960"/>
 <MobileWidgetList>
 <Widget widgetName="year"/>
 <Widget widgetName="sec"/>
 </MobileWidgetList>
+<Display display="true"/>
+<DelayDisplayContent delay="false"/>
+<Position position="0"/>
+<Design_Width design_width="960"/>
 <WidgetNameTagMap>
 <NameTag name="sec" tag="部    门:"/>
 <NameTag name="year" tag="年    份:"/>
