@@ -238,7 +238,7 @@
 <![CDATA[FR]]></DatabaseName>
 </Connection>
 <Query>
-<![CDATA[select b.section_office,isnull(a.actually,0) as actually ,b.section_office_budget from ((select section_office,sum(amount) as actually from wsd_other_maintenance_funds where year='${year}' group by section_office) a full outer join (select section_office,section_office_budget from wsd_other_maintenance_budget where year='${year}') b on a.section_office=b.section_office) order by  CHARINDEX(b.section_office,'二水厂,二水厂排泥水,增压站,三水厂,滨江水厂,滨江水厂排泥水,自动化仪表科,生技科,行政科,调度中心')]]></Query>
+<![CDATA[select b.section_office,isnull(a.actually,0) as actually ,b.section_office_budget from ((select section_office,sum(amount) as actually from wsd_other_maintenance_funds where year='${year}' and section_office <> '应急水库' group by section_office) a full outer join (select section_office,section_office_budget from wsd_other_maintenance_budget where year='${year}' and section_office<>'应急水库') b on a.section_office=b.section_office) order by  CHARINDEX(b.section_office,'二水厂,二水厂排泥水,增压站,三水厂,滨江水厂,滨江水厂排泥水,自动化仪表科,生技科,行政科,调度中心')]]></Query>
 </TableData>
 </TableDataMap>
 <Report class="com.fr.report.poly.PolyWorkSheet" name="sheet1">
@@ -4800,6 +4800,14 @@
 <C c="0" r="121" s="12">
 <O t="DSColumn">
 <Attributes dsName="4&lt;其它费用预算及实际花费(科室)&gt;" columnName="section_office"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNAME>
+<![CDATA[section_office]]></CNAME>
+<Compare op="1">
+<O>
+<![CDATA[应急水库]]></O>
+</Compare>
+</Condition>
 <Complex/>
 <RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
 <Parameters/>
@@ -6050,5 +6058,5 @@
 </Style>
 </StyleList>
 <DesignerVersion DesignerVersion="IAA"/>
-<PreviewType PreviewType="0"/>
+<PreviewType PreviewType="2"/>
 </WorkBook>
