@@ -15,7 +15,7 @@
 <![CDATA[FR]]></DatabaseName>
 </Connection>
 <Query>
-<![CDATA[select b.section_office,isnull(a.actually,0) as actually ,b.section_office_budget from ((select section_office,sum(amount) as actually from wsd_other_maintenance_funds where year='${year}' group by section_office) a full outer join (select section_office,section_office_budget from wsd_other_maintenance_budget where year='${year}') b on a.section_office=b.section_office) order by  CHARINDEX(b.section_office,'二水厂,二水厂排泥水,增压站,三水厂,滨江水厂,滨江水厂排泥水,自动化仪表科,生技科,行政科,调度中心')]]></Query>
+<![CDATA[select b.section_office,isnull(a.actually,0) as actually ,b.section_office_budget from ((select section_office,sum(amount) as actually from wsd_other_maintenance_funds where year='${year}' and section_office != '应急水库'   group by section_office) a full outer join (select section_office,section_office_budget from wsd_other_maintenance_budget where year='${year}' and section_office != '应急水库') b on a.section_office=b.section_office) order by  CHARINDEX(b.section_office,'二水厂,二水厂排泥水,增压站,三水厂,滨江水厂,滨江水厂排泥水,自动化仪表科,生技科,行政科,调度中心')]]></Query>
 </TableData>
 <TableData name="other maintenance actually" class="com.fr.data.impl.DBTableData">
 <Parameters>
@@ -98,6 +98,8 @@
 <O t="DSColumn">
 <Attributes dsName="other maintenance actually" columnName="section_office"/>
 <Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[0]]></CNUMBER>
 <CNAME>
 <![CDATA[section_office]]></CNAME>
 <Compare op="1">

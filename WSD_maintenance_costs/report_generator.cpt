@@ -31,7 +31,7 @@
 <![CDATA[FR]]></DatabaseName>
 </Connection>
 <Query>
-<![CDATA[select * from dbo.WSD_maintenance_fee_analysis_lv2 where YEAR='${year}' order by CHARINDEX(section_office,'二水厂,二水厂排泥水,增压站,三水厂,滨江水厂,滨江水厂排泥水,自动化仪表科,生技科,行政科,调度中心')]]></Query>
+<![CDATA[select * from dbo.WSD_maintenance_fee_analysis_lv2 where YEAR='${year}' and section_office != '应急水库' order by CHARINDEX(section_office,'二水厂,二水厂排泥水,增压站,三水厂,滨江水厂,滨江水厂排泥水,自动化仪表科,生技科,行政科,调度中心')]]></Query>
 </TableData>
 <TableData name="1&lt;月维修费预算&gt;" class="com.fr.data.impl.DBTableData">
 <Parameters>
@@ -206,7 +206,7 @@
 <![CDATA[FR]]></DatabaseName>
 </Connection>
 <Query>
-<![CDATA[select  sum(amount) as actually_fee from dbo.WSD_other_maintenance_funds where year(date)='${year}']]></Query>
+<![CDATA[select  sum(amount) as actually_fee from dbo.WSD_other_maintenance_funds where year(date)='${year}' and section_office != '应急水库']]></Query>
 </TableData>
 <TableData name="4&lt;月其它费用预算&gt;" class="com.fr.data.impl.DBTableData">
 <Parameters>
@@ -259,12 +259,12 @@
 <RowHeight defaultValue="723900">
 <![CDATA[723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,3352800,723900,723900,723900,723900,723900,723900,723900,2628900,1485900,723900,723900,723900,723900,723900,723900,1943100,723900,6477000,2324100,723900,723900,723900,723900,3162300,3048000,0,13182600,723900,723900,723900,723900,723900,723900,723900,3657600,723900,723900,1562100,8191500,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,4724400,914400,723900,723900,1143000,723900,723900,723900,723900,723900,723900,723900,723900,2019300,2857500,3390900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,2324100,2057400,1143000,723900,723900,723900,723900,723900,723900,723900,1104900,723900,723900,723900,723900,1409700,1790700,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,3086100,723900,723900,723900,723900,723900,723900,723900,723900,723900,2057400,723900]]></RowHeight>
 <ColumnWidth defaultValue="2743200">
-<![CDATA[3505200,3505200,3124200,3238500,1181100,5295900,1333500,762000,1295400,0,0,2743200]]></ColumnWidth>
+<![CDATA[3505200,3505200,3124200,3238500,1181100,5295900,1333500,762000,1295400,0,0,0,0,0,0,0,0,0,0,2743200]]></ColumnWidth>
 <CellElementList>
 <C c="0" r="0" cs="9" s="0">
 <O t="Formula" class="Formula">
 <Attributes>
-<![CDATA[=year(today()) + "年" + month(today()) + "月维修费用分析"]]></Attributes>
+<![CDATA[=year(today()) + "年" + (month(today())-1) + "月维修费用分析"]]></Attributes>
 </O>
 <PrivilegeControl/>
 <Expand/>
@@ -309,7 +309,7 @@
 <C c="0" r="3" cs="9" s="2">
 <O t="Formula" class="Formula">
 <Attributes>
-<![CDATA[="    " + year(today()) + "年全年预算" + round(J2 / 10000, 2) + "万, 1-" + month(today()) + "月实际发生设备维修费用" + round(J6 / 10000, 2) + "万元，完成同期预算" + round(J6 / J7 * 100, 2) + "%,完成全年预算" + round(J6 / J2 * 100, 2) + "%。其中物料消耗" + round(J5 / 10000, 2) + "万元，占总额" + round(J5 / J6 * 100, 2) + "%，设备外包费用" + round(J3 / 10000, 2) + "万元，占总额" + round(J3 / J6 * 100, 2) + "%。"]]></Attributes>
+<![CDATA[="    " + year(today()) + "年全年预算" + round(J2 / 10000, 2) + "万, 1-" + (month(today())-1) + "月实际发生设备维修费用" + round(J6 / 10000, 2) + "万元，完成同期预算" + round(J6 / J7 * 100, 2) + "%,完成全年预算" + round(J6 / J2 * 100, 2) + "%。其中物料消耗" + round(J5 / 10000, 2) + "万元，占总额" + round(J5 / J6 * 100, 2) + "%，设备外包费用" + round(J3 / 10000, 2) + "万元，占总额" + round(J3 / J6 * 100, 2) + "%。"]]></Attributes>
 </O>
 <PrivilegeControl/>
 <Expand/>
@@ -355,7 +355,7 @@
 </GI>
 <O t="Formula" class="Formula">
 <Attributes>
-<![CDATA[=$year + "年至" + month(today()) + "月设备维修费计划与实际"]]></Attributes>
+<![CDATA[=$year + "年至" + (month(today())-1) + "月设备维修费计划与实际"]]></Attributes>
 </O>
 <TextAttr>
 <Attr alignText="0">
@@ -834,7 +834,7 @@
 </GI>
 <O t="Formula" class="Formula">
 <Attributes>
-<![CDATA[=$year + "年至" + month(today()) + "设备维修费分布"]]></Attributes>
+<![CDATA[=$year + "年至" + (month(today())-1) + "月设备维修费分布"]]></Attributes>
 </O>
 <TextAttr>
 <Attr alignText="0">
@@ -1090,7 +1090,7 @@
 <C c="0" r="21" cs="9" s="2">
 <O t="Formula" class="Formula">
 <Attributes>
-<![CDATA[="    1)从供水部整体费用分布情况分析，1-" + month(today()) + "月份排列前五区域的主要是：" + J12[J12:!1]A + round(K12[K12:!1]A / K11, 4) * 100 + "%， " + J12[J12:!2]A + round(K12[K12:!2]A / K11, 4) * 100 + "%， " + J12[J12:!3]A + round(K12[K12:!3]A / K11, 4) * 100 + "%， " + J12[J12:!4]A + round(K12[K12:!4]A / K11, 4) * 100 + "%， " + J12[J12:!5]A + round(K12[K12:!5]A / K11, 4) * 100 + "%， "]]></Attributes>
+<![CDATA[="    1)从供水部整体费用分布情况分析，1-" + (month(today())-1) + "月份排列前五区域的主要是：" + J12[J12:!1]A + round(K12[K12:!1]A / K11, 4) * 100 + "%， " + J12[J12:!2]A + round(K12[K12:!2]A / K11, 4) * 100 + "%， " + J12[J12:!3]A + round(K12[K12:!3]A / K11, 4) * 100 + "%， " + J12[J12:!4]A + round(K12[K12:!4]A / K11, 4) * 100 + "%， " + J12[J12:!5]A + round(K12[K12:!5]A / K11, 4) * 100 + "%， "]]></Attributes>
 </O>
 <PrivilegeControl/>
 <Expand/>
@@ -4277,7 +4277,7 @@
 <C c="0" r="105" cs="8" s="2">
 <O t="Formula" class="Formula">
 <Attributes>
-<![CDATA[="    " + year(today()) + "年全年预算" + round(J106 / 10000, 2) + "万, 1-" + month(today()) + "月实际发生其他维修费用" + round(J107 / 10000, 2) + "万元，完成同期预算" + round(J107 / J108, 2) * 100 + "%，完成全年预算" + round(J107 / J106, 2) * 100 + "%。"]]></Attributes>
+<![CDATA[="    " + year(today()) + "年全年预算" + round(J106 / 10000, 2) + "万, 1-" + (month(today())-1) + "月实际发生其他维修费用" + round(J107 / 10000, 2) + "万元，完成同期预算" + round(J107 / J108, 2) * 100 + "%，完成全年预算" + round(J107 / J106, 2) * 100 + "%。"]]></Attributes>
 </O>
 <PrivilegeControl/>
 <Expand/>
@@ -4800,13 +4800,31 @@
 <C c="0" r="121" s="12">
 <O t="DSColumn">
 <Attributes dsName="4&lt;其它费用预算及实际花费(科室)&gt;" columnName="section_office"/>
+<Condition class="com.fr.data.condition.ListCondition">
+<JoinCondition join="0">
 <Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[0]]></CNUMBER>
 <CNAME>
 <![CDATA[section_office]]></CNAME>
 <Compare op="1">
 <O>
 <![CDATA[应急水库]]></O>
 </Compare>
+</Condition>
+</JoinCondition>
+<JoinCondition join="0">
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[0]]></CNUMBER>
+<CNAME>
+<![CDATA[section_office]]></CNAME>
+<Compare op="1">
+<O>
+<![CDATA[生技科]]></O>
+</Compare>
+</Condition>
+</JoinCondition>
 </Condition>
 <Complex/>
 <RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
@@ -5851,7 +5869,7 @@
 <Expand/>
 </C>
 </CellElementList>
-<PECBAttr blockName="block1" x="1143000" y="571500" width="47929800" height="165735000"/>
+<PECBAttr blockName="block1" x="1143000" y="571500" width="25984200" height="165735000"/>
 </Block>
 <PrivilegeControl/>
 </Report>

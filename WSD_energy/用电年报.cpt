@@ -1,0 +1,5164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WorkBook xmlVersion="20141222" releaseVersion="8.0.0">
+<TableDataMap>
+<TableData name="yd" class="com.fr.data.impl.storeproc.StoreProcedure">
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[cssfopc]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[dbo.Report_month]]></Query>
+<ParamterList>
+<para>
+<Attributes name="rq" type="12" schema="2147483646"/>
+<O>
+<![CDATA[]]></O>
+</para>
+<para>
+<Attributes name="report_id" type="4" schema="2147483646"/>
+<O t="I">
+<![CDATA[99]]></O>
+</para>
+</ParamterList>
+<ResultNames>
+<Name>
+<![CDATA[Table]]></Name>
+</ResultNames>
+</TableData>
+</TableDataMap>
+<ReportWebAttr>
+<ServerPrinter/>
+<WebPageContent>
+<Listener event="afterload">
+<JavaScript class="com.fr.js.JavaScriptImpl">
+<Parameters/>
+<Content>
+<![CDATA[contentPane.makeHighlight('#d7f5f5')]]></Content>
+</JavaScript>
+</Listener>
+<ToolBars>
+<ToolBarManager>
+<Location>
+<Embed position="1"/>
+</Location>
+<ToolBar>
+<Widget class="com.fr.report.web.button.page.First">
+<WidgetAttr>
+<PrivilegeControl/>
+</WidgetAttr>
+<Text>
+<![CDATA[${i18n('ReportServerP-First')}]]></Text>
+<IconName>
+<![CDATA[first]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.button.page.Previous">
+<WidgetAttr>
+<PrivilegeControl/>
+</WidgetAttr>
+<Text>
+<![CDATA[${i18n('ReportServerP-Previous')}]]></Text>
+<IconName>
+<![CDATA[previous]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.button.page.PageNavi">
+<WidgetAttr>
+<PrivilegeControl/>
+</WidgetAttr>
+</Widget>
+<Widget class="com.fr.report.web.button.page.Next">
+<WidgetAttr>
+<PrivilegeControl/>
+</WidgetAttr>
+<Text>
+<![CDATA[${i18n('ReportServerP-Next')}]]></Text>
+<IconName>
+<![CDATA[next]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.button.page.Last">
+<WidgetAttr>
+<PrivilegeControl/>
+</WidgetAttr>
+<Text>
+<![CDATA[${i18n('ReportServerP-Last')}]]></Text>
+<IconName>
+<![CDATA[last]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.button.FlashPrint">
+<WidgetAttr>
+<PrivilegeControl/>
+</WidgetAttr>
+<Text>
+<![CDATA[${i18n('Utils-Print[Client]A')}]]></Text>
+<IconName>
+<![CDATA[flashprint]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.button.Print">
+<WidgetAttr>
+<PrivilegeControl/>
+</WidgetAttr>
+<Text>
+<![CDATA[${i18n('Print')}]]></Text>
+<IconName>
+<![CDATA[print]]></IconName>
+<PrintButtons/>
+</Widget>
+<Widget class="com.fr.report.web.button.Export">
+<WidgetAttr>
+<PrivilegeControl/>
+</WidgetAttr>
+<Text>
+<![CDATA[${i18n('Export')}]]></Text>
+<IconName>
+<![CDATA[export]]></IconName>
+<Buttons pdf="true" excelP="true" excelO="true" excelS="true" word="true" image="true" html="true"/>
+</Widget>
+<Widget class="com.fr.report.web.button.Email">
+<WidgetAttr>
+<PrivilegeControl/>
+</WidgetAttr>
+<Text>
+<![CDATA[${i18n('Email')}]]></Text>
+<IconName>
+<![CDATA[email]]></IconName>
+</Widget>
+</ToolBar>
+</ToolBarManager>
+</ToolBars>
+<WebPage isPage="false" isShowAsImage="false" isAutoScale="false" isTDHeavy="false"/>
+</WebPageContent>
+<WebWriteContent>
+<Listener event="afterload">
+<JavaScript class="com.fr.js.JavaScriptImpl">
+<Parameters/>
+<Content>
+<![CDATA[contentPane.makeHighlight('#d7f5f5')]]></Content>
+</JavaScript>
+</Listener>
+<ToolBars>
+<ToolBarManager>
+<Location>
+<Embed position="1"/>
+</Location>
+<ToolBar>
+<Widget class="com.fr.report.web.button.write.Submit">
+<WidgetAttr>
+<PrivilegeControl/>
+</WidgetAttr>
+<Text>
+<![CDATA[${i18n('Utils-Submit')}]]></Text>
+<IconName>
+<![CDATA[submit]]></IconName>
+<Verify failVerifySubmit="false"/>
+</Widget>
+<Widget class="com.fr.report.web.button.write.Verify">
+<WidgetAttr>
+<PrivilegeControl/>
+</WidgetAttr>
+<Text>
+<![CDATA[${i18n('Verify-Data_Verify')}]]></Text>
+<IconName>
+<![CDATA[verify]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.button.FlashPrint">
+<WidgetAttr>
+<PrivilegeControl/>
+</WidgetAttr>
+<Text>
+<![CDATA[${i18n('Utils-Print[Client]A')}]]></Text>
+<IconName>
+<![CDATA[flashprint]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.button.Print">
+<WidgetAttr>
+<PrivilegeControl/>
+</WidgetAttr>
+<Text>
+<![CDATA[${i18n('Print')}]]></Text>
+<IconName>
+<![CDATA[print]]></IconName>
+<PrintButtons/>
+</Widget>
+<Widget class="com.fr.report.web.button.Export">
+<WidgetAttr>
+<PrivilegeControl/>
+</WidgetAttr>
+<Text>
+<![CDATA[${i18n('Export')}]]></Text>
+<IconName>
+<![CDATA[export]]></IconName>
+<Buttons pdf="true" excelP="true" excelO="true" excelS="true" word="true" image="true" html="true"/>
+</Widget>
+<Widget class="com.fr.report.web.button.Email">
+<WidgetAttr>
+<PrivilegeControl/>
+</WidgetAttr>
+<Text>
+<![CDATA[${i18n('Email')}]]></Text>
+<IconName>
+<![CDATA[email]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.button.write.AppendColumnRow">
+<WidgetAttr>
+<PrivilegeControl/>
+</WidgetAttr>
+<Text>
+<![CDATA[${i18n('Add')}${i18n('Record')}]]></Text>
+<IconName>
+<![CDATA[appendcolumn]]></IconName>
+</Widget>
+<Widget class="com.fr.report.web.button.write.ShowCellValue">
+<WidgetAttr>
+<PrivilegeControl/>
+</WidgetAttr>
+<widgetValue/>
+<LabelAttr verticalcenter="true" textalign="0" autoline="false"/>
+<FRFont name="SimSun" style="0" size="72"/>
+<border style="0" color="-723724"/>
+</Widget>
+</ToolBar>
+</ToolBarManager>
+</ToolBars>
+<SelectedColor/>
+<WebWrite SheetPosition="3"/>
+<RptLocation isShowAtLeft="true"/>
+<UnloadCheck/>
+<ShowWidgets show="true"/>
+</WebWriteContent>
+</ReportWebAttr>
+<Report class="com.fr.report.worksheet.WorkSheet" name="sheet1">
+<ReportPageAttr>
+<HR F="0" T="3"/>
+<FR/>
+<HC F="0" T="0"/>
+<FC/>
+<UPFCR COLUMN="true" ROW="true"/>
+</ReportPageAttr>
+<ColumnPrivilegeControl/>
+<RowPrivilegeControl/>
+<RowHeight defaultValue="723900">
+<![CDATA[723900,1066800,990600,838200,723900,723900,723900,723900,723900,723900,723900]]></RowHeight>
+<ColumnWidth defaultValue="2743200">
+<![CDATA[4229100,2743200,2743200,2743200,2743200,2743200,2743200,3200400,2705100,0,0,2743200,0,0,2743200,2743200,3657600,2743200,2743200,0,0,2743200,2743200,2743200,2743200,2743200,2743200,2743200,2743200,2743200,2743200,2743200,2743200,2743200,2743200,2743200,2743200,2743200,2743200,0,0,0,0,0,0,0,0,0,0,0,2743200,2743200,2743200,2743200,2743200,2743200,2743200,2743200,0,0,2743200,2743200,2743200,2743200,0,0,0,0,0,0,0,2743200,2743200,2743200,3771900,0,0,0,0,0,0,0,2743200]]></ColumnWidth>
+<CellElementList>
+<C c="0" r="0">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="0" r="1" s="0">
+<O>
+<![CDATA[生产指标]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="1" cs="6" s="1">
+<O>
+<![CDATA[生产用电量]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="7" r="1" cs="9" s="1">
+<O>
+<![CDATA[三产用电量]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="16" r="1" cs="8" s="1">
+<O>
+<![CDATA[总用电量]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="24" r="1" cs="5" s="1">
+<O>
+<![CDATA[应急水库]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="29" r="1" cs="6" s="1">
+<O>
+<![CDATA[清水泵用电量]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="35" r="1" cs="4" s="1">
+<O>
+<![CDATA[浑水泵用电量]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="39" r="1" s="1">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="40" r="1" s="1">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="41" r="1" s="1">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="42" r="1" s="1">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="43" r="1" s="1">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="44" r="1" s="1">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="45" r="1" s="1">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="46" r="1" s="1">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="47" r="1" s="1">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="48" r="1" s="1">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="49" r="1" s="1">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="50" r="1" cs="6" s="1">
+<O>
+<![CDATA[电耗]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="56" r="1" cs="8" s="1">
+<O>
+<![CDATA[清水泵电耗]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="64" r="1" s="1">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="65" r="1" s="1">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="66" r="1" s="1">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="67" r="1" s="1">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="68" r="1" s="1">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="69" r="1" s="1">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="70" r="1" s="1">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="71" r="1" cs="4" s="1">
+<O>
+<![CDATA[浑水泵电耗]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="75" r="1" s="1">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="76" r="1" s="1">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="77" r="1" s="1">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="78" r="1" s="1">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="79" r="1" s="1">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="80" r="1" s="1">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="81" r="1" s="1">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="82" r="1" cs="4" s="1">
+<O>
+<![CDATA[二泵房配水电耗]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="86" r="1" cs="3" s="1">
+<O>
+<![CDATA[一泵房配水电耗]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="0" r="2" s="2">
+<O>
+<![CDATA[部门]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="2" s="3">
+<O>
+<![CDATA[二水厂]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="2" s="3">
+<O>
+<![CDATA[三水厂]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="2" s="3">
+<O>
+<![CDATA[滨江水厂]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="4" r="2" s="3">
+<O>
+<![CDATA[藕渠站]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="5" r="2" s="3">
+<O>
+<![CDATA[城区站]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="6" r="2" s="3">
+<O>
+<![CDATA[总]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="7" r="2" s="3">
+<O>
+<![CDATA[二水厂]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="8" r="2" s="3">
+<O>
+<![CDATA[滨江水厂]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="9" r="2" s="3">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="10" r="2" s="3">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="11" r="2" s="3">
+<O>
+<![CDATA[藕渠站]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="12" r="2" s="3">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="13" r="2" s="3">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="14" r="2" s="3">
+<O>
+<![CDATA[城区站]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="15" r="2" s="3">
+<O>
+<![CDATA[总]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="16" r="2" s="3">
+<O>
+<![CDATA[二水厂]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="17" r="2" s="3">
+<O>
+<![CDATA[三水厂]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="18" r="2" s="3">
+<O>
+<![CDATA[滨江水厂]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="19" r="2" s="3">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="20" r="2" s="3">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="21" r="2" s="3">
+<O>
+<![CDATA[藕渠站]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="22" r="2" s="3">
+<O>
+<![CDATA[城区站]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="23" r="2" s="3">
+<O>
+<![CDATA[总]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="24" r="2" s="3">
+<O>
+<![CDATA[供三厂]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="25" r="2" s="3">
+<O>
+<![CDATA[供滨江]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="26" r="2" s="3">
+<O>
+<![CDATA[翻水]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="27" r="2" s="3">
+<O>
+<![CDATA[其它]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="28" r="2" s="3">
+<O>
+<![CDATA[总]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="29" r="2" s="3">
+<O>
+<![CDATA[二水厂]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="30" r="2" s="3">
+<O>
+<![CDATA[三水厂]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="31" r="2" s="3">
+<O>
+<![CDATA[滨江水厂(一期）]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="32" r="2" s="3">
+<O>
+<![CDATA[滨江水厂(二期）]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="33" r="2" s="3">
+<O>
+<![CDATA[藕渠站]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="34" r="2" s="3">
+<O>
+<![CDATA[城区站]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="35" r="2" s="3">
+<O>
+<![CDATA[二水厂]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="36" r="2" s="3">
+<O>
+<![CDATA[三水厂]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="37" r="2" s="3">
+<O>
+<![CDATA[滨江水厂]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="38" r="2" s="3">
+<O>
+<![CDATA[应急水库]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="39" r="2" s="3">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="40" r="2" s="3">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="41" r="2" s="3">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="42" r="2" s="3">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="43" r="2" s="3">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="44" r="2" s="3">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="45" r="2" s="3">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="46" r="2" s="3">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="47" r="2" s="3">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="48" r="2" s="3">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="49" r="2" s="3">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="50" r="2" s="3">
+<O>
+<![CDATA[二水厂]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="51" r="2" s="3">
+<O>
+<![CDATA[三水厂]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="52" r="2" s="3">
+<O>
+<![CDATA[滨江水厂]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="53" r="2" s="3">
+<O>
+<![CDATA[藕渠站]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="54" r="2" s="3">
+<O>
+<![CDATA[城区站]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="55" r="2" s="3">
+<O>
+<![CDATA[总]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="56" r="2" s="3">
+<O>
+<![CDATA[二水厂]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="57" r="2" s="3">
+<O>
+<![CDATA[三水厂]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="58" r="2" s="3">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="59" r="2" s="3">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="60" r="2" s="3">
+<O>
+<![CDATA[滨江水厂（一期）]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="61" r="2" s="3">
+<O>
+<![CDATA[滨江水厂（二期）]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="62" r="2" s="3">
+<O>
+<![CDATA[藕渠站]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="63" r="2" s="3">
+<O>
+<![CDATA[城区站]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="64" r="2" s="3">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="65" r="2" s="3">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="66" r="2" s="3">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="67" r="2" s="3">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="68" r="2" s="3">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="69" r="2" s="3">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="70" r="2" s="3">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="71" r="2" s="3">
+<O>
+<![CDATA[二水厂]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="72" r="2" s="3">
+<O>
+<![CDATA[三水厂]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="73" r="2" s="3">
+<O>
+<![CDATA[滨江水厂]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="74" r="2" s="3">
+<O>
+<![CDATA[应急水库]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="75" r="2" s="3">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="76" r="2" s="3">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="77" r="2" s="3">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="78" r="2" s="3">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="79" r="2" s="3">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="80" r="2" s="3">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="81" r="2" s="3">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="82" r="2" s="3">
+<O>
+<![CDATA[二水厂]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="83" r="2" s="3">
+<O>
+<![CDATA[三水厂]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="84" r="2" s="3">
+<O>
+<![CDATA[滨江水厂（一期）]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="85" r="2" s="3">
+<O>
+<![CDATA[滨江水厂（二期）]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="86" r="2" s="3">
+<O>
+<![CDATA[二水厂]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="87" r="2" s="3">
+<O>
+<![CDATA[三水厂]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="88" r="2" s="3">
+<O>
+<![CDATA[滨江水厂]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="90" r="2">
+<O>
+<![CDATA[ ]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="0" r="3" s="3">
+<O>
+<![CDATA[单位]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="3" s="3">
+<O>
+<![CDATA[kWh]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="3" s="3">
+<O>
+<![CDATA[kWh]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="3" s="3">
+<O>
+<![CDATA[kWh]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="4" r="3" s="3">
+<O>
+<![CDATA[kWh]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="5" r="3" s="3">
+<O>
+<![CDATA[kWh]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="6" r="3" s="3">
+<O>
+<![CDATA[kWh]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="7" r="3" s="3">
+<O>
+<![CDATA[kWh]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="8" r="3" s="3">
+<O>
+<![CDATA[kWh]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="9" r="3" s="3">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="10" r="3" s="3">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="11" r="3" s="3">
+<O>
+<![CDATA[kWh]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="12" r="3" s="3">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="13" r="3" s="3">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="14" r="3" s="3">
+<O>
+<![CDATA[kWh]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="15" r="3" s="3">
+<O>
+<![CDATA[kWh]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="16" r="3" s="3">
+<O>
+<![CDATA[kWh]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="17" r="3" s="3">
+<O>
+<![CDATA[kWh]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="18" r="3" s="3">
+<O>
+<![CDATA[kWh]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="19" r="3" s="3">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="20" r="3" s="3">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="21" r="3" s="3">
+<O>
+<![CDATA[kWh]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="22" r="3" s="3">
+<O>
+<![CDATA[kWh]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="23" r="3" s="3">
+<O>
+<![CDATA[kWh/km3]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="24" r="3" s="3">
+<O>
+<![CDATA[kWh]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="25" r="3" s="3">
+<O>
+<![CDATA[kWh]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="26" r="3" s="3">
+<O>
+<![CDATA[kWh]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="27" r="3" s="3">
+<O>
+<![CDATA[kWh]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="28" r="3" s="3">
+<O>
+<![CDATA[kWh]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="29" r="3" s="3">
+<O>
+<![CDATA[kWh]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="30" r="3" s="3">
+<O>
+<![CDATA[kWh]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="31" r="3" s="3">
+<O>
+<![CDATA[kWh]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="32" r="3" s="3">
+<O>
+<![CDATA[kWh]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="33" r="3" s="3">
+<O>
+<![CDATA[kWh]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="34" r="3" s="3">
+<O>
+<![CDATA[kWh]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="35" r="3" s="3">
+<O>
+<![CDATA[kWh]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="36" r="3" s="3">
+<O>
+<![CDATA[kWh]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="37" r="3" s="3">
+<O>
+<![CDATA[kWh]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="38" r="3" s="3">
+<O>
+<![CDATA[kWh]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="39" r="3" s="3">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="40" r="3" s="3">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="41" r="3" s="3">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="42" r="3" s="3">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="43" r="3" s="3">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="44" r="3" s="3">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="45" r="3" s="3">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="46" r="3" s="3">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="47" r="3" s="3">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="48" r="3" s="3">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="49" r="3" s="3">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="50" r="3" s="3">
+<O>
+<![CDATA[kWh/km3]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="51" r="3" s="3">
+<O>
+<![CDATA[kWh/km3]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="52" r="3" s="3">
+<O>
+<![CDATA[kWh/km3]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="53" r="3" s="3">
+<O>
+<![CDATA[kWh/km3]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="54" r="3" s="3">
+<O>
+<![CDATA[kWh/km3]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="55" r="3" s="3">
+<O>
+<![CDATA[kWh/km3]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="56" r="3" s="3">
+<O>
+<![CDATA[kWh/km3]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="57" r="3" s="3">
+<O>
+<![CDATA[kWh/km3]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="58" r="3" s="3">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="59" r="3" s="3">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="60" r="3" s="3">
+<O>
+<![CDATA[kWh/km3]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="61" r="3" s="3">
+<O>
+<![CDATA[kWh/km3]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="62" r="3" s="3">
+<O>
+<![CDATA[kWh/km3]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="63" r="3" s="3">
+<O>
+<![CDATA[kWh/km3]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="64" r="3" s="3">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="65" r="3" s="3">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="66" r="3" s="3">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="67" r="3" s="3">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="68" r="3" s="3">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="69" r="3" s="3">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="70" r="3" s="3">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="71" r="3" s="3">
+<O>
+<![CDATA[kWh/km3]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="72" r="3" s="3">
+<O>
+<![CDATA[kWh/km3]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="73" r="3" s="3">
+<O>
+<![CDATA[kWh/km3]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="74" r="3" s="3">
+<O>
+<![CDATA[kWh/km3]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="75" r="3" s="3">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="76" r="3" s="3">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="77" r="3" s="3">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="78" r="3" s="3">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="79" r="3" s="3">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="80" r="3" s="3">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="81" r="3" s="3">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="82" r="3" s="3">
+<O>
+<![CDATA[kWh/km3Mpa]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="83" r="3" s="3">
+<O>
+<![CDATA[kWh/km3Mpa]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="84" r="3" s="3">
+<O>
+<![CDATA[kWh/km3Mpa]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="85" r="3" s="3">
+<O>
+<![CDATA[kWh/km3Mpa]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="86" r="3" s="3">
+<O>
+<![CDATA[kWh/km3Mpa]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="87" r="3" s="3">
+<O>
+<![CDATA[kWh/km3Mpa]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="88" r="3" s="3">
+<O>
+<![CDATA[kWh/km3Mpa]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="89" r="3">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="90" r="3">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="0" r="4" s="4">
+<O t="DSColumn">
+<Attributes dsName="yd_Table" columnName="rq"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<NameJavaScriptGroup>
+<NameJavaScript name="网络报表1">
+<JavaScript class="com.fr.js.ReportletHyperlink">
+<JavaScript class="com.fr.js.ReportletHyperlink">
+<Parameters>
+<Parameter>
+<Attributes name="rq"/>
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=$$$]]></Attributes>
+</O>
+</Parameter>
+<Parameter>
+<Attributes name="__bypagesize__"/>
+<O>
+<![CDATA[false]]></O>
+</Parameter>
+</Parameters>
+<TargetFrame>
+<![CDATA[_self]]></TargetFrame>
+<Features width="2000" height="700"/>
+<ReportletName showPI="true">
+<![CDATA[/CSSF_FR/WSD/供水部月报/用电月报.cpt]]></ReportletName>
+</JavaScript>
+</JavaScript>
+</NameJavaScript>
+</NameJavaScriptGroup>
+<Expand dir="0"/>
+</C>
+<C c="1" r="4" s="5">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=Q5 - H5]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="4" s="6">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=R5]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="4" s="6">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=S5 - I5]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="4" r="4" s="6">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=V5 - L5]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="5" r="4" s="6">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=W5 - O5]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="6" r="4" s="6">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=B5 + C5 + D5 + E5 + F5]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="7" r="4" s="5">
+<O t="DSColumn">
+<Attributes dsName="yd_Table" columnName="ec_scydl"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="8" r="4" s="7">
+<O t="DSColumn">
+<Attributes dsName="yd_Table" columnName="bj_pn_pm9"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="9" r="4" s="7">
+<O t="DSColumn">
+<Attributes dsName="yd_Table" columnName="oq_cz_ydl"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="10" r="4" s="7">
+<O t="DSColumn">
+<Attributes dsName="yd_Table" columnName="oq_zhl_ydl"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="11" r="4" s="7">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=J5 + K5]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="12" r="4" s="7">
+<O t="DSColumn">
+<Attributes dsName="yd_Table" columnName="cq_xq1_ydl"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="13" r="4" s="7">
+<O t="DSColumn">
+<Attributes dsName="yd_Table" columnName="cq_xq2_ydl"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="14" r="4" s="7">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=M5 + N5]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="15" r="4" s="8">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=H5 + I5 + L5 + O5]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="16" r="4" s="5">
+<O t="DSColumn">
+<Attributes dsName="yd_Table" columnName="ec_ydl"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="17" r="4" s="6">
+<O t="DSColumn">
+<Attributes dsName="yd_Table" columnName="sc_ydl"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="18" r="4" s="6">
+<O t="DSColumn">
+<Attributes dsName="yd_Table" columnName="bj_ydl"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="19" r="4" s="6">
+<O t="DSColumn">
+<Attributes dsName="yd_Table" columnName="oq_oq_ydl"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="20" r="4" s="6">
+<O t="DSColumn">
+<Attributes dsName="yd_Table" columnName="oq_hsh_ydl"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="21" r="4" s="6">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=T5 + U5]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="22" r="4" s="6">
+<O t="DSColumn">
+<Attributes dsName="yd_Table" columnName="cq_ydl"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="23" r="4" s="9">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=Q5 + R5 + S5 + V5 + W5]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="24" r="4" s="10">
+<O t="DSColumn">
+<Attributes dsName="yd_Table" columnName="yjsk_sc_ydl"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="25" r="4" s="7">
+<O t="DSColumn">
+<Attributes dsName="yd_Table" columnName="yjsk_bj_ydl"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="26" r="4" s="7">
+<O t="DSColumn">
+<Attributes dsName="yd_Table" columnName="yjsk_fs_ydl"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="27" r="4" s="7">
+<O t="DSColumn">
+<Attributes dsName="yd_Table" columnName="yjsk_qt_ydl"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="28" r="4" s="8">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=Y5 + Z5 + AA5]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="29" r="4" s="10">
+<O t="DSColumn">
+<Attributes dsName="yd_Table" columnName="ec_ebf_beng_ydl"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="30" r="4" s="7">
+<O t="DSColumn">
+<Attributes dsName="yd_Table" columnName="sc_ebf_beng_ydl"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="31" r="4" s="7">
+<O t="DSColumn">
+<Attributes dsName="yd_Table" columnName="bj1q_ebf_beng_ydl"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="32" r="4" s="7">
+<O t="DSColumn">
+<Attributes dsName="yd_Table" columnName="bj2q_ebf_beng_ydl"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="33" r="4" s="7">
+<O t="DSColumn">
+<Attributes dsName="yd_Table" columnName="oq_beng_ydl"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="34" r="4" s="8">
+<O t="DSColumn">
+<Attributes dsName="yd_Table" columnName="cq_beng_ydl"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="35" r="4" s="10">
+<O t="DSColumn">
+<Attributes dsName="yd_Table" columnName="ec_ybf_beng_ydl"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="36" r="4" s="7">
+<O t="DSColumn">
+<Attributes dsName="yd_Table" columnName="sc_ybf_beng_ydl"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="37" r="4" s="7">
+<O t="DSColumn">
+<Attributes dsName="yd_Table" columnName="bj_ybf_beng_ydl"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="38" r="4" s="8">
+<O t="DSColumn">
+<Attributes dsName="yd_Table" columnName="yjsk_beng_ydl"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="39" r="4" s="7">
+<O t="DSColumn">
+<Attributes dsName="yd_Table" columnName="ec_gsl"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="40" r="4" s="7">
+<O t="DSColumn">
+<Attributes dsName="yd_Table" columnName="sc_gsl"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="41" r="4" s="7">
+<O t="DSColumn">
+<Attributes dsName="yd_Table" columnName="bj_gsl"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="42" r="4" s="7">
+<O t="DSColumn">
+<Attributes dsName="yd_Table" columnName="oq_1q_pt_gsl"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="43" r="4" s="7">
+<O t="DSColumn">
+<Attributes dsName="yd_Table" columnName="oq_2q_pt_gsl"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="44" r="4" s="7">
+<O t="DSColumn">
+<Attributes dsName="yd_Table" columnName="oq_dn_pt_gsl"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="45" r="4" s="7">
+<O t="DSColumn">
+<Attributes dsName="yd_Table" columnName="oq_st_pt_gsl"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="46" r="4" s="7">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=AQ5 + AR5 + AS5 + AT5]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="47" r="4" s="7">
+<O t="DSColumn">
+<Attributes dsName="yd_Table" columnName="cq_xq_pt_gsl"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="48" r="4" s="7">
+<O t="DSColumn">
+<Attributes dsName="yd_Table" columnName="cq_dy_pt_gsl"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="49" r="4" s="7">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=AV5 + AW5]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="50" r="4" s="5">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=B5 * 1000 / AN5]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="51" r="4" s="6">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=C5 * 1000 / AO5]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="52" r="4" s="6">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=D5 * 1000 / AP5]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="53" r="4" s="6">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=E5 * 1000 / AU5]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="54" r="4" s="6">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=F5 * 1000 / AX5]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="55" r="4" s="6">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=(B5 + C5 + D5 + E5 + F5) * 1000 / (AN5 + AO5 + AP5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="56" r="4" s="5">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=AD5 * 1000 / AN5]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="57" r="4" s="6">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=AE5 * 1000 / AO5]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="58" r="4" s="6">
+<O t="DSColumn">
+<Attributes dsName="yd_Table" columnName="bj1q_gsl"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="59" r="4" s="6">
+<O t="DSColumn">
+<Attributes dsName="yd_Table" columnName="bj2q_gsl"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="60" r="4" s="6">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=(AF5) * 1000 / (BG5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="61" r="4" s="6">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=AG5 * 1000 / BH5]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="62" r="4" s="6">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=AH5 * 1000 / AU5]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="63" r="4" s="9">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=AI5 * 1000 / AU5]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="64" r="4" s="6">
+<O t="DSColumn">
+<Attributes dsName="yd_Table" columnName="ec_zsl"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="65" r="4" s="6">
+<O t="DSColumn">
+<Attributes dsName="yd_Table" columnName="sc_zsl"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="66" r="4" s="6">
+<O t="DSColumn">
+<Attributes dsName="yd_Table" columnName="bj_zsl"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="67" r="4" s="6">
+<O t="DSColumn">
+<Attributes dsName="yd_Table" columnName="yjsk_flow1_lj_diff"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="68" r="4" s="6">
+<O t="DSColumn">
+<Attributes dsName="yd_Table" columnName="yjsk_flow2_lj_diff"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="69" r="4">
+<O t="DSColumn">
+<Attributes dsName="yd_Table" columnName="yjsk_fs_flow"/>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="70" r="4" s="6">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="71" r="4" s="5">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=AJ5 * 1000 / BM5]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="72" r="4" s="6">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=AK5 * 1000 / BN5]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="73" r="4" s="6">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=AL5 * 1000 / BO5]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="74" r="4" s="9">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=AM5 * 1000 / (BP5 + BQ5 + BR5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="75" r="4" s="11">
+<O t="DSColumn">
+<Attributes dsName="yd_Table" columnName="bj_ybf_head_Monthavghour"/>
+<Complex/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="76" r="4" s="11">
+<O t="DSColumn">
+<Attributes dsName="yd_Table" columnName="bj2q_ebf_head_Monthavghour"/>
+<Complex/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="77" r="4" s="11">
+<O t="DSColumn">
+<Attributes dsName="yd_Table" columnName="bj1q_ebf_head_Monthavghour"/>
+<Complex/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="78" r="4" s="11">
+<O t="DSColumn">
+<Attributes dsName="yd_Table" columnName="sc_ebf_head_Monthavghour"/>
+<Complex/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="79" r="4" s="11">
+<O t="DSColumn">
+<Attributes dsName="yd_Table" columnName="sc_ybf_head_Monthavghour"/>
+<Complex/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="80" r="4" s="11">
+<O t="DSColumn">
+<Attributes dsName="yd_Table" columnName="ec_ybf_head_Monthavghour"/>
+<Complex/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="81" r="4" s="11">
+<O t="DSColumn">
+<Attributes dsName="yd_Table" columnName="ec_ebf_head_Monthavghour"/>
+<Complex/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="82" r="4" s="5">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=BE5 / CD5]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="83" r="4" s="6">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=BF5 / CA5]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="84" r="4" s="6">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=BI5 / BZ5]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="85" r="4" s="9">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=BJ5 / BY5]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="86" r="4" s="5">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=BT5 / CC5]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="87" r="4" s="6">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=BU5 / CB5]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="88" r="4" s="9">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=BV5 / BX5]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="0" r="5" s="12">
+<O>
+<![CDATA[合计/加权平均]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="5" s="13">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=sum(B5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="5" s="14">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=sum(C5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="5" s="14">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=sum(D5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="4" r="5" s="14">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=sum(E5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="5" r="5" s="14">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=sum(F5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="6" r="5" s="14">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=sum(G5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="7" r="5" s="13">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=sum(H5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="8" r="5" s="14">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=sum(I5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="9" r="5" s="14">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=sum(J5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="10" r="5" s="14">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=sum(K5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="11" r="5" s="14">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=sum(L5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="12" r="5" s="14">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=sum(M5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="13" r="5" s="14">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=sum(N5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="14" r="5" s="14">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=sum(O5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="15" r="5" s="15">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=sum(P5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="16" r="5" s="13">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=sum(Q5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="17" r="5" s="14">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=sum(R5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="18" r="5" s="14">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=sum(S5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="19" r="5" s="14">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=sum(T5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="20" r="5" s="14">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=sum(U5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="21" r="5" s="14">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=sum(V5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="22" r="5" s="14">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=sum(W5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="23" r="5" s="15">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=sum(X5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="24" r="5" s="13">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=sum(Y5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="25" r="5" s="14">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=sum(Z5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="26" r="5" s="14">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=sum(AA5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="27" r="5" s="14">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=sum(AB5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="28" r="5" s="15">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=sum(AC5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="29" r="5" s="13">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=sum(AD5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="30" r="5" s="14">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=sum(AE5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="31" r="5" s="14">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=sum(AF5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="32" r="5" s="14">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=sum(AG5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="33" r="5" s="14">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=sum(AH5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="34" r="5" s="15">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=sum(AI5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="35" r="5" s="13">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=sum(AJ5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="36" r="5" s="14">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=sum(AK5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="37" r="5" s="14">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=sum(AL5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="38" r="5" s="15">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=sum(AM5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="39" r="5" s="14">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=sum(AN5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="40" r="5" s="14">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=sum(AO5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="41" r="5" s="14">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=sum(AP5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="42" r="5" s="14">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=sum(AQ5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="43" r="5" s="14">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=sum(AR5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="44" r="5" s="14">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=sum(AS5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="45" r="5" s="14">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=sum(AT5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="46" r="5" s="14">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=sum(AU5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="47" r="5" s="14">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=sum(AV5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="48" r="5" s="14">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=sum(AW5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="49" r="5" s="14">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=sum(AX5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="50" r="5" s="16">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=B6 * 1000 / AN6]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="51" r="5" s="17">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=C6 * 1000 / AO6]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="52" r="5" s="17">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=D6 * 1000 / AP6]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="53" r="5" s="17">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=E6 * 1000 / AU6]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="54" r="5" s="17">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=F6 * 1000 / AX6]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="55" r="5" s="17">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=(B6 + C6 + D6 + E6 + F6) * 1000 / (AN6 + AO6 + AP6)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="56" r="5" s="16">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=AD6 * 1000 / AN6]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="57" r="5" s="17">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=AE6 * 1000 / AO6]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="58" r="5" s="17">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=SUM(BG5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="59" r="5" s="17">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=SUM(BH5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="60" r="5" s="17">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=(AF6) * 1000 / (BG6)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="61" r="5" s="17">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=AG6 * 1000 / BH6]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="62" r="5" s="17">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=AH6 * 1000 / AU6]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="63" r="5" s="18">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=AI6 * 1000 / AU6]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="64" r="5" s="17">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=SUM(BM5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="65" r="5" s="17">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=SUM(BN5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="66" r="5" s="17">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=SUM(BO5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="67" r="5" s="17">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=SUM(BP5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="68" r="5" s="17">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=SUM(BQ5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="69" r="5" s="17">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=SUM(BR5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="70" r="5" s="17">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="71" r="5" s="16">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=AJ6 * 1000 / BM6]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="72" r="5" s="17">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=AK6 * 1000 / BN6]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="73" r="5" s="17">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=AL6 * 1000 / BO6]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="74" r="5" s="18">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=AM6 * 1000 / (BP6 + BQ6 + BR6)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="75" r="5" s="17">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=AVERAGE(BX5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand dir="0"/>
+</C>
+<C c="76" r="5" s="17">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=AVERAGE(BY5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="77" r="5" s="17">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=AVERAGE(BZ5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="78" r="5" s="17">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=AVERAGE(CA5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="79" r="5" s="17">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=AVERAGE(CB5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="80" r="5" s="17">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=AVERAGE(CC5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="81" r="5" s="17">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=AVERAGE(CD5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="82" r="5" s="16">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=BE6 / CD6]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="83" r="5" s="17">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=BF6 / CA6]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="84" r="5" s="17">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=BI6 / BZ6]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="85" r="5" s="18">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=BJ6 / BY6]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="86" r="5" s="16">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=BT6 / CC6]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="87" r="5" s="17">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=BU6 / CB6]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="88" r="5" s="18">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=BV6 / BX6]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="0" r="6" s="12">
+<O>
+<![CDATA[最大值]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="6" s="13">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=MAX(B5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="6" s="14">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=MAX(C5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="6" s="14">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=MAX(D5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="4" r="6" s="14">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=MAX(E5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="5" r="6" s="14">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=MAX(F5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="6" r="6" s="14">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=MAX(G5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="7" r="6" s="13">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=MAX(H5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="8" r="6" s="14">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=MAX(I5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="9" r="6" s="14">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=MAX(J5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="10" r="6" s="14">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=MAX(K5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="11" r="6" s="14">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=MAX(L5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="12" r="6" s="14">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=MAX(M5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="13" r="6" s="14">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=MAX(N5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="14" r="6" s="14">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=MAX(O5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="15" r="6" s="15">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=MAX(P5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="16" r="6" s="13">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=MAX(Q5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="17" r="6" s="14">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=MAX(R5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="18" r="6" s="14">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=MAX(S5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="19" r="6" s="14">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="20" r="6" s="14">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="21" r="6" s="14">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=MAX(V5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="22" r="6" s="14">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=MAX(W5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="23" r="6" s="15">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=MAX(X5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="24" r="6" s="13">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=MAX(Y5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="25" r="6" s="14">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=MAX(Z5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="26" r="6" s="14">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=MAX(AA5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="27" r="6" s="14">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=MAX(AB5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="28" r="6" s="15">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=MAX(AC5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="29" r="6" s="13">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=MAX(AD5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="30" r="6" s="14">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=MAX(AE5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="31" r="6" s="14">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=MAX(AF5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="32" r="6" s="14">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=MAX(AG5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="33" r="6" s="14">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=MAX(AH5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="34" r="6" s="15">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=MAX(AI5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="35" r="6" s="13">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=MAX(AJ5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="36" r="6" s="14">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=MAX(AK5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="37" r="6" s="14">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=MAX(AL5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="38" r="6" s="15">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=MAX(AM5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="39" r="6" s="14">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=MAX(AN5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="40" r="6" s="14">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=MAX(AO5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="41" r="6" s="14">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=MAX(AP5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="42" r="6" s="14">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=MAX(AQ5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="43" r="6" s="14">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=MAX(AR5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="44" r="6" s="14">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=MAX(AS5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="45" r="6" s="14">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=MAX(AT5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="46" r="6" s="14">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=MAX(AU5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="47" r="6" s="14">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=MAX(AV5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="48" r="6" s="14">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=MAX(AW5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="49" r="6" s="14">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=MAX(AX5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="50" r="6" s="16">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=MAX(AY5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="51" r="6" s="17">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=MAX(AZ5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="52" r="6" s="17">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=MAX(BA5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="53" r="6" s="17">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=MAX(BB5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="54" r="6" s="17">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=MAX(BC5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="55" r="6" s="17">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=MAX(BD5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="56" r="6" s="16">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=MAX(BE5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="57" r="6" s="17">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=MAX(BF5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="58" r="6" s="17">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="59" r="6" s="17">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="60" r="6" s="17">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=MAX(BI5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="61" r="6" s="17">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=MAX(BJ5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="62" r="6" s="17">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=MAX(BK5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="63" r="6" s="18">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=MAX(BL5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="64" r="6" s="17">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="65" r="6" s="17">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="66" r="6" s="17">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="67" r="6" s="17">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="68" r="6" s="17">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="69" r="6" s="17">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="70" r="6" s="17">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="71" r="6" s="16">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=MAX(BT5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="72" r="6" s="17">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=MAX(BU5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="73" r="6" s="17">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=MAX(BV5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="74" r="6" s="18">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=MAX(BW5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="75" r="6" s="17">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="76" r="6" s="17">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="77" r="6" s="17">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="78" r="6" s="17">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="79" r="6" s="17">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="80" r="6" s="17">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="81" r="6" s="17">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="82" r="6" s="16">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=MAX(CE5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="83" r="6" s="17">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=MAX(CF5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="84" r="6" s="17">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=MAX(CG5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="85" r="6" s="18">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=MAX(CH5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="86" r="6" s="16">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=MAX(CI5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="87" r="6" s="17">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=MAX(CJ5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="88" r="6" s="18">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=MAX(CK5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="89" r="6">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="90" r="6">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="0" r="7" s="12">
+<O>
+<![CDATA[最小值]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="7" s="13">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=MIN(B5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="7" s="14">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=MIN(C5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="7" s="14">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=MIN(D5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="4" r="7" s="14">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=MIN(E5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="5" r="7" s="14">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=MIN(F5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="6" r="7" s="14">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=MIN(G5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="7" r="7" s="13">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=MIN(H5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="8" r="7" s="14">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=MIN(I5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="9" r="7" s="14">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=MIN(J5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="10" r="7" s="14">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=MIN(K5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="11" r="7" s="14">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=MIN(L5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="12" r="7" s="14">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=MIN(M5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="13" r="7" s="14">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=MIN(N5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="14" r="7" s="14">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=MIN(O5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="15" r="7" s="15">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=MIN(P5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="16" r="7" s="13">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=MIN(Q5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="17" r="7" s="14">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=MIN(R5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="18" r="7" s="14">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=MIN(S5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="19" r="7" s="14">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="20" r="7" s="14">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="21" r="7" s="14">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=MIN(V5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="22" r="7" s="14">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=MIN(W5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="23" r="7" s="15">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=MIN(X5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="24" r="7" s="13">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=MIN(Y5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="25" r="7" s="14">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=MIN(Z5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="26" r="7" s="14">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=MIN(AA5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="27" r="7" s="14">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=MIN(AB5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="28" r="7" s="15">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=MIN(AC5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="29" r="7" s="13">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=MIN(AD5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="30" r="7" s="14">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=MIN(AE5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="31" r="7" s="14">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=MIN(AF5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="32" r="7" s="14">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=MIN(AG5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="33" r="7" s="14">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=MIN(AH5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="34" r="7" s="15">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=MIN(AI5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="35" r="7" s="13">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=MIN(AJ5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="36" r="7" s="14">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=MIN(AK5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="37" r="7" s="14">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=MIN(AL5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="38" r="7" s="15">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=MIN(AM5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="39" r="7" s="14">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=MIN(AN5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="40" r="7" s="14">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=MIN(AO5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="41" r="7" s="14">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=MIN(AP5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="42" r="7" s="14">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=MIN(AQ5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="43" r="7" s="14">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=MIN(AR5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="44" r="7" s="14">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=MIN(AS5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="45" r="7" s="14">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=MIN(AT5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="46" r="7" s="14">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=MIN(AU5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="47" r="7" s="14">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=MIN(AV5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="48" r="7" s="14">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=MIN(AW5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="49" r="7" s="14">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=MIN(AX5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="50" r="7" s="16">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=MIN(AY5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="51" r="7" s="17">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=MIN(AZ5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="52" r="7" s="17">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=MIN(BA5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="53" r="7" s="17">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=MIN(BB5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="54" r="7" s="17">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=MIN(BC5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="55" r="7" s="17">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=MIN(BD5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="56" r="7" s="16">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=MIN(BE5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="57" r="7" s="17">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=MIN(BF5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="58" r="7" s="17">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="59" r="7" s="17">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="60" r="7" s="17">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=MIN(BI5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="61" r="7" s="17">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=MIN(BJ5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="62" r="7" s="17">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=MIN(BK5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="63" r="7" s="18">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=MIN(BL5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="64" r="7" s="17">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="65" r="7" s="17">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="66" r="7" s="17">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="67" r="7" s="17">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="68" r="7" s="17">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="69" r="7" s="17">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="70" r="7" s="17">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="71" r="7" s="16">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=MIN(BT5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="72" r="7" s="17">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=MIN(BU5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="73" r="7" s="17">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=MIN(BV5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="74" r="7" s="18">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=MIN(BW5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="75" r="7" s="17">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="76" r="7" s="17">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="77" r="7" s="17">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="78" r="7" s="17">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="79" r="7" s="17">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="80" r="7" s="17">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="81" r="7" s="17">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="82" r="7" s="16">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=MIN(CE5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="83" r="7" s="17">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=MIN(CF5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="84" r="7" s="17">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=MIN(CG5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="85" r="7" s="18">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=MIN(CH5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="86" r="7" s="16">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=MIN(CI5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="87" r="7" s="17">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=MIN(CJ5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="88" r="7" s="18">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=MIN(CK5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="0" r="8" s="12">
+<O>
+<![CDATA[算术平均]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="8" s="13">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=AVERAGE(B5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="8" s="14">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=AVERAGE(C5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="8" s="14">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=AVERAGE(D5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="4" r="8" s="14">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=AVERAGE(E5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="5" r="8" s="14">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=AVERAGE(F5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="6" r="8" s="14">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=AVERAGE(G5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="7" r="8" s="13">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=AVERAGE(H5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="8" r="8" s="14">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=AVERAGE(I5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="9" r="8" s="14">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=AVERAGE(J5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="10" r="8" s="14">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=AVERAGE(K5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="11" r="8" s="14">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=AVERAGE(L5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="12" r="8" s="14">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=AVERAGE(M5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="13" r="8" s="14">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=AVERAGE(N5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="14" r="8" s="14">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=AVERAGE(O5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="15" r="8" s="15">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=AVERAGE(P5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="16" r="8" s="13">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=AVERAGE(Q5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="17" r="8" s="14">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=AVERAGE(R5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="18" r="8" s="14">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=AVERAGE(S5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="19" r="8" s="14">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="20" r="8" s="14">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="21" r="8" s="14">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=AVERAGE(V5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="22" r="8" s="14">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=AVERAGE(W5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="23" r="8" s="15">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=AVERAGE(X5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="24" r="8" s="13">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=AVERAGE(Y5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="25" r="8" s="14">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=AVERAGE(Z5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="26" r="8" s="14">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=AVERAGE(AA5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="27" r="8" s="14">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=AVERAGE(AB5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="28" r="8" s="15">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=AVERAGE(AC5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="29" r="8" s="13">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=AVERAGE(AD5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="30" r="8" s="14">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=AVERAGE(AE5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="31" r="8" s="14">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=AVERAGE(AF5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="32" r="8" s="14">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=AVERAGE(AG5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="33" r="8" s="14">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=AVERAGE(AH5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="34" r="8" s="15">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=AVERAGE(AI5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="35" r="8" s="13">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=AVERAGE(AJ5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="36" r="8" s="14">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=AVERAGE(AK5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="37" r="8" s="14">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=AVERAGE(AL5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="38" r="8" s="15">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=AVERAGE(AM5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="39" r="8" s="14">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=AVERAGE(AN5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="40" r="8" s="14">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=AVERAGE(AO5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="41" r="8" s="14">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=AVERAGE(AP5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="42" r="8" s="14">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=AVERAGE(AQ5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="43" r="8" s="14">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=AVERAGE(AR5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="44" r="8" s="14">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=AVERAGE(AS5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="45" r="8" s="14">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=AVERAGE(AT5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="46" r="8" s="14">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=AVERAGE(AU5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="47" r="8" s="14">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=AVERAGE(AV5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="48" r="8" s="14">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=AVERAGE(AW5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="49" r="8" s="14">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=AVERAGE(AX5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="50" r="8" s="16">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=AVERAGE(AY5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="51" r="8" s="17">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=AVERAGE(AZ5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="52" r="8" s="17">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=AVERAGE(BA5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="53" r="8" s="17">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=AVERAGE(BB5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="54" r="8" s="17">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=AVERAGE(BC5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="55" r="8" s="17">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=AVERAGE(BD5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="56" r="8" s="16">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=AVERAGE(BE5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="57" r="8" s="17">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=AVERAGE(BF5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="58" r="8" s="17">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="59" r="8" s="17">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="60" r="8" s="17">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=AVERAGE(BI5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="61" r="8" s="17">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=AVERAGE(BJ5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="62" r="8" s="17">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=AVERAGE(BK5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="63" r="8" s="18">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=AVERAGE(BL5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="64" r="8" s="17">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="65" r="8" s="17">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="66" r="8" s="17">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="67" r="8" s="17">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="68" r="8" s="17">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="69" r="8" s="17">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="70" r="8" s="17">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="71" r="8" s="16">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=AVERAGE(BT5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="72" r="8" s="17">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=AVERAGE(BU5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="73" r="8" s="17">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=AVERAGE(BV5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="74" r="8" s="18">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=AVERAGE(BW5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="75" r="8" s="17">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="76" r="8" s="17">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="77" r="8" s="17">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="78" r="8" s="17">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="79" r="8" s="17">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="80" r="8" s="17">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="81" r="8" s="17">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="82" r="8" s="16">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=AVERAGE(CE5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="83" r="8" s="17">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=AVERAGE(CF5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="84" r="8" s="17">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=AVERAGE(CG5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="85" r="8" s="18">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=AVERAGE(CH5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="86" r="8" s="16">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=AVERAGE(CI5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="87" r="8" s="17">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=AVERAGE(CJ5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="88" r="8" s="18">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=AVERAGE(CK5)]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+</CellElementList>
+<ReportAttrSet>
+<ReportSettings headerHeight="0" footerHeight="0">
+<FrozenColumnRow columnrow="B5"/>
+<PaperSetting/>
+</ReportSettings>
+<Header reportPageType="0">
+<Background name="NullBackground"/>
+<LeftList/>
+<CenterList/>
+<RightList/>
+</Header>
+<Footer reportPageType="0">
+<Background name="NullBackground"/>
+<LeftList/>
+<CenterList/>
+<RightList/>
+</Footer>
+</ReportAttrSet>
+<PrivilegeControl/>
+</Report>
+<ReportParameterAttr>
+<Attributes showWindow="true" delayPlaying="false" windowPosition="1" align="0"/>
+<PWTitle>
+<![CDATA[参数]]></PWTitle>
+<ParameterUI class="com.fr.form.main.parameter.FormParameterUI">
+<Layout class="com.fr.form.ui.container.WParameterLayout">
+<WidgetName name="para"/>
+<WidgetAttr>
+<PrivilegeControl/>
+</WidgetAttr>
+<Margin top="1" left="1" bottom="1" right="1"/>
+<Border>
+<border style="0" color="-723724" type="0" borderStyle="0"/>
+<WidgetTitle>
+<O>
+<![CDATA[新建标题]]></O>
+<FRFont name="SimSun" style="0" size="72"/>
+<Position pos="0"/>
+</WidgetTitle>
+<Alpha alpha="1.0"/>
+</Border>
+<Background name="ColorBackground" color="-1118482"/>
+<LCAttr vgap="0" hgap="0" compInterval="0"/>
+<Widget class="com.fr.form.ui.container.WAbsoluteLayout$BoundsWidget">
+<InnerWidget class="com.fr.form.parameter.FormSubmitButton">
+<WidgetName name="Search"/>
+<WidgetAttr>
+<PrivilegeControl/>
+</WidgetAttr>
+<Text>
+<![CDATA[查询]]></Text>
+<Hotkeys>
+<![CDATA[enter]]></Hotkeys>
+</InnerWidget>
+<BoundsAttr x="226" y="15" width="80" height="21"/>
+</Widget>
+<Widget class="com.fr.form.ui.container.WAbsoluteLayout$BoundsWidget">
+<InnerWidget class="com.fr.form.ui.ComboBox">
+<WidgetName name="rq"/>
+<WidgetAttr>
+<PrivilegeControl/>
+</WidgetAttr>
+<Dictionary class="com.fr.data.impl.DatabaseDictionary">
+<FormulaDictAttr kiName="Year" viName="YearCN"/>
+<DBDictAttr tableName="Year_list" schemaName="" ki="-1" vi="-1" kiName="Year" viName="YearCN"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[FR]]></DatabaseName>
+</Connection>
+</Dictionary>
+<widgetValue>
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=year(today())]]></Attributes>
+</O>
+</widgetValue>
+</InnerWidget>
+<BoundsAttr x="119" y="15" width="87" height="21"/>
+</Widget>
+<Widget class="com.fr.form.ui.container.WAbsoluteLayout$BoundsWidget">
+<InnerWidget class="com.fr.form.ui.Label">
+<WidgetName name="Labelrq"/>
+<WidgetAttr>
+<PrivilegeControl/>
+</WidgetAttr>
+<widgetValue>
+<O>
+<![CDATA[选择年份：]]></O>
+</widgetValue>
+<LabelAttr verticalcenter="true" textalign="0" autoline="true"/>
+<FRFont name="SimSun" style="0" size="72"/>
+<border style="0" color="-723724"/>
+</InnerWidget>
+<BoundsAttr x="39" y="15" width="80" height="21"/>
+</Widget>
+<Sorted sorted="false"/>
+<Display display="true"/>
+<DelayDisplayContent delay="false"/>
+<Position position="0"/>
+<Design_Width design_width="960"/>
+<MobileWidgetList>
+<Widget widgetName="rq"/>
+</MobileWidgetList>
+<WidgetNameTagMap>
+<NameTag name="rq" tag="选择年份："/>
+</WidgetNameTagMap>
+</Layout>
+<DesignAttr width="960" height="54"/>
+</ParameterUI>
+<Parameter>
+<Attributes name="rq"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</ReportParameterAttr>
+<StyleList>
+<Style horizontal_alignment="0" imageLayout="1">
+<FRFont name="微软雅黑" style="0" size="88" foreground="-1"/>
+<Background name="ColorBackground" color="-12080918"/>
+<Border>
+<Top style="1" color="-1"/>
+<Bottom style="1" color="-1"/>
+<Left style="1" color="-1"/>
+<Right style="1" color="-1"/>
+</Border>
+</Style>
+<Style horizontal_alignment="0" imageLayout="1">
+<FRFont name="微软雅黑" style="1" size="88" foreground="-15494168"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="1" color="-12080918"/>
+<Bottom style="1" color="-12080918"/>
+<Left style="1" color="-12080918"/>
+<Right style="1" color="-12080918"/>
+</Border>
+</Style>
+<Style horizontal_alignment="0" imageLayout="1">
+<FRFont name="微软雅黑" style="0" size="80" foreground="-1"/>
+<Background name="ColorBackground" color="-12080918"/>
+<Border>
+<Top color="-1"/>
+<Bottom color="-1"/>
+<Left style="6" color="-1"/>
+<Right color="-1"/>
+</Border>
+</Style>
+<Style horizontal_alignment="0" imageLayout="1">
+<FRFont name="微软雅黑" style="0" size="80" foreground="-1"/>
+<Background name="ColorBackground" color="-12080918"/>
+<Border>
+<Top style="1" color="-1"/>
+<Bottom style="1" color="-1"/>
+<Left style="1" color="-1"/>
+<Right style="1" color="-1"/>
+</Border>
+</Style>
+<Style horizontal_alignment="0" imageLayout="1">
+<FRFont name="微软雅黑" style="0" size="72" foreground="-13408513" underline="1"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="1" color="-2171170"/>
+<Bottom style="1" color="-2171170"/>
+<Left style="1" color="-2171170"/>
+<Right color="-2171170"/>
+</Border>
+</Style>
+<Style horizontal_alignment="0" imageLayout="1">
+<Format class="com.fr.base.CoreDecimalFormat">
+<![CDATA[#0.00]]></Format>
+<FRFont name="微软雅黑" style="0" size="72"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="1" color="-2171170"/>
+<Bottom style="1" color="-2171170"/>
+<Left style="1" color="-2171170"/>
+<Right color="-2171170"/>
+</Border>
+</Style>
+<Style horizontal_alignment="0" imageLayout="1">
+<Format class="com.fr.base.CoreDecimalFormat">
+<![CDATA[#0.00]]></Format>
+<FRFont name="微软雅黑" style="0" size="72"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="1" color="-2171170"/>
+<Bottom style="1" color="-2171170"/>
+<Left color="-2171170"/>
+<Right color="-2171170"/>
+</Border>
+</Style>
+<Style horizontal_alignment="0" imageLayout="1">
+<Format class="com.fr.base.CoreDecimalFormat">
+<![CDATA[#0]]></Format>
+<FRFont name="微软雅黑" style="0" size="72"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="1" color="-2171170"/>
+<Bottom style="1" color="-2171170"/>
+<Left color="-2171170"/>
+<Right color="-2171170"/>
+</Border>
+</Style>
+<Style horizontal_alignment="0" imageLayout="1">
+<Format class="com.fr.base.CoreDecimalFormat">
+<![CDATA[#0]]></Format>
+<FRFont name="微软雅黑" style="0" size="72"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="1" color="-2171170"/>
+<Bottom style="1" color="-2171170"/>
+<Left color="-2171170"/>
+<Right style="1" color="-2171170"/>
+</Border>
+</Style>
+<Style horizontal_alignment="0" imageLayout="1">
+<Format class="com.fr.base.CoreDecimalFormat">
+<![CDATA[#0.00]]></Format>
+<FRFont name="微软雅黑" style="0" size="72"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="1" color="-2171170"/>
+<Bottom style="1" color="-2171170"/>
+<Left color="-2171170"/>
+<Right style="1" color="-2171170"/>
+</Border>
+</Style>
+<Style horizontal_alignment="0" imageLayout="1">
+<Format class="com.fr.base.CoreDecimalFormat">
+<![CDATA[#0]]></Format>
+<FRFont name="微软雅黑" style="0" size="72"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="1" color="-2171170"/>
+<Bottom style="1" color="-2171170"/>
+<Left style="1" color="-2171170"/>
+<Right color="-2171170"/>
+</Border>
+</Style>
+<Style imageLayout="1">
+<Format class="com.fr.base.CoreDecimalFormat">
+<![CDATA[#0.00]]></Format>
+<FRFont name="SimSun" style="0" size="72"/>
+<Background name="NullBackground"/>
+<Border>
+<Top style="1" color="-2171170"/>
+<Bottom style="1" color="-2171170"/>
+<Left color="-2171170"/>
+<Right color="-2171170"/>
+</Border>
+</Style>
+<Style horizontal_alignment="0" imageLayout="1">
+<FRFont name="微软雅黑" style="0" size="72"/>
+<Background name="ColorBackground" color="-2581"/>
+<Border>
+<Top style="1" color="-2171170"/>
+<Bottom style="1" color="-2171170"/>
+<Left style="1" color="-2171170"/>
+<Right color="-2171170"/>
+</Border>
+</Style>
+<Style horizontal_alignment="0" imageLayout="1">
+<Format class="com.fr.base.CoreDecimalFormat">
+<![CDATA[#0]]></Format>
+<FRFont name="微软雅黑" style="0" size="72"/>
+<Background name="ColorBackground" color="-2581"/>
+<Border>
+<Top style="1" color="-2171170"/>
+<Bottom style="1" color="-2171170"/>
+<Left style="1" color="-2171170"/>
+<Right color="-2171170"/>
+</Border>
+</Style>
+<Style horizontal_alignment="0" imageLayout="1">
+<Format class="com.fr.base.CoreDecimalFormat">
+<![CDATA[#0]]></Format>
+<FRFont name="微软雅黑" style="0" size="72"/>
+<Background name="ColorBackground" color="-2581"/>
+<Border>
+<Top style="1" color="-2171170"/>
+<Bottom style="1" color="-2171170"/>
+<Left color="-2171170"/>
+<Right color="-2171170"/>
+</Border>
+</Style>
+<Style horizontal_alignment="0" imageLayout="1">
+<Format class="com.fr.base.CoreDecimalFormat">
+<![CDATA[#0]]></Format>
+<FRFont name="微软雅黑" style="0" size="72"/>
+<Background name="ColorBackground" color="-2581"/>
+<Border>
+<Top style="1" color="-2171170"/>
+<Bottom style="1" color="-2171170"/>
+<Left color="-2171170"/>
+<Right style="1" color="-2171170"/>
+</Border>
+</Style>
+<Style horizontal_alignment="0" imageLayout="1">
+<Format class="com.fr.base.CoreDecimalFormat">
+<![CDATA[#0.00]]></Format>
+<FRFont name="微软雅黑" style="0" size="72"/>
+<Background name="ColorBackground" color="-2581"/>
+<Border>
+<Top style="1" color="-2171170"/>
+<Bottom style="1" color="-2171170"/>
+<Left style="1" color="-2171170"/>
+<Right color="-2171170"/>
+</Border>
+</Style>
+<Style horizontal_alignment="0" imageLayout="1">
+<Format class="com.fr.base.CoreDecimalFormat">
+<![CDATA[#0.00]]></Format>
+<FRFont name="微软雅黑" style="0" size="72"/>
+<Background name="ColorBackground" color="-2581"/>
+<Border>
+<Top style="1" color="-2171170"/>
+<Bottom style="1" color="-2171170"/>
+<Left color="-2171170"/>
+<Right color="-2171170"/>
+</Border>
+</Style>
+<Style horizontal_alignment="0" imageLayout="1">
+<Format class="com.fr.base.CoreDecimalFormat">
+<![CDATA[#0.00]]></Format>
+<FRFont name="微软雅黑" style="0" size="72"/>
+<Background name="ColorBackground" color="-2581"/>
+<Border>
+<Top style="1" color="-2171170"/>
+<Bottom style="1" color="-2171170"/>
+<Left color="-2171170"/>
+<Right style="1" color="-2171170"/>
+</Border>
+</Style>
+</StyleList>
+<DesignerVersion DesignerVersion="IAA"/>
+<PreviewType PreviewType="1"/>
+</WorkBook>
