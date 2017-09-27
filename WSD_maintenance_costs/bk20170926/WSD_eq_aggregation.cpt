@@ -828,7 +828,7 @@ group by month(date),sub_category, category,controllable order by charindex(cate
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="4" r="0" cs="2" s="0">
+<C c="4" r="0" cs="2" s="13">
 <O t="Formula" class="Formula">
 <Attributes>
 <![CDATA[=$year+"年"+""+$sec+"不可控费用"]]></Attributes>
@@ -836,29 +836,29 @@ group by month(date),sub_category, category,controllable order by charindex(cate
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="0" r="1" s="13">
+<C c="0" r="1" s="14">
 <O>
 <![CDATA[项目]]></O>
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="1" r="1" s="13">
+<C c="1" r="1" s="14">
 <O>
 <![CDATA[金额]]></O>
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="3" r="1" s="14">
+<C c="3" r="1" s="15">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="4" r="1" s="15">
+<C c="4" r="1" s="16">
 <O>
 <![CDATA[项目]]></O>
 <PrivilegeControl/>
 <Expand leftParentDefault="false" upParentDefault="false"/>
 </C>
-<C c="5" r="1" s="15">
+<C c="5" r="1" s="16">
 <O>
 <![CDATA[金额]]></O>
 <PrivilegeControl/>
@@ -1091,11 +1091,11 @@ group by month(date),sub_category, category,controllable order by charindex(cate
 <PrivilegeControl/>
 <Expand dir="0" leftParentDefault="false"/>
 </C>
-<C c="3" r="2" s="14">
+<C c="3" r="2" s="15">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="4" r="2" s="16">
+<C c="4" r="2" s="17">
 <O t="DSColumn">
 <Attributes dsName="不可控" columnName="sub_category"/>
 <Complex/>
@@ -1105,7 +1105,7 @@ group by month(date),sub_category, category,controllable order by charindex(cate
 <PrivilegeControl/>
 <Expand dir="0" leftParentDefault="false" left="F3" upParentDefault="false"/>
 </C>
-<C c="5" r="2" s="17">
+<C c="5" r="2" s="18">
 <O t="DSColumn">
 <Attributes dsName="不可控" columnName="total"/>
 <Complex order="2"/>
@@ -1117,13 +1117,13 @@ group by month(date),sub_category, category,controllable order by charindex(cate
 <PrivilegeControl/>
 <Expand dir="0" leftParentDefault="false"/>
 </C>
-<C c="0" r="3" s="18">
+<C c="0" r="3" s="19">
 <O>
 <![CDATA[合计]]></O>
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="1" r="3" s="19">
+<C c="1" r="3" s="20">
 <O t="Formula" class="Formula">
 <Attributes>
 <![CDATA[=sum(B3)]]></Attributes>
@@ -1131,17 +1131,17 @@ group by month(date),sub_category, category,controllable order by charindex(cate
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="3" r="3" s="14">
+<C c="3" r="3" s="15">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="4" r="3" s="20">
+<C c="4" r="3" s="21">
 <O>
 <![CDATA[合计]]></O>
 <PrivilegeControl/>
 <Expand leftParentDefault="false" upParentDefault="false"/>
 </C>
-<C c="5" r="3" s="21">
+<C c="5" r="3" s="22">
 <O t="Formula" class="Formula">
 <Attributes>
 <![CDATA[=sum(F3)]]></Attributes>
@@ -1153,7 +1153,7 @@ group by month(date),sub_category, category,controllable order by charindex(cate
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="1" r="4" s="22">
+<C c="1" r="4" s="23">
 <PrivilegeControl/>
 </C>
 <C c="8" r="4">
@@ -1471,6 +1471,11 @@ group by month(date),sub_category, category,controllable order by charindex(cate
 <Style horizontal_alignment="2" imageLayout="1">
 <FRFont name="微软雅黑" style="0" size="80"/>
 <Background name="ColorBackground" color="-5141"/>
+<Border/>
+</Style>
+<Style imageLayout="1">
+<FRFont name="微软雅黑" style="1" size="112"/>
+<Background name="NullBackground"/>
 <Border/>
 </Style>
 <Style horizontal_alignment="0" imageLayout="1">
