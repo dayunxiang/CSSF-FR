@@ -34,9 +34,9 @@
 <ColumnPrivilegeControl/>
 <RowPrivilegeControl/>
 <RowHeight defaultValue="723900">
-<![CDATA[1143000,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900]]></RowHeight>
+<![CDATA[1143000,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900]]></RowHeight>
 <ColumnWidth defaultValue="2743200">
-<![CDATA[4305300,5067300,4838700,4229100,2743200,2743200,3886200,2743200,2743200,2743200,2743200,2743200,2743200,2743200,2743200,2743200,2743200,2743200,2743200,2743200,2743200]]></ColumnWidth>
+<![CDATA[4305300,5067300,4838700,4229100,2743200,2743200,3886200,2743200,2743200,2743200,2743200]]></ColumnWidth>
 <CellElementList>
 <C c="0" r="0" s="0">
 <O>
@@ -149,7 +149,7 @@
 <C c="5" r="1" s="2">
 <O t="Formula" class="Formula">
 <Attributes>
-<![CDATA[=round(B2/C2,4)]]></Attributes>
+<![CDATA[=round(B2/C2,4)*100+"%"]]></Attributes>
 </O>
 <PrivilegeControl/>
 <Expand/>
@@ -157,7 +157,7 @@
 <C c="6" r="1" s="2">
 <O t="Formula" class="Formula">
 <Attributes>
-<![CDATA[=round(B2/B3,4)]]></Attributes>
+<![CDATA[=round(B2/B3,4)*100 + "%"]]></Attributes>
 </O>
 <PrivilegeControl/>
 <Expand/>
@@ -195,13 +195,17 @@
 <Expand/>
 </C>
 <C c="4" r="2" s="3">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=round(B3/C3,4)]]></Attributes>
+</O>
 <PrivilegeControl/>
 <Expand/>
 </C>
 <C c="5" r="2" s="4">
 <O t="Formula" class="Formula">
 <Attributes>
-<![CDATA[=round(B3/C3,4)]]></Attributes>
+<![CDATA[=round(B3/C3,4)*100 + "%"]]></Attributes>
 </O>
 <PrivilegeControl/>
 <Expand/>
@@ -223,9 +227,9 @@
 <ColumnPrivilegeControl/>
 <RowPrivilegeControl/>
 <RowHeight defaultValue="723900">
-<![CDATA[12153900,11658600,10668000,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900]]></RowHeight>
+<![CDATA[12153900,11658600,13296900,723900,723900,723900,723900,723900,723900,723900,723900]]></RowHeight>
 <ColumnWidth defaultValue="2743200">
-<![CDATA[16154400,16154400,2743200,2743200,2743200,2743200,2743200,2743200,2743200,2743200,2743200,2743200,2743200,2743200,2743200,2743200,2743200,2743200,2743200,2743200,2743200]]></ColumnWidth>
+<![CDATA[16154400,16154400,2743200,2743200,2743200,2743200,2743200,2743200,2743200,2743200,2743200]]></ColumnWidth>
 <CellElementList>
 <C c="0" r="0">
 <O t="CC">
@@ -1359,7 +1363,7 @@
 </AttrAlpha>
 </GI>
 <Attr isVisible="true"/>
-<FRFont name="微软雅黑" style="0" size="72"/>
+<FRFont name="微软雅黑" style="0" size="64"/>
 <Format class="com.fr.base.CoreDecimalFormat">
 <![CDATA[#0%]]></Format>
 </DataSheet>
@@ -1520,13 +1524,13 @@
 <SeriesName>
 <O t="Formula" class="Formula">
 <Attributes>
-<![CDATA[="执行率"]]></Attributes>
+<![CDATA[=block1~A2:A3]]></Attributes>
 </O>
 </SeriesName>
 <SeriesValue>
 <O t="Formula" class="Formula">
 <Attributes>
-<![CDATA[=block1~F2:F3]]></Attributes>
+<![CDATA[=block1~E2:E3]]></Attributes>
 </O>
 </SeriesValue>
 </SeriesDefinition>
@@ -1534,7 +1538,7 @@
 <Category>
 <O t="Formula" class="Formula">
 <Attributes>
-<![CDATA[=block1~A2:A3]]></Attributes>
+<![CDATA[=]]></Attributes>
 </O>
 </Category>
 <Top topCate="-1" topValue="-1" isDiscardOtherCate="false" isDiscardOtherSeries="false" isDiscardNullCate="false" isDiscardNullSeries="false"/>
@@ -1576,38 +1580,18 @@
 <HighlightAction class="com.fr.report.cell.cellattr.highlight.RowHeightHighlightAction"/>
 </Highlight>
 </HighlightList>
-<Expand/>
+<Expand leftParentDefault="false" upParentDefault="false"/>
 </C>
 <C c="1" r="3">
-<PrivilegeControl/>
-<HighlightList>
-<Highlight class="com.fr.report.cell.cellattr.highlight.DefaultHighlight">
-<Name>
-<![CDATA[条件属性1]]></Name>
-<Condition class="com.fr.data.condition.ListCondition"/>
-<HighlightAction class="com.fr.report.cell.cellattr.highlight.RowHeightHighlightAction"/>
-</Highlight>
-</HighlightList>
-<Expand/>
-</C>
-<C c="0" r="4">
 <O t="Formula" class="Formula">
 <Attributes>
 <![CDATA[=block1~F2:F3]]></Attributes>
 </O>
 <PrivilegeControl/>
-<HighlightList>
-<Highlight class="com.fr.report.cell.cellattr.highlight.DefaultHighlight">
-<Name>
-<![CDATA[条件属性1]]></Name>
-<Condition class="com.fr.data.condition.ListCondition"/>
-<HighlightAction class="com.fr.report.cell.cellattr.highlight.RowHeightHighlightAction"/>
-</Highlight>
-</HighlightList>
-<Expand/>
+<Expand leftParentDefault="false" upParentDefault="false"/>
 </C>
 </CellElementList>
-<PECBAttr blockName="block2" x="1219200" y="7543800" width="37795200" height="36652200"/>
+<PECBAttr blockName="block2" x="1219200" y="7543800" width="37795200" height="39281100"/>
 </Block>
 <PrivilegeControl/>
 </Report>
@@ -1707,12 +1691,7 @@
 <Style horizontal_alignment="0" imageLayout="1">
 <FRFont name="微软雅黑" style="0" size="80" foreground="-1"/>
 <Background name="ColorBackground" color="-13531493"/>
-<Border>
-<Top color="-16777216"/>
-<Bottom color="-16777216"/>
-<Left color="-16777216"/>
-<Right color="-16777216"/>
-</Border>
+<Border/>
 </Style>
 <Style horizontal_alignment="0" imageLayout="1" paddingRight="4">
 <Format class="com.fr.base.CoreDecimalFormat">

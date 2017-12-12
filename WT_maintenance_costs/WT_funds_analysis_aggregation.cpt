@@ -15,7 +15,7 @@
 <![CDATA[FR]]></DatabaseName>
 </Connection>
 <Query>
-<![CDATA[select * from dbo.WT_maintenance_fee_analysis_lv2 where YEAR='${year}' order by CHARINDEX(section_office,'周行污水厂,虞山污水厂,东南污水厂,辛庄污水厂,八字桥污水厂,设备维护科')]]></Query>
+<![CDATA[select * from dbo.WT_maintenance_fee_analysis_lv2 where YEAR='${year}' and section_office != '董浜污水厂' order by CHARINDEX(section_office,'周行污水厂,虞山污水厂,东南污水厂,辛庄污水厂,八字桥污水厂,设备维护科')]]></Query>
 </TableData>
 <TableData name="ds2" class="com.fr.data.impl.DBTableData">
 <Parameters>
