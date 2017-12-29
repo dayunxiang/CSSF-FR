@@ -528,6 +528,114 @@ b.Department
 <![CDATA[Table]]></Name>
 </ResultNames>
 </TableData>
+<TableData name="部门能耗分布new" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="month"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+<Parameter>
+<Attributes name="year"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[FR]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[select distinct * from 
+(select 
+ DP_ID,Input_Year
+      ,sum([Dian_Yongliang]A) as 电用量
+      ,sum([Shui_Yongliang]A) as 水用量
+      ,sum([Qiyou_Yongliang]A) as 汽油用量
+      ,sum([Chaiyou_Yongliang]A) as 柴油用量
+      ,sum([Dian_Feiyong]A) as 电费用
+      ,sum([Shui_Feiyong]A) as 水费用
+      ,sum([Qiyou_Feiyong]A) as 汽油费用
+      ,sum([Chaiyou_Feiyong]A) as 柴油费用
+      ,sum([Dian_DJZ]A*0.0001*[Dian_Yongliang]A) as 电等价值
+      ,sum([Shui_DJZ]A*0.0001*[Shui_Yongliang]A) as 水等价值
+      ,sum([Qiyou_DJZ]A*0.00073*[Qiyou_Yongliang]A) as 汽油等价值
+      ,sum([Chaiyou_DJZ]A*0.00084*[Chaiyou_Yongliang]A) as 柴油等价值
+      ,sum([Dian_DLZ]A*0.0001*[Dian_Yongliang]A) as 电当量值
+      ,sum([Shui_DLZ]A) as 水当量值
+      ,sum([Qiyou_DLZ]A*0.00073*[Qiyou_Yongliang]A) as 汽油当量值
+      ,sum([Chaiyou_DLZ]A*0.00084*[Chaiyou_Yongliang]A) as 柴油当量值
+      ,sum((([Dian_DJZ]A*0.0001*[Dian_Yongliang]A)+([Shui_DJZ]A*0.0001*[Shui_Yongliang]A)+([Qiyou_DJZ]A*0.00073*[Qiyou_Yongliang]A)+([Chaiyou_DJZ]A*0.00084*[Chaiyou_Yongliang]A))) as 总能耗
+      
+ from Energy_Data where input_year=${year} and input_mohtn <= ${month} group by dp_id,Input_Year ) a  join (select Department,ab from CSSF_Department) b on a.DP_ID=b.ab order by 总能耗 desc]]></Query>
+</TableData>
+<TableData name="部门汽油消耗new" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="month"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+<Parameter>
+<Attributes name="year"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[FR]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[select 
+distinct * from
+     
+ 
+       (select dp_id,input_year,
+       sum([Qiyou_Yongliang]A) as 汽油用量
+     
+      ,sum([Qiyou_Feiyong]A) as 汽油费用
+      
+      ,sum([Qiyou_DJZ]A*0.00073*[Qiyou_Yongliang]A) as 汽油等价值
+     
+      ,sum([Qiyou_DLZ]A*0.00073*[Qiyou_Yongliang]A) as 汽油当量值 from Energy_Data where input_year=${year} and input_mohtn <= ${month} group by dp_id,input_year ) a  join (select Department,ab from CSSF_Department) b on a.DP_ID = b.Ab  
+       order by a.汽油用量   desc]]></Query>
+</TableData>
+<TableData name="部门柴油消耗new" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="month"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+<Parameter>
+<Attributes name="year"/>
+<O>
+<![CDATA[]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[FR]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[select 
+distinct * from
+     
+ 
+       (select dp_id,input_year,
+       sum([Chaiyou_Yongliang]A) as 柴油用量
+     
+      ,sum([Chaiyou_Feiyong]A) as 柴油费用
+      
+      ,sum([Chaiyou_DJZ]A*0.00073*[Chaiyou_Yongliang]A) as 柴油等价值
+     
+      ,sum([Chaiyou_DLZ]A*0.00073*[Chaiyou_Yongliang]A) as 柴油当量值 from Energy_Data where input_year=${year} and input_mohtn <= ${month} group by dp_id,input_year ) a  join (select Department,ab from CSSF_Department) b on a.DP_ID = b.Ab  
+       order by a.柴油用量   desc]]></Query>
+</TableData>
 </TableDataMap>
 <Report class="com.fr.report.poly.PolyWorkSheet" name="sheet1">
 <ReportAttrSet>
@@ -2908,9 +3016,13 @@ b.Department
 </C>
 <C c="0" r="75" s="4">
 <O t="DSColumn">
-<Attributes dsName="部门能耗分布" columnName="Department"/>
+<Attributes dsName="部门能耗分布new" columnName="Department"/>
 <Complex/>
 <RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<SortFormula>
+<![CDATA[D76]]></SortFormula>
+<Result>
+<![CDATA[$$$]]></Result>
 <Parameters/>
 </O>
 <PrivilegeControl/>
@@ -2934,7 +3046,7 @@ b.Department
 </C>
 <C c="3" r="75" s="4">
 <O t="DSColumn">
-<Attributes dsName="部门能耗分布" columnName="电等价值"/>
+<Attributes dsName="部门能耗分布new" columnName="电等价值"/>
 <Complex/>
 <RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
 <Result>
@@ -2946,7 +3058,7 @@ b.Department
 </C>
 <C c="4" r="75" s="4">
 <O t="DSColumn">
-<Attributes dsName="部门能耗分布" columnName="水等价值"/>
+<Attributes dsName="部门能耗分布new" columnName="水等价值"/>
 <Complex/>
 <RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
 <Result>
@@ -2958,7 +3070,7 @@ b.Department
 </C>
 <C c="5" r="75" s="4">
 <O t="DSColumn">
-<Attributes dsName="部门能耗分布" columnName="汽油等价值"/>
+<Attributes dsName="部门能耗分布new" columnName="汽油等价值"/>
 <Complex/>
 <RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
 <Result>
@@ -2970,7 +3082,7 @@ b.Department
 </C>
 <C c="6" r="75" s="4">
 <O t="DSColumn">
-<Attributes dsName="部门能耗分布" columnName="柴油等价值"/>
+<Attributes dsName="部门能耗分布new" columnName="柴油等价值"/>
 <Complex/>
 <RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
 <Result>
@@ -3074,7 +3186,7 @@ b.Department
 </C>
 <C c="0" r="83" s="2">
 <O t="DSColumn">
-<Attributes dsName="部门汽油消耗" columnName="Department"/>
+<Attributes dsName="部门汽油消耗new" columnName="Department"/>
 <Complex/>
 <RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
 <Parameters/>
@@ -3084,7 +3196,7 @@ b.Department
 </C>
 <C c="1" r="83" s="2">
 <O t="DSColumn">
-<Attributes dsName="部门汽油消耗" columnName="汽油用量"/>
+<Attributes dsName="部门汽油消耗new" columnName="汽油用量"/>
 <Complex/>
 <RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
 <Parameters/>
@@ -3094,24 +3206,31 @@ b.Department
 </C>
 <C c="2" r="83" s="2">
 <PrivilegeControl/>
+<Expand/>
 </C>
 <C c="3" r="83" s="2">
 <PrivilegeControl/>
+<Expand/>
 </C>
 <C c="4" r="83" s="2">
 <PrivilegeControl/>
+<Expand/>
 </C>
 <C c="5" r="83" s="2">
 <PrivilegeControl/>
+<Expand/>
 </C>
 <C c="6" r="83" s="2">
 <PrivilegeControl/>
+<Expand/>
 </C>
 <C c="7" r="83" s="2">
 <PrivilegeControl/>
+<Expand/>
 </C>
 <C c="0" r="84" s="2">
 <PrivilegeControl/>
+<Expand/>
 </C>
 <C c="1" r="84" s="2">
 <O t="Formula" class="Formula">
@@ -3123,21 +3242,27 @@ b.Department
 </C>
 <C c="2" r="84" s="2">
 <PrivilegeControl/>
+<Expand/>
 </C>
 <C c="3" r="84" s="2">
 <PrivilegeControl/>
+<Expand/>
 </C>
 <C c="4" r="84" s="2">
 <PrivilegeControl/>
+<Expand/>
 </C>
 <C c="5" r="84" s="2">
 <PrivilegeControl/>
+<Expand/>
 </C>
 <C c="6" r="84" s="2">
 <PrivilegeControl/>
+<Expand/>
 </C>
 <C c="7" r="84" s="2">
 <PrivilegeControl/>
+<Expand/>
 </C>
 <C c="0" r="85" cs="8" s="2">
 <O t="Formula" class="Formula">
@@ -3149,7 +3274,7 @@ b.Department
 </C>
 <C c="0" r="86">
 <O t="DSColumn">
-<Attributes dsName="部门柴油消耗" columnName="Department"/>
+<Attributes dsName="部门柴油消耗new" columnName="Department"/>
 <Complex/>
 <RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
 <Parameters/>
@@ -3159,7 +3284,7 @@ b.Department
 </C>
 <C c="1" r="86">
 <O t="DSColumn">
-<Attributes dsName="部门柴油消耗" columnName="柴油用量"/>
+<Attributes dsName="部门柴油消耗new" columnName="柴油用量"/>
 <Complex/>
 <RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
 <Parameters/>
@@ -3441,7 +3566,7 @@ b.Department
 <Top topCate="-1" topValue="-1" isDiscardOtherCate="false" isDiscardOtherSeries="false" isDiscardNullCate="false" isDiscardNullSeries="false"/>
 <TableData class="com.fr.data.impl.NameTableData">
 <Name>
-<![CDATA[部门能耗分布]]></Name>
+<![CDATA[部门能耗分布new]]></Name>
 </TableData>
 <CategoryName value=""/>
 </OneValueCDDefinition>
@@ -3734,7 +3859,7 @@ b.Department
 <Top topCate="-1" topValue="-1" isDiscardOtherCate="false" isDiscardOtherSeries="false" isDiscardNullCate="false" isDiscardNullSeries="false"/>
 <TableData class="com.fr.data.impl.NameTableData">
 <Name>
-<![CDATA[部门能耗分布]]></Name>
+<![CDATA[部门能耗分布new]]></Name>
 </TableData>
 <CategoryName value=""/>
 </OneValueCDDefinition>
@@ -4027,7 +4152,7 @@ b.Department
 <Top topCate="-1" topValue="-1" isDiscardOtherCate="false" isDiscardOtherSeries="false" isDiscardNullCate="false" isDiscardNullSeries="false"/>
 <TableData class="com.fr.data.impl.NameTableData">
 <Name>
-<![CDATA[部门能耗分布]]></Name>
+<![CDATA[部门能耗分布new]]></Name>
 </TableData>
 <CategoryName value=""/>
 </OneValueCDDefinition>
@@ -4320,7 +4445,7 @@ b.Department
 <Top topCate="-1" topValue="-1" isDiscardOtherCate="false" isDiscardOtherSeries="false" isDiscardNullCate="false" isDiscardNullSeries="false"/>
 <TableData class="com.fr.data.impl.NameTableData">
 <Name>
-<![CDATA[部门能耗分布]]></Name>
+<![CDATA[部门能耗分布new]]></Name>
 </TableData>
 <CategoryName value=""/>
 </OneValueCDDefinition>
@@ -5052,7 +5177,7 @@ b.Department
 <Expand/>
 </C>
 </CellElementList>
-<PECBAttr blockName="block2" x="1143000" y="120700800" width="15087600" height="14897100"/>
+<PECBAttr blockName="block2" x="1143000" y="121577100" width="15087600" height="14897100"/>
 </Block>
 <Block class="com.fr.report.poly.PolyECBlock">
 <ReportPageAttr>
@@ -5989,7 +6114,7 @@ b.Department
 <Expand/>
 </C>
 </CellElementList>
-<PECBAttr blockName="block3" x="1143000" y="136436100" width="28308300" height="18097500"/>
+<PECBAttr blockName="block3" x="1143000" y="137312400" width="28308300" height="18097500"/>
 </Block>
 <Block class="com.fr.report.poly.PolyECBlock">
 <ReportPageAttr>
@@ -10591,7 +10716,7 @@ b.Department
 <widgetValue>
 <O t="Formula" class="Formula">
 <Attributes>
-<![CDATA[=month(today())-1]]></Attributes>
+<![CDATA[=month(today())]]></Attributes>
 </O>
 </widgetValue>
 </InnerWidget>
@@ -10637,19 +10762,17 @@ b.Department
 <BoundsAttr x="130" y="25" width="80" height="21"/>
 </Widget>
 <Sorted sorted="false"/>
-<MobileWidgetList>
-<Widget widgetName="year"/>
-<Widget widgetName="month"/>
-<Widget widgetName="Search"/>
-</MobileWidgetList>
 <Display display="true"/>
 <DelayDisplayContent delay="false"/>
 <Position position="0"/>
 <Design_Width design_width="960"/>
+<MobileWidgetList>
+<Widget widgetName="year"/>
+<Widget widgetName="month"/>
+</MobileWidgetList>
 <WidgetNameTagMap>
 <NameTag name="month" tag="月份："/>
 <NameTag name="year" tag="年份："/>
-<NameTag name="Search" tag="month:"/>
 </WidgetNameTagMap>
 </Layout>
 <DesignAttr width="960" height="80"/>
