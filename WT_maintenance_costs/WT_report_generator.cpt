@@ -36,7 +36,7 @@
 <![CDATA[FR]]></DatabaseName>
 </Connection>
 <Query>
-<![CDATA[select sum(expense) as total_expense from dbo.WT_maintenance_fee_allinone  where 1=1 and  year(date)='${year}' and month(date)<='${month}']]></Query>
+<![CDATA[select sum(expense) as total_expense from dbo.WT_maintenance_fee_allinone  where 1=1 and  year(date)='${year}' and month(date)<='${month}' and section_office != '董浜污水厂']]></Query>
 </TableData>
 <TableData name="1&lt;月维修费预算&gt;" class="com.fr.data.impl.DBTableData">
 <Parameters>
@@ -94,7 +94,7 @@
 <![CDATA[FR]]></DatabaseName>
 </Connection>
 <Query>
-<![CDATA[select category, sum(expense) as total_expense from dbo.WT_maintenance_fee_allinone  where 1=1 and  year(date)='${year}' group by category order by total_expense desc ]]></Query>
+<![CDATA[select category, sum(expense) as total_expense from dbo.WT_maintenance_fee_allinone  where 1=1 and  year(date)='${year}' and section_office != '董浜污水厂' group by category order by total_expense desc ]]></Query>
 </TableData>
 <TableData name="1&lt;维修费top5&gt;" class="com.fr.data.impl.DBTableData">
 <Parameters>
@@ -591,6 +591,26 @@ group by category order by '金额' desc ]]></Query>
 </labelDetail>
 </AttrLabel>
 </Attr>
+<Attr class="com.fr.plugin.chart.base.VanChartAttrTrendLine">
+<TrendLine>
+<Attr trendLineName="" trendLineType="exponential" prePeriod="0" afterPeriod="0"/>
+<LineStyleInfo>
+<AttrAlpha>
+<Attr alpha="1.0"/>
+</AttrAlpha>
+<AttrColor>
+<Attr/>
+</AttrColor>
+<AttrLineStyle>
+<newAttr lineStyle="0"/>
+</AttrLineStyle>
+<AttrBorder>
+<Attr lineStyle="0" isRoundBorder="false" roundRadius="0"/>
+<newColor borderColor="-16777216"/>
+</AttrBorder>
+</LineStyleInfo>
+</TrendLine>
+</Attr>
 </AttrList>
 </ConditionAttr>
 </DefaultAttr>
@@ -636,41 +656,41 @@ group by category order by '金额' desc ]]></Query>
 <newPlotFillStyle>
 <AttrFillStyle>
 <AFStyle colorStyle="1"/>
-<FillStyleName fillStyleName="新特性"/>
-<isCustomFillStyle isCustomFillStyle="false"/>
+<FillStyleName fillStyleName=""/>
+<isCustomFillStyle isCustomFillStyle="true"/>
 <ColorList>
-<OColor colvalue="-10243346"/>
-<OColor colvalue="-8988015"/>
-<OColor colvalue="-472193"/>
-<OColor colvalue="-486008"/>
-<OColor colvalue="-8595761"/>
-<OColor colvalue="-7236949"/>
-<OColor colvalue="-8873759"/>
-<OColor colvalue="-1071514"/>
-<OColor colvalue="-1188474"/>
-<OColor colvalue="-6715442"/>
-<OColor colvalue="-10243346"/>
-<OColor colvalue="-8988015"/>
-<OColor colvalue="-472193"/>
-<OColor colvalue="-486008"/>
-<OColor colvalue="-8595761"/>
-<OColor colvalue="-7236949"/>
-<OColor colvalue="-8873759"/>
-<OColor colvalue="-1071514"/>
-<OColor colvalue="-1188474"/>
-<OColor colvalue="-6715442"/>
-<OColor colvalue="-10243346"/>
-<OColor colvalue="-8988015"/>
-<OColor colvalue="-472193"/>
-<OColor colvalue="-486008"/>
-<OColor colvalue="-8595761"/>
-<OColor colvalue="-7236949"/>
-<OColor colvalue="-8873759"/>
-<OColor colvalue="-1071514"/>
-<OColor colvalue="-1188474"/>
-<OColor colvalue="-6715442"/>
-<OColor colvalue="-10243346"/>
-<OColor colvalue="-8988015"/>
+<OColor colvalue="-65536"/>
+<OColor colvalue="-16750951"/>
+<OColor colvalue="-4363512"/>
+<OColor colvalue="-16750485"/>
+<OColor colvalue="-154"/>
+<OColor colvalue="-10331231"/>
+<OColor colvalue="-7763575"/>
+<OColor colvalue="-6514688"/>
+<OColor colvalue="-16744620"/>
+<OColor colvalue="-6187579"/>
+<OColor colvalue="-65536"/>
+<OColor colvalue="-945550"/>
+<OColor colvalue="-4092928"/>
+<OColor colvalue="-13224394"/>
+<OColor colvalue="-12423245"/>
+<OColor colvalue="-10043521"/>
+<OColor colvalue="-406154"/>
+<OColor colvalue="-13031292"/>
+<OColor colvalue="-16732559"/>
+<OColor colvalue="-7099690"/>
+<OColor colvalue="-11991199"/>
+<OColor colvalue="-331445"/>
+<OColor colvalue="-6991099"/>
+<OColor colvalue="-16686527"/>
+<OColor colvalue="-9205567"/>
+<OColor colvalue="-7397856"/>
+<OColor colvalue="-406154"/>
+<OColor colvalue="-2712831"/>
+<OColor colvalue="-4737097"/>
+<OColor colvalue="-11460720"/>
+<OColor colvalue="-6696775"/>
+<OColor colvalue="-3685632"/>
 </ColorList>
 </AttrFillStyle>
 </newPlotFillStyle>
@@ -998,7 +1018,7 @@ group by category order by '金额' desc ]]></Query>
 <AttrLabel>
 <labelAttr enable="true"/>
 <labelDetail class="com.fr.plugin.chart.base.AttrLabelDetail">
-<Attr showLine="false" autoAdjust="false" position="5" isCustom="false"/>
+<Attr showLine="true" autoAdjust="false" position="6" isCustom="false"/>
 <TextAttr>
 <Attr alignText="0">
 <FRFont name="宋体" style="0" size="72"/>
@@ -1025,7 +1045,7 @@ group by category order by '金额' desc ]]></Query>
 </category>
 <series class="com.fr.plugin.chart.base.format.AttrTooltipSeriesFormat">
 <AttrTooltipSeriesFormat>
-<Attr enable="false"/>
+<Attr enable="true"/>
 </AttrTooltipSeriesFormat>
 </series>
 <HtmlLabel customText="" useHtml="false" isCustomWidth="false" isCustomHeight="false" width="50" height="50"/>
@@ -1076,41 +1096,41 @@ group by category order by '金额' desc ]]></Query>
 <newPlotFillStyle>
 <AttrFillStyle>
 <AFStyle colorStyle="1"/>
-<FillStyleName fillStyleName="新特性"/>
-<isCustomFillStyle isCustomFillStyle="false"/>
+<FillStyleName fillStyleName=""/>
+<isCustomFillStyle isCustomFillStyle="true"/>
 <ColorList>
-<OColor colvalue="-10243346"/>
-<OColor colvalue="-8988015"/>
-<OColor colvalue="-472193"/>
-<OColor colvalue="-486008"/>
-<OColor colvalue="-8595761"/>
-<OColor colvalue="-7236949"/>
-<OColor colvalue="-8873759"/>
-<OColor colvalue="-1071514"/>
-<OColor colvalue="-1188474"/>
-<OColor colvalue="-6715442"/>
-<OColor colvalue="-10243346"/>
-<OColor colvalue="-8988015"/>
-<OColor colvalue="-472193"/>
-<OColor colvalue="-486008"/>
-<OColor colvalue="-8595761"/>
-<OColor colvalue="-7236949"/>
-<OColor colvalue="-8873759"/>
-<OColor colvalue="-1071514"/>
-<OColor colvalue="-1188474"/>
-<OColor colvalue="-6715442"/>
-<OColor colvalue="-10243346"/>
-<OColor colvalue="-8988015"/>
-<OColor colvalue="-472193"/>
-<OColor colvalue="-486008"/>
-<OColor colvalue="-8595761"/>
-<OColor colvalue="-7236949"/>
-<OColor colvalue="-8873759"/>
-<OColor colvalue="-1071514"/>
-<OColor colvalue="-1188474"/>
-<OColor colvalue="-6715442"/>
-<OColor colvalue="-10243346"/>
-<OColor colvalue="-8988015"/>
+<OColor colvalue="-6750157"/>
+<OColor colvalue="-16750900"/>
+<OColor colvalue="-4363512"/>
+<OColor colvalue="-16750485"/>
+<OColor colvalue="-3658447"/>
+<OColor colvalue="-10331231"/>
+<OColor colvalue="-7763575"/>
+<OColor colvalue="-6514688"/>
+<OColor colvalue="-16744620"/>
+<OColor colvalue="-6187579"/>
+<OColor colvalue="-15714713"/>
+<OColor colvalue="-945550"/>
+<OColor colvalue="-4092928"/>
+<OColor colvalue="-13224394"/>
+<OColor colvalue="-12423245"/>
+<OColor colvalue="-10043521"/>
+<OColor colvalue="-406154"/>
+<OColor colvalue="-13031292"/>
+<OColor colvalue="-16732559"/>
+<OColor colvalue="-7099690"/>
+<OColor colvalue="-11991199"/>
+<OColor colvalue="-331445"/>
+<OColor colvalue="-6991099"/>
+<OColor colvalue="-16686527"/>
+<OColor colvalue="-9205567"/>
+<OColor colvalue="-7397856"/>
+<OColor colvalue="-406154"/>
+<OColor colvalue="-2712831"/>
+<OColor colvalue="-4737097"/>
+<OColor colvalue="-11460720"/>
+<OColor colvalue="-6696775"/>
+<OColor colvalue="-3685632"/>
 </ColorList>
 </AttrFillStyle>
 </newPlotFillStyle>
@@ -1842,7 +1862,7 @@ group by category order by '金额' desc ]]></Query>
 </category>
 <series class="com.fr.plugin.chart.base.format.AttrTooltipSeriesFormat">
 <AttrTooltipSeriesFormat>
-<Attr enable="false"/>
+<Attr enable="true"/>
 </AttrTooltipSeriesFormat>
 </series>
 <HtmlLabel customText="" useHtml="false" isCustomWidth="false" isCustomHeight="false" width="50" height="50"/>
@@ -1893,41 +1913,41 @@ group by category order by '金额' desc ]]></Query>
 <newPlotFillStyle>
 <AttrFillStyle>
 <AFStyle colorStyle="1"/>
-<FillStyleName fillStyleName="新特性"/>
-<isCustomFillStyle isCustomFillStyle="false"/>
+<FillStyleName fillStyleName=""/>
+<isCustomFillStyle isCustomFillStyle="true"/>
 <ColorList>
-<OColor colvalue="-10243346"/>
-<OColor colvalue="-8988015"/>
-<OColor colvalue="-472193"/>
-<OColor colvalue="-486008"/>
-<OColor colvalue="-8595761"/>
-<OColor colvalue="-7236949"/>
-<OColor colvalue="-8873759"/>
-<OColor colvalue="-1071514"/>
-<OColor colvalue="-1188474"/>
-<OColor colvalue="-6715442"/>
-<OColor colvalue="-10243346"/>
-<OColor colvalue="-8988015"/>
-<OColor colvalue="-472193"/>
-<OColor colvalue="-486008"/>
-<OColor colvalue="-8595761"/>
-<OColor colvalue="-7236949"/>
-<OColor colvalue="-8873759"/>
-<OColor colvalue="-1071514"/>
-<OColor colvalue="-1188474"/>
-<OColor colvalue="-6715442"/>
-<OColor colvalue="-10243346"/>
-<OColor colvalue="-8988015"/>
-<OColor colvalue="-472193"/>
-<OColor colvalue="-486008"/>
-<OColor colvalue="-8595761"/>
-<OColor colvalue="-7236949"/>
-<OColor colvalue="-8873759"/>
-<OColor colvalue="-1071514"/>
-<OColor colvalue="-1188474"/>
-<OColor colvalue="-6715442"/>
-<OColor colvalue="-10243346"/>
-<OColor colvalue="-8988015"/>
+<OColor colvalue="-15118441"/>
+<OColor colvalue="-11184811"/>
+<OColor colvalue="-4363512"/>
+<OColor colvalue="-16750485"/>
+<OColor colvalue="-3658447"/>
+<OColor colvalue="-10331231"/>
+<OColor colvalue="-7763575"/>
+<OColor colvalue="-6514688"/>
+<OColor colvalue="-16744620"/>
+<OColor colvalue="-6187579"/>
+<OColor colvalue="-15714713"/>
+<OColor colvalue="-945550"/>
+<OColor colvalue="-4092928"/>
+<OColor colvalue="-13224394"/>
+<OColor colvalue="-12423245"/>
+<OColor colvalue="-10043521"/>
+<OColor colvalue="-406154"/>
+<OColor colvalue="-13031292"/>
+<OColor colvalue="-16732559"/>
+<OColor colvalue="-7099690"/>
+<OColor colvalue="-11991199"/>
+<OColor colvalue="-331445"/>
+<OColor colvalue="-6991099"/>
+<OColor colvalue="-16686527"/>
+<OColor colvalue="-9205567"/>
+<OColor colvalue="-7397856"/>
+<OColor colvalue="-406154"/>
+<OColor colvalue="-2712831"/>
+<OColor colvalue="-4737097"/>
+<OColor colvalue="-11460720"/>
+<OColor colvalue="-6696775"/>
+<OColor colvalue="-3685632"/>
 </ColorList>
 </AttrFillStyle>
 </newPlotFillStyle>
@@ -2185,7 +2205,7 @@ group by category order by '金额' desc ]]></Query>
 <AttrLabel>
 <labelAttr enable="true"/>
 <labelDetail class="com.fr.plugin.chart.base.AttrLabelDetail">
-<Attr showLine="false" autoAdjust="false" position="5" isCustom="false"/>
+<Attr showLine="true" autoAdjust="false" position="6" isCustom="false"/>
 <TextAttr>
 <Attr alignText="0">
 <FRFont name="宋体" style="0" size="72"/>
@@ -2212,7 +2232,7 @@ group by category order by '金额' desc ]]></Query>
 </category>
 <series class="com.fr.plugin.chart.base.format.AttrTooltipSeriesFormat">
 <AttrTooltipSeriesFormat>
-<Attr enable="false"/>
+<Attr enable="true"/>
 </AttrTooltipSeriesFormat>
 </series>
 <HtmlLabel customText="" useHtml="false" isCustomWidth="false" isCustomHeight="false" width="50" height="50"/>
@@ -2263,41 +2283,41 @@ group by category order by '金额' desc ]]></Query>
 <newPlotFillStyle>
 <AttrFillStyle>
 <AFStyle colorStyle="1"/>
-<FillStyleName fillStyleName="新特性"/>
-<isCustomFillStyle isCustomFillStyle="false"/>
+<FillStyleName fillStyleName=""/>
+<isCustomFillStyle isCustomFillStyle="true"/>
 <ColorList>
-<OColor colvalue="-10243346"/>
-<OColor colvalue="-8988015"/>
-<OColor colvalue="-472193"/>
-<OColor colvalue="-486008"/>
-<OColor colvalue="-8595761"/>
-<OColor colvalue="-7236949"/>
-<OColor colvalue="-8873759"/>
-<OColor colvalue="-1071514"/>
-<OColor colvalue="-1188474"/>
-<OColor colvalue="-6715442"/>
-<OColor colvalue="-10243346"/>
-<OColor colvalue="-8988015"/>
-<OColor colvalue="-472193"/>
-<OColor colvalue="-486008"/>
-<OColor colvalue="-8595761"/>
-<OColor colvalue="-7236949"/>
-<OColor colvalue="-8873759"/>
-<OColor colvalue="-1071514"/>
-<OColor colvalue="-1188474"/>
-<OColor colvalue="-6715442"/>
-<OColor colvalue="-10243346"/>
-<OColor colvalue="-8988015"/>
-<OColor colvalue="-472193"/>
-<OColor colvalue="-486008"/>
-<OColor colvalue="-8595761"/>
-<OColor colvalue="-7236949"/>
-<OColor colvalue="-8873759"/>
-<OColor colvalue="-1071514"/>
-<OColor colvalue="-1188474"/>
-<OColor colvalue="-6715442"/>
-<OColor colvalue="-10243346"/>
-<OColor colvalue="-8988015"/>
+<OColor colvalue="-15118441"/>
+<OColor colvalue="-11184811"/>
+<OColor colvalue="-4363512"/>
+<OColor colvalue="-16750485"/>
+<OColor colvalue="-3658447"/>
+<OColor colvalue="-10331231"/>
+<OColor colvalue="-7763575"/>
+<OColor colvalue="-6514688"/>
+<OColor colvalue="-16744620"/>
+<OColor colvalue="-6187579"/>
+<OColor colvalue="-15714713"/>
+<OColor colvalue="-945550"/>
+<OColor colvalue="-4092928"/>
+<OColor colvalue="-13224394"/>
+<OColor colvalue="-12423245"/>
+<OColor colvalue="-10043521"/>
+<OColor colvalue="-406154"/>
+<OColor colvalue="-13031292"/>
+<OColor colvalue="-16732559"/>
+<OColor colvalue="-7099690"/>
+<OColor colvalue="-11991199"/>
+<OColor colvalue="-331445"/>
+<OColor colvalue="-6991099"/>
+<OColor colvalue="-16686527"/>
+<OColor colvalue="-9205567"/>
+<OColor colvalue="-7397856"/>
+<OColor colvalue="-406154"/>
+<OColor colvalue="-2712831"/>
+<OColor colvalue="-4737097"/>
+<OColor colvalue="-11460720"/>
+<OColor colvalue="-6696775"/>
+<OColor colvalue="-3685632"/>
 </ColorList>
 </AttrFillStyle>
 </newPlotFillStyle>
@@ -2520,7 +2540,7 @@ group by category order by '金额' desc ]]></Query>
 </category>
 <series class="com.fr.plugin.chart.base.format.AttrTooltipSeriesFormat">
 <AttrTooltipSeriesFormat>
-<Attr enable="false"/>
+<Attr enable="true"/>
 </AttrTooltipSeriesFormat>
 </series>
 <HtmlLabel customText="" useHtml="false" isCustomWidth="false" isCustomHeight="false" width="50" height="50"/>
@@ -2571,41 +2591,41 @@ group by category order by '金额' desc ]]></Query>
 <newPlotFillStyle>
 <AttrFillStyle>
 <AFStyle colorStyle="1"/>
-<FillStyleName fillStyleName="新特性"/>
-<isCustomFillStyle isCustomFillStyle="false"/>
+<FillStyleName fillStyleName=""/>
+<isCustomFillStyle isCustomFillStyle="true"/>
 <ColorList>
-<OColor colvalue="-10243346"/>
-<OColor colvalue="-8988015"/>
-<OColor colvalue="-472193"/>
-<OColor colvalue="-486008"/>
-<OColor colvalue="-8595761"/>
-<OColor colvalue="-7236949"/>
-<OColor colvalue="-8873759"/>
-<OColor colvalue="-1071514"/>
-<OColor colvalue="-1188474"/>
-<OColor colvalue="-6715442"/>
-<OColor colvalue="-10243346"/>
-<OColor colvalue="-8988015"/>
-<OColor colvalue="-472193"/>
-<OColor colvalue="-486008"/>
-<OColor colvalue="-8595761"/>
-<OColor colvalue="-7236949"/>
-<OColor colvalue="-8873759"/>
-<OColor colvalue="-1071514"/>
-<OColor colvalue="-1188474"/>
-<OColor colvalue="-6715442"/>
-<OColor colvalue="-10243346"/>
-<OColor colvalue="-8988015"/>
-<OColor colvalue="-472193"/>
-<OColor colvalue="-486008"/>
-<OColor colvalue="-8595761"/>
-<OColor colvalue="-7236949"/>
-<OColor colvalue="-8873759"/>
-<OColor colvalue="-1071514"/>
-<OColor colvalue="-1188474"/>
-<OColor colvalue="-6715442"/>
-<OColor colvalue="-10243346"/>
-<OColor colvalue="-8988015"/>
+<OColor colvalue="-15118441"/>
+<OColor colvalue="-11184811"/>
+<OColor colvalue="-4363512"/>
+<OColor colvalue="-16750485"/>
+<OColor colvalue="-3658447"/>
+<OColor colvalue="-10331231"/>
+<OColor colvalue="-7763575"/>
+<OColor colvalue="-6514688"/>
+<OColor colvalue="-16744620"/>
+<OColor colvalue="-6187579"/>
+<OColor colvalue="-15714713"/>
+<OColor colvalue="-945550"/>
+<OColor colvalue="-4092928"/>
+<OColor colvalue="-13224394"/>
+<OColor colvalue="-12423245"/>
+<OColor colvalue="-10043521"/>
+<OColor colvalue="-406154"/>
+<OColor colvalue="-13031292"/>
+<OColor colvalue="-16732559"/>
+<OColor colvalue="-7099690"/>
+<OColor colvalue="-11991199"/>
+<OColor colvalue="-331445"/>
+<OColor colvalue="-6991099"/>
+<OColor colvalue="-16686527"/>
+<OColor colvalue="-9205567"/>
+<OColor colvalue="-7397856"/>
+<OColor colvalue="-406154"/>
+<OColor colvalue="-2712831"/>
+<OColor colvalue="-4737097"/>
+<OColor colvalue="-11460720"/>
+<OColor colvalue="-6696775"/>
+<OColor colvalue="-3685632"/>
 </ColorList>
 </AttrFillStyle>
 </newPlotFillStyle>
@@ -2813,7 +2833,7 @@ group by category order by '金额' desc ]]></Query>
 </category>
 <series class="com.fr.plugin.chart.base.format.AttrTooltipSeriesFormat">
 <AttrTooltipSeriesFormat>
-<Attr enable="false"/>
+<Attr enable="true"/>
 </AttrTooltipSeriesFormat>
 </series>
 <HtmlLabel customText="" useHtml="false" isCustomWidth="false" isCustomHeight="false" width="50" height="50"/>
@@ -2864,41 +2884,41 @@ group by category order by '金额' desc ]]></Query>
 <newPlotFillStyle>
 <AttrFillStyle>
 <AFStyle colorStyle="1"/>
-<FillStyleName fillStyleName="新特性"/>
-<isCustomFillStyle isCustomFillStyle="false"/>
+<FillStyleName fillStyleName=""/>
+<isCustomFillStyle isCustomFillStyle="true"/>
 <ColorList>
-<OColor colvalue="-10243346"/>
-<OColor colvalue="-8988015"/>
-<OColor colvalue="-472193"/>
-<OColor colvalue="-486008"/>
-<OColor colvalue="-8595761"/>
-<OColor colvalue="-7236949"/>
-<OColor colvalue="-8873759"/>
-<OColor colvalue="-1071514"/>
-<OColor colvalue="-1188474"/>
-<OColor colvalue="-6715442"/>
-<OColor colvalue="-10243346"/>
-<OColor colvalue="-8988015"/>
-<OColor colvalue="-472193"/>
-<OColor colvalue="-486008"/>
-<OColor colvalue="-8595761"/>
-<OColor colvalue="-7236949"/>
-<OColor colvalue="-8873759"/>
-<OColor colvalue="-1071514"/>
-<OColor colvalue="-1188474"/>
-<OColor colvalue="-6715442"/>
-<OColor colvalue="-10243346"/>
-<OColor colvalue="-8988015"/>
-<OColor colvalue="-472193"/>
-<OColor colvalue="-486008"/>
-<OColor colvalue="-8595761"/>
-<OColor colvalue="-7236949"/>
-<OColor colvalue="-8873759"/>
-<OColor colvalue="-1071514"/>
-<OColor colvalue="-1188474"/>
-<OColor colvalue="-6715442"/>
-<OColor colvalue="-10243346"/>
-<OColor colvalue="-8988015"/>
+<OColor colvalue="-15118441"/>
+<OColor colvalue="-11184811"/>
+<OColor colvalue="-4363512"/>
+<OColor colvalue="-16750485"/>
+<OColor colvalue="-3658447"/>
+<OColor colvalue="-10331231"/>
+<OColor colvalue="-7763575"/>
+<OColor colvalue="-6514688"/>
+<OColor colvalue="-16744620"/>
+<OColor colvalue="-6187579"/>
+<OColor colvalue="-15714713"/>
+<OColor colvalue="-945550"/>
+<OColor colvalue="-4092928"/>
+<OColor colvalue="-13224394"/>
+<OColor colvalue="-12423245"/>
+<OColor colvalue="-10043521"/>
+<OColor colvalue="-406154"/>
+<OColor colvalue="-13031292"/>
+<OColor colvalue="-16732559"/>
+<OColor colvalue="-7099690"/>
+<OColor colvalue="-11991199"/>
+<OColor colvalue="-331445"/>
+<OColor colvalue="-6991099"/>
+<OColor colvalue="-16686527"/>
+<OColor colvalue="-9205567"/>
+<OColor colvalue="-7397856"/>
+<OColor colvalue="-406154"/>
+<OColor colvalue="-2712831"/>
+<OColor colvalue="-4737097"/>
+<OColor colvalue="-11460720"/>
+<OColor colvalue="-6696775"/>
+<OColor colvalue="-3685632"/>
 </ColorList>
 </AttrFillStyle>
 </newPlotFillStyle>
@@ -3286,6 +3306,26 @@ group by category order by '金额' desc ]]></Query>
 <Attr alpha="1.0"/>
 </AttrAlpha>
 </Attr>
+<Attr class="com.fr.plugin.chart.base.VanChartAttrTrendLine">
+<TrendLine>
+<Attr trendLineName="" trendLineType="exponential" prePeriod="0" afterPeriod="0"/>
+<LineStyleInfo>
+<AttrAlpha>
+<Attr alpha="1.0"/>
+</AttrAlpha>
+<AttrColor>
+<Attr/>
+</AttrColor>
+<AttrLineStyle>
+<newAttr lineStyle="0"/>
+</AttrLineStyle>
+<AttrBorder>
+<Attr lineStyle="0" isRoundBorder="false" roundRadius="0"/>
+<newColor borderColor="-16777216"/>
+</AttrBorder>
+</LineStyleInfo>
+</TrendLine>
+</Attr>
 </AttrList>
 </ConditionAttr>
 </DefaultAttr>
@@ -3331,41 +3371,41 @@ group by category order by '金额' desc ]]></Query>
 <newPlotFillStyle>
 <AttrFillStyle>
 <AFStyle colorStyle="1"/>
-<FillStyleName fillStyleName="新特性"/>
-<isCustomFillStyle isCustomFillStyle="false"/>
+<FillStyleName fillStyleName=""/>
+<isCustomFillStyle isCustomFillStyle="true"/>
 <ColorList>
-<OColor colvalue="-10243346"/>
-<OColor colvalue="-8988015"/>
-<OColor colvalue="-472193"/>
-<OColor colvalue="-486008"/>
-<OColor colvalue="-8595761"/>
-<OColor colvalue="-7236949"/>
-<OColor colvalue="-8873759"/>
-<OColor colvalue="-1071514"/>
-<OColor colvalue="-1188474"/>
-<OColor colvalue="-6715442"/>
-<OColor colvalue="-10243346"/>
-<OColor colvalue="-8988015"/>
-<OColor colvalue="-472193"/>
-<OColor colvalue="-486008"/>
-<OColor colvalue="-8595761"/>
-<OColor colvalue="-7236949"/>
-<OColor colvalue="-8873759"/>
-<OColor colvalue="-1071514"/>
-<OColor colvalue="-1188474"/>
-<OColor colvalue="-6715442"/>
-<OColor colvalue="-10243346"/>
-<OColor colvalue="-8988015"/>
-<OColor colvalue="-472193"/>
-<OColor colvalue="-486008"/>
-<OColor colvalue="-8595761"/>
-<OColor colvalue="-7236949"/>
-<OColor colvalue="-8873759"/>
-<OColor colvalue="-1071514"/>
-<OColor colvalue="-1188474"/>
-<OColor colvalue="-6715442"/>
-<OColor colvalue="-10243346"/>
-<OColor colvalue="-8988015"/>
+<OColor colvalue="-39322"/>
+<OColor colvalue="-13395457"/>
+<OColor colvalue="-4363512"/>
+<OColor colvalue="-16750485"/>
+<OColor colvalue="-3658447"/>
+<OColor colvalue="-10331231"/>
+<OColor colvalue="-7763575"/>
+<OColor colvalue="-6514688"/>
+<OColor colvalue="-16744620"/>
+<OColor colvalue="-6187579"/>
+<OColor colvalue="-15714713"/>
+<OColor colvalue="-945550"/>
+<OColor colvalue="-4092928"/>
+<OColor colvalue="-13224394"/>
+<OColor colvalue="-12423245"/>
+<OColor colvalue="-10043521"/>
+<OColor colvalue="-406154"/>
+<OColor colvalue="-13031292"/>
+<OColor colvalue="-16732559"/>
+<OColor colvalue="-7099690"/>
+<OColor colvalue="-11991199"/>
+<OColor colvalue="-331445"/>
+<OColor colvalue="-6991099"/>
+<OColor colvalue="-16686527"/>
+<OColor colvalue="-9205567"/>
+<OColor colvalue="-7397856"/>
+<OColor colvalue="-406154"/>
+<OColor colvalue="-2712831"/>
+<OColor colvalue="-4737097"/>
+<OColor colvalue="-11460720"/>
+<OColor colvalue="-6696775"/>
+<OColor colvalue="-3685632"/>
 </ColorList>
 </AttrFillStyle>
 </newPlotFillStyle>
@@ -3721,6 +3761,26 @@ group by category order by '金额' desc ]]></Query>
 </labelDetail>
 </AttrLabel>
 </Attr>
+<Attr class="com.fr.plugin.chart.base.VanChartAttrTrendLine">
+<TrendLine>
+<Attr trendLineName="" trendLineType="exponential" prePeriod="0" afterPeriod="0"/>
+<LineStyleInfo>
+<AttrAlpha>
+<Attr alpha="1.0"/>
+</AttrAlpha>
+<AttrColor>
+<Attr/>
+</AttrColor>
+<AttrLineStyle>
+<newAttr lineStyle="0"/>
+</AttrLineStyle>
+<AttrBorder>
+<Attr lineStyle="0" isRoundBorder="false" roundRadius="0"/>
+<newColor borderColor="-16777216"/>
+</AttrBorder>
+</LineStyleInfo>
+</TrendLine>
+</Attr>
 </AttrList>
 </ConditionAttr>
 </DefaultAttr>
@@ -3766,41 +3826,41 @@ group by category order by '金额' desc ]]></Query>
 <newPlotFillStyle>
 <AttrFillStyle>
 <AFStyle colorStyle="1"/>
-<FillStyleName fillStyleName="新特性"/>
-<isCustomFillStyle isCustomFillStyle="false"/>
+<FillStyleName fillStyleName=""/>
+<isCustomFillStyle isCustomFillStyle="true"/>
 <ColorList>
-<OColor colvalue="-10243346"/>
-<OColor colvalue="-8988015"/>
-<OColor colvalue="-472193"/>
-<OColor colvalue="-486008"/>
-<OColor colvalue="-8595761"/>
-<OColor colvalue="-7236949"/>
-<OColor colvalue="-8873759"/>
-<OColor colvalue="-1071514"/>
-<OColor colvalue="-1188474"/>
-<OColor colvalue="-6715442"/>
-<OColor colvalue="-10243346"/>
-<OColor colvalue="-8988015"/>
-<OColor colvalue="-472193"/>
-<OColor colvalue="-486008"/>
-<OColor colvalue="-8595761"/>
-<OColor colvalue="-7236949"/>
-<OColor colvalue="-8873759"/>
-<OColor colvalue="-1071514"/>
-<OColor colvalue="-1188474"/>
-<OColor colvalue="-6715442"/>
-<OColor colvalue="-10243346"/>
-<OColor colvalue="-8988015"/>
-<OColor colvalue="-472193"/>
-<OColor colvalue="-486008"/>
-<OColor colvalue="-8595761"/>
-<OColor colvalue="-7236949"/>
-<OColor colvalue="-8873759"/>
-<OColor colvalue="-1071514"/>
-<OColor colvalue="-1188474"/>
-<OColor colvalue="-6715442"/>
-<OColor colvalue="-10243346"/>
-<OColor colvalue="-8988015"/>
+<OColor colvalue="-10066330"/>
+<OColor colvalue="-11184811"/>
+<OColor colvalue="-4363512"/>
+<OColor colvalue="-16750485"/>
+<OColor colvalue="-3658447"/>
+<OColor colvalue="-10331231"/>
+<OColor colvalue="-7763575"/>
+<OColor colvalue="-6514688"/>
+<OColor colvalue="-16744620"/>
+<OColor colvalue="-6187579"/>
+<OColor colvalue="-15714713"/>
+<OColor colvalue="-945550"/>
+<OColor colvalue="-4092928"/>
+<OColor colvalue="-13224394"/>
+<OColor colvalue="-12423245"/>
+<OColor colvalue="-10043521"/>
+<OColor colvalue="-406154"/>
+<OColor colvalue="-13031292"/>
+<OColor colvalue="-16732559"/>
+<OColor colvalue="-7099690"/>
+<OColor colvalue="-11991199"/>
+<OColor colvalue="-331445"/>
+<OColor colvalue="-6991099"/>
+<OColor colvalue="-16686527"/>
+<OColor colvalue="-9205567"/>
+<OColor colvalue="-7397856"/>
+<OColor colvalue="-406154"/>
+<OColor colvalue="-2712831"/>
+<OColor colvalue="-4737097"/>
+<OColor colvalue="-11460720"/>
+<OColor colvalue="-6696775"/>
+<OColor colvalue="-3685632"/>
 </ColorList>
 </AttrFillStyle>
 </newPlotFillStyle>
@@ -4129,7 +4189,7 @@ group by category order by '金额' desc ]]></Query>
 </category>
 <series class="com.fr.plugin.chart.base.format.AttrTooltipSeriesFormat">
 <AttrTooltipSeriesFormat>
-<Attr enable="false"/>
+<Attr enable="true"/>
 </AttrTooltipSeriesFormat>
 </series>
 <HtmlLabel customText="" useHtml="false" isCustomWidth="false" isCustomHeight="false" width="50" height="50"/>
@@ -4180,41 +4240,41 @@ group by category order by '金额' desc ]]></Query>
 <newPlotFillStyle>
 <AttrFillStyle>
 <AFStyle colorStyle="1"/>
-<FillStyleName fillStyleName="新特性"/>
-<isCustomFillStyle isCustomFillStyle="false"/>
+<FillStyleName fillStyleName=""/>
+<isCustomFillStyle isCustomFillStyle="true"/>
 <ColorList>
-<OColor colvalue="-10243346"/>
-<OColor colvalue="-8988015"/>
-<OColor colvalue="-472193"/>
-<OColor colvalue="-486008"/>
-<OColor colvalue="-8595761"/>
-<OColor colvalue="-7236949"/>
-<OColor colvalue="-8873759"/>
-<OColor colvalue="-1071514"/>
-<OColor colvalue="-1188474"/>
-<OColor colvalue="-6715442"/>
-<OColor colvalue="-10243346"/>
-<OColor colvalue="-8988015"/>
-<OColor colvalue="-472193"/>
-<OColor colvalue="-486008"/>
-<OColor colvalue="-8595761"/>
-<OColor colvalue="-7236949"/>
-<OColor colvalue="-8873759"/>
-<OColor colvalue="-1071514"/>
-<OColor colvalue="-1188474"/>
-<OColor colvalue="-6715442"/>
-<OColor colvalue="-10243346"/>
-<OColor colvalue="-8988015"/>
-<OColor colvalue="-472193"/>
-<OColor colvalue="-486008"/>
-<OColor colvalue="-8595761"/>
-<OColor colvalue="-7236949"/>
-<OColor colvalue="-8873759"/>
-<OColor colvalue="-1071514"/>
-<OColor colvalue="-1188474"/>
-<OColor colvalue="-6715442"/>
-<OColor colvalue="-10243346"/>
-<OColor colvalue="-8988015"/>
+<OColor colvalue="-15118441"/>
+<OColor colvalue="-11184811"/>
+<OColor colvalue="-4363512"/>
+<OColor colvalue="-16750485"/>
+<OColor colvalue="-3658447"/>
+<OColor colvalue="-10331231"/>
+<OColor colvalue="-7763575"/>
+<OColor colvalue="-6514688"/>
+<OColor colvalue="-16744620"/>
+<OColor colvalue="-6187579"/>
+<OColor colvalue="-15714713"/>
+<OColor colvalue="-945550"/>
+<OColor colvalue="-4092928"/>
+<OColor colvalue="-13224394"/>
+<OColor colvalue="-12423245"/>
+<OColor colvalue="-10043521"/>
+<OColor colvalue="-406154"/>
+<OColor colvalue="-13031292"/>
+<OColor colvalue="-16732559"/>
+<OColor colvalue="-7099690"/>
+<OColor colvalue="-11991199"/>
+<OColor colvalue="-331445"/>
+<OColor colvalue="-6991099"/>
+<OColor colvalue="-16686527"/>
+<OColor colvalue="-9205567"/>
+<OColor colvalue="-7397856"/>
+<OColor colvalue="-406154"/>
+<OColor colvalue="-2712831"/>
+<OColor colvalue="-4737097"/>
+<OColor colvalue="-11460720"/>
+<OColor colvalue="-6696775"/>
+<OColor colvalue="-3685632"/>
 </ColorList>
 </AttrFillStyle>
 </newPlotFillStyle>
@@ -4437,7 +4497,7 @@ group by category order by '金额' desc ]]></Query>
 </category>
 <series class="com.fr.plugin.chart.base.format.AttrTooltipSeriesFormat">
 <AttrTooltipSeriesFormat>
-<Attr enable="false"/>
+<Attr enable="true"/>
 </AttrTooltipSeriesFormat>
 </series>
 <HtmlLabel customText="" useHtml="false" isCustomWidth="false" isCustomHeight="false" width="50" height="50"/>
@@ -4488,41 +4548,41 @@ group by category order by '金额' desc ]]></Query>
 <newPlotFillStyle>
 <AttrFillStyle>
 <AFStyle colorStyle="1"/>
-<FillStyleName fillStyleName="新特性"/>
-<isCustomFillStyle isCustomFillStyle="false"/>
+<FillStyleName fillStyleName=""/>
+<isCustomFillStyle isCustomFillStyle="true"/>
 <ColorList>
-<OColor colvalue="-10243346"/>
-<OColor colvalue="-8988015"/>
-<OColor colvalue="-472193"/>
-<OColor colvalue="-486008"/>
-<OColor colvalue="-8595761"/>
-<OColor colvalue="-7236949"/>
-<OColor colvalue="-8873759"/>
-<OColor colvalue="-1071514"/>
-<OColor colvalue="-1188474"/>
-<OColor colvalue="-6715442"/>
-<OColor colvalue="-10243346"/>
-<OColor colvalue="-8988015"/>
-<OColor colvalue="-472193"/>
-<OColor colvalue="-486008"/>
-<OColor colvalue="-8595761"/>
-<OColor colvalue="-7236949"/>
-<OColor colvalue="-8873759"/>
-<OColor colvalue="-1071514"/>
-<OColor colvalue="-1188474"/>
-<OColor colvalue="-6715442"/>
-<OColor colvalue="-10243346"/>
-<OColor colvalue="-8988015"/>
-<OColor colvalue="-472193"/>
-<OColor colvalue="-486008"/>
-<OColor colvalue="-8595761"/>
-<OColor colvalue="-7236949"/>
-<OColor colvalue="-8873759"/>
-<OColor colvalue="-1071514"/>
-<OColor colvalue="-1188474"/>
-<OColor colvalue="-6715442"/>
-<OColor colvalue="-10243346"/>
-<OColor colvalue="-8988015"/>
+<OColor colvalue="-15118441"/>
+<OColor colvalue="-11184811"/>
+<OColor colvalue="-4363512"/>
+<OColor colvalue="-16750485"/>
+<OColor colvalue="-3658447"/>
+<OColor colvalue="-10331231"/>
+<OColor colvalue="-7763575"/>
+<OColor colvalue="-6514688"/>
+<OColor colvalue="-16744620"/>
+<OColor colvalue="-6187579"/>
+<OColor colvalue="-15714713"/>
+<OColor colvalue="-945550"/>
+<OColor colvalue="-4092928"/>
+<OColor colvalue="-13224394"/>
+<OColor colvalue="-12423245"/>
+<OColor colvalue="-10043521"/>
+<OColor colvalue="-406154"/>
+<OColor colvalue="-13031292"/>
+<OColor colvalue="-16732559"/>
+<OColor colvalue="-7099690"/>
+<OColor colvalue="-11991199"/>
+<OColor colvalue="-331445"/>
+<OColor colvalue="-6991099"/>
+<OColor colvalue="-16686527"/>
+<OColor colvalue="-9205567"/>
+<OColor colvalue="-7397856"/>
+<OColor colvalue="-406154"/>
+<OColor colvalue="-2712831"/>
+<OColor colvalue="-4737097"/>
+<OColor colvalue="-11460720"/>
+<OColor colvalue="-6696775"/>
+<OColor colvalue="-3685632"/>
 </ColorList>
 </AttrFillStyle>
 </newPlotFillStyle>
@@ -4810,6 +4870,26 @@ group by category order by '金额' desc ]]></Query>
 <Attr alpha="1.0"/>
 </AttrAlpha>
 </Attr>
+<Attr class="com.fr.plugin.chart.base.VanChartAttrTrendLine">
+<TrendLine>
+<Attr trendLineName="" trendLineType="exponential" prePeriod="0" afterPeriod="0"/>
+<LineStyleInfo>
+<AttrAlpha>
+<Attr alpha="1.0"/>
+</AttrAlpha>
+<AttrColor>
+<Attr/>
+</AttrColor>
+<AttrLineStyle>
+<newAttr lineStyle="0"/>
+</AttrLineStyle>
+<AttrBorder>
+<Attr lineStyle="0" isRoundBorder="false" roundRadius="0"/>
+<newColor borderColor="-16777216"/>
+</AttrBorder>
+</LineStyleInfo>
+</TrendLine>
+</Attr>
 </AttrList>
 </ConditionAttr>
 </DefaultAttr>
@@ -4856,41 +4936,41 @@ group by category order by '金额' desc ]]></Query>
 <newPlotFillStyle>
 <AttrFillStyle>
 <AFStyle colorStyle="1"/>
-<FillStyleName fillStyleName="新特性"/>
-<isCustomFillStyle isCustomFillStyle="false"/>
+<FillStyleName fillStyleName=""/>
+<isCustomFillStyle isCustomFillStyle="true"/>
 <ColorList>
-<OColor colvalue="-10243346"/>
-<OColor colvalue="-8988015"/>
-<OColor colvalue="-472193"/>
-<OColor colvalue="-486008"/>
-<OColor colvalue="-8595761"/>
-<OColor colvalue="-7236949"/>
-<OColor colvalue="-8873759"/>
-<OColor colvalue="-1071514"/>
-<OColor colvalue="-1188474"/>
-<OColor colvalue="-6715442"/>
-<OColor colvalue="-10243346"/>
-<OColor colvalue="-8988015"/>
-<OColor colvalue="-472193"/>
-<OColor colvalue="-486008"/>
-<OColor colvalue="-8595761"/>
-<OColor colvalue="-7236949"/>
-<OColor colvalue="-8873759"/>
-<OColor colvalue="-1071514"/>
-<OColor colvalue="-1188474"/>
-<OColor colvalue="-6715442"/>
-<OColor colvalue="-10243346"/>
-<OColor colvalue="-8988015"/>
-<OColor colvalue="-472193"/>
-<OColor colvalue="-486008"/>
-<OColor colvalue="-8595761"/>
-<OColor colvalue="-7236949"/>
-<OColor colvalue="-8873759"/>
-<OColor colvalue="-1071514"/>
-<OColor colvalue="-1188474"/>
-<OColor colvalue="-6715442"/>
-<OColor colvalue="-10243346"/>
-<OColor colvalue="-8988015"/>
+<OColor colvalue="-15118441"/>
+<OColor colvalue="-11184811"/>
+<OColor colvalue="-4363512"/>
+<OColor colvalue="-16750485"/>
+<OColor colvalue="-3658447"/>
+<OColor colvalue="-10331231"/>
+<OColor colvalue="-7763575"/>
+<OColor colvalue="-6514688"/>
+<OColor colvalue="-16744620"/>
+<OColor colvalue="-6187579"/>
+<OColor colvalue="-15714713"/>
+<OColor colvalue="-945550"/>
+<OColor colvalue="-4092928"/>
+<OColor colvalue="-13224394"/>
+<OColor colvalue="-12423245"/>
+<OColor colvalue="-10043521"/>
+<OColor colvalue="-406154"/>
+<OColor colvalue="-13031292"/>
+<OColor colvalue="-16732559"/>
+<OColor colvalue="-7099690"/>
+<OColor colvalue="-11991199"/>
+<OColor colvalue="-331445"/>
+<OColor colvalue="-6991099"/>
+<OColor colvalue="-16686527"/>
+<OColor colvalue="-9205567"/>
+<OColor colvalue="-7397856"/>
+<OColor colvalue="-406154"/>
+<OColor colvalue="-2712831"/>
+<OColor colvalue="-4737097"/>
+<OColor colvalue="-11460720"/>
+<OColor colvalue="-6696775"/>
+<OColor colvalue="-3685632"/>
 </ColorList>
 </AttrFillStyle>
 </newPlotFillStyle>
@@ -5182,6 +5262,26 @@ group by category order by '金额' desc ]]></Query>
 <Attr alpha="1.0"/>
 </AttrAlpha>
 </Attr>
+<Attr class="com.fr.plugin.chart.base.VanChartAttrTrendLine">
+<TrendLine>
+<Attr trendLineName="" trendLineType="exponential" prePeriod="0" afterPeriod="0"/>
+<LineStyleInfo>
+<AttrAlpha>
+<Attr alpha="1.0"/>
+</AttrAlpha>
+<AttrColor>
+<Attr/>
+</AttrColor>
+<AttrLineStyle>
+<newAttr lineStyle="0"/>
+</AttrLineStyle>
+<AttrBorder>
+<Attr lineStyle="0" isRoundBorder="false" roundRadius="0"/>
+<newColor borderColor="-16777216"/>
+</AttrBorder>
+</LineStyleInfo>
+</TrendLine>
+</Attr>
 </AttrList>
 </ConditionAttr>
 </DefaultAttr>
@@ -5228,41 +5328,41 @@ group by category order by '金额' desc ]]></Query>
 <newPlotFillStyle>
 <AttrFillStyle>
 <AFStyle colorStyle="1"/>
-<FillStyleName fillStyleName="新特性"/>
-<isCustomFillStyle isCustomFillStyle="false"/>
+<FillStyleName fillStyleName=""/>
+<isCustomFillStyle isCustomFillStyle="true"/>
 <ColorList>
-<OColor colvalue="-10243346"/>
-<OColor colvalue="-8988015"/>
-<OColor colvalue="-472193"/>
-<OColor colvalue="-486008"/>
-<OColor colvalue="-8595761"/>
-<OColor colvalue="-7236949"/>
-<OColor colvalue="-8873759"/>
-<OColor colvalue="-1071514"/>
-<OColor colvalue="-1188474"/>
-<OColor colvalue="-6715442"/>
-<OColor colvalue="-10243346"/>
-<OColor colvalue="-8988015"/>
-<OColor colvalue="-472193"/>
-<OColor colvalue="-486008"/>
-<OColor colvalue="-8595761"/>
-<OColor colvalue="-7236949"/>
-<OColor colvalue="-8873759"/>
-<OColor colvalue="-1071514"/>
-<OColor colvalue="-1188474"/>
-<OColor colvalue="-6715442"/>
-<OColor colvalue="-10243346"/>
-<OColor colvalue="-8988015"/>
-<OColor colvalue="-472193"/>
-<OColor colvalue="-486008"/>
-<OColor colvalue="-8595761"/>
-<OColor colvalue="-7236949"/>
-<OColor colvalue="-8873759"/>
-<OColor colvalue="-1071514"/>
-<OColor colvalue="-1188474"/>
-<OColor colvalue="-6715442"/>
-<OColor colvalue="-10243346"/>
-<OColor colvalue="-8988015"/>
+<OColor colvalue="-15118441"/>
+<OColor colvalue="-11184811"/>
+<OColor colvalue="-4363512"/>
+<OColor colvalue="-16750485"/>
+<OColor colvalue="-3658447"/>
+<OColor colvalue="-10331231"/>
+<OColor colvalue="-7763575"/>
+<OColor colvalue="-6514688"/>
+<OColor colvalue="-16744620"/>
+<OColor colvalue="-6187579"/>
+<OColor colvalue="-15714713"/>
+<OColor colvalue="-945550"/>
+<OColor colvalue="-4092928"/>
+<OColor colvalue="-13224394"/>
+<OColor colvalue="-12423245"/>
+<OColor colvalue="-10043521"/>
+<OColor colvalue="-406154"/>
+<OColor colvalue="-13031292"/>
+<OColor colvalue="-16732559"/>
+<OColor colvalue="-7099690"/>
+<OColor colvalue="-11991199"/>
+<OColor colvalue="-331445"/>
+<OColor colvalue="-6991099"/>
+<OColor colvalue="-16686527"/>
+<OColor colvalue="-9205567"/>
+<OColor colvalue="-7397856"/>
+<OColor colvalue="-406154"/>
+<OColor colvalue="-2712831"/>
+<OColor colvalue="-4737097"/>
+<OColor colvalue="-11460720"/>
+<OColor colvalue="-6696775"/>
+<OColor colvalue="-3685632"/>
 </ColorList>
 </AttrFillStyle>
 </newPlotFillStyle>
@@ -5554,6 +5654,26 @@ group by category order by '金额' desc ]]></Query>
 <Attr alpha="1.0"/>
 </AttrAlpha>
 </Attr>
+<Attr class="com.fr.plugin.chart.base.VanChartAttrTrendLine">
+<TrendLine>
+<Attr trendLineName="" trendLineType="exponential" prePeriod="0" afterPeriod="0"/>
+<LineStyleInfo>
+<AttrAlpha>
+<Attr alpha="1.0"/>
+</AttrAlpha>
+<AttrColor>
+<Attr/>
+</AttrColor>
+<AttrLineStyle>
+<newAttr lineStyle="0"/>
+</AttrLineStyle>
+<AttrBorder>
+<Attr lineStyle="0" isRoundBorder="false" roundRadius="0"/>
+<newColor borderColor="-16777216"/>
+</AttrBorder>
+</LineStyleInfo>
+</TrendLine>
+</Attr>
 </AttrList>
 </ConditionAttr>
 </DefaultAttr>
@@ -5600,41 +5720,41 @@ group by category order by '金额' desc ]]></Query>
 <newPlotFillStyle>
 <AttrFillStyle>
 <AFStyle colorStyle="1"/>
-<FillStyleName fillStyleName="新特性"/>
-<isCustomFillStyle isCustomFillStyle="false"/>
+<FillStyleName fillStyleName=""/>
+<isCustomFillStyle isCustomFillStyle="true"/>
 <ColorList>
-<OColor colvalue="-10243346"/>
-<OColor colvalue="-8988015"/>
-<OColor colvalue="-472193"/>
-<OColor colvalue="-486008"/>
-<OColor colvalue="-8595761"/>
-<OColor colvalue="-7236949"/>
-<OColor colvalue="-8873759"/>
-<OColor colvalue="-1071514"/>
-<OColor colvalue="-1188474"/>
-<OColor colvalue="-6715442"/>
-<OColor colvalue="-10243346"/>
-<OColor colvalue="-8988015"/>
-<OColor colvalue="-472193"/>
-<OColor colvalue="-486008"/>
-<OColor colvalue="-8595761"/>
-<OColor colvalue="-7236949"/>
-<OColor colvalue="-8873759"/>
-<OColor colvalue="-1071514"/>
-<OColor colvalue="-1188474"/>
-<OColor colvalue="-6715442"/>
-<OColor colvalue="-10243346"/>
-<OColor colvalue="-8988015"/>
-<OColor colvalue="-472193"/>
-<OColor colvalue="-486008"/>
-<OColor colvalue="-8595761"/>
-<OColor colvalue="-7236949"/>
-<OColor colvalue="-8873759"/>
-<OColor colvalue="-1071514"/>
-<OColor colvalue="-1188474"/>
-<OColor colvalue="-6715442"/>
-<OColor colvalue="-10243346"/>
-<OColor colvalue="-8988015"/>
+<OColor colvalue="-15118441"/>
+<OColor colvalue="-11184811"/>
+<OColor colvalue="-4363512"/>
+<OColor colvalue="-16750485"/>
+<OColor colvalue="-3658447"/>
+<OColor colvalue="-10331231"/>
+<OColor colvalue="-7763575"/>
+<OColor colvalue="-6514688"/>
+<OColor colvalue="-16744620"/>
+<OColor colvalue="-6187579"/>
+<OColor colvalue="-15714713"/>
+<OColor colvalue="-945550"/>
+<OColor colvalue="-4092928"/>
+<OColor colvalue="-13224394"/>
+<OColor colvalue="-12423245"/>
+<OColor colvalue="-10043521"/>
+<OColor colvalue="-406154"/>
+<OColor colvalue="-13031292"/>
+<OColor colvalue="-16732559"/>
+<OColor colvalue="-7099690"/>
+<OColor colvalue="-11991199"/>
+<OColor colvalue="-331445"/>
+<OColor colvalue="-6991099"/>
+<OColor colvalue="-16686527"/>
+<OColor colvalue="-9205567"/>
+<OColor colvalue="-7397856"/>
+<OColor colvalue="-406154"/>
+<OColor colvalue="-2712831"/>
+<OColor colvalue="-4737097"/>
+<OColor colvalue="-11460720"/>
+<OColor colvalue="-6696775"/>
+<OColor colvalue="-3685632"/>
 </ColorList>
 </AttrFillStyle>
 </newPlotFillStyle>
@@ -5926,6 +6046,26 @@ group by category order by '金额' desc ]]></Query>
 <Attr alpha="1.0"/>
 </AttrAlpha>
 </Attr>
+<Attr class="com.fr.plugin.chart.base.VanChartAttrTrendLine">
+<TrendLine>
+<Attr trendLineName="" trendLineType="exponential" prePeriod="0" afterPeriod="0"/>
+<LineStyleInfo>
+<AttrAlpha>
+<Attr alpha="1.0"/>
+</AttrAlpha>
+<AttrColor>
+<Attr/>
+</AttrColor>
+<AttrLineStyle>
+<newAttr lineStyle="0"/>
+</AttrLineStyle>
+<AttrBorder>
+<Attr lineStyle="0" isRoundBorder="false" roundRadius="0"/>
+<newColor borderColor="-16777216"/>
+</AttrBorder>
+</LineStyleInfo>
+</TrendLine>
+</Attr>
 </AttrList>
 </ConditionAttr>
 </DefaultAttr>
@@ -5972,41 +6112,41 @@ group by category order by '金额' desc ]]></Query>
 <newPlotFillStyle>
 <AttrFillStyle>
 <AFStyle colorStyle="1"/>
-<FillStyleName fillStyleName="新特性"/>
-<isCustomFillStyle isCustomFillStyle="false"/>
+<FillStyleName fillStyleName=""/>
+<isCustomFillStyle isCustomFillStyle="true"/>
 <ColorList>
-<OColor colvalue="-10243346"/>
-<OColor colvalue="-8988015"/>
-<OColor colvalue="-472193"/>
-<OColor colvalue="-486008"/>
-<OColor colvalue="-8595761"/>
-<OColor colvalue="-7236949"/>
-<OColor colvalue="-8873759"/>
-<OColor colvalue="-1071514"/>
-<OColor colvalue="-1188474"/>
-<OColor colvalue="-6715442"/>
-<OColor colvalue="-10243346"/>
-<OColor colvalue="-8988015"/>
-<OColor colvalue="-472193"/>
-<OColor colvalue="-486008"/>
-<OColor colvalue="-8595761"/>
-<OColor colvalue="-7236949"/>
-<OColor colvalue="-8873759"/>
-<OColor colvalue="-1071514"/>
-<OColor colvalue="-1188474"/>
-<OColor colvalue="-6715442"/>
-<OColor colvalue="-10243346"/>
-<OColor colvalue="-8988015"/>
-<OColor colvalue="-472193"/>
-<OColor colvalue="-486008"/>
-<OColor colvalue="-8595761"/>
-<OColor colvalue="-7236949"/>
-<OColor colvalue="-8873759"/>
-<OColor colvalue="-1071514"/>
-<OColor colvalue="-1188474"/>
-<OColor colvalue="-6715442"/>
-<OColor colvalue="-10243346"/>
-<OColor colvalue="-8988015"/>
+<OColor colvalue="-15118441"/>
+<OColor colvalue="-11184811"/>
+<OColor colvalue="-4363512"/>
+<OColor colvalue="-16750485"/>
+<OColor colvalue="-3658447"/>
+<OColor colvalue="-10331231"/>
+<OColor colvalue="-7763575"/>
+<OColor colvalue="-6514688"/>
+<OColor colvalue="-16744620"/>
+<OColor colvalue="-6187579"/>
+<OColor colvalue="-15714713"/>
+<OColor colvalue="-945550"/>
+<OColor colvalue="-4092928"/>
+<OColor colvalue="-13224394"/>
+<OColor colvalue="-12423245"/>
+<OColor colvalue="-10043521"/>
+<OColor colvalue="-406154"/>
+<OColor colvalue="-13031292"/>
+<OColor colvalue="-16732559"/>
+<OColor colvalue="-7099690"/>
+<OColor colvalue="-11991199"/>
+<OColor colvalue="-331445"/>
+<OColor colvalue="-6991099"/>
+<OColor colvalue="-16686527"/>
+<OColor colvalue="-9205567"/>
+<OColor colvalue="-7397856"/>
+<OColor colvalue="-406154"/>
+<OColor colvalue="-2712831"/>
+<OColor colvalue="-4737097"/>
+<OColor colvalue="-11460720"/>
+<OColor colvalue="-6696775"/>
+<OColor colvalue="-3685632"/>
 </ColorList>
 </AttrFillStyle>
 </newPlotFillStyle>
@@ -6298,6 +6438,26 @@ group by category order by '金额' desc ]]></Query>
 <Attr alpha="1.0"/>
 </AttrAlpha>
 </Attr>
+<Attr class="com.fr.plugin.chart.base.VanChartAttrTrendLine">
+<TrendLine>
+<Attr trendLineName="" trendLineType="exponential" prePeriod="0" afterPeriod="0"/>
+<LineStyleInfo>
+<AttrAlpha>
+<Attr alpha="1.0"/>
+</AttrAlpha>
+<AttrColor>
+<Attr/>
+</AttrColor>
+<AttrLineStyle>
+<newAttr lineStyle="0"/>
+</AttrLineStyle>
+<AttrBorder>
+<Attr lineStyle="0" isRoundBorder="false" roundRadius="0"/>
+<newColor borderColor="-16777216"/>
+</AttrBorder>
+</LineStyleInfo>
+</TrendLine>
+</Attr>
 </AttrList>
 </ConditionAttr>
 </DefaultAttr>
@@ -6344,41 +6504,41 @@ group by category order by '金额' desc ]]></Query>
 <newPlotFillStyle>
 <AttrFillStyle>
 <AFStyle colorStyle="1"/>
-<FillStyleName fillStyleName="新特性"/>
-<isCustomFillStyle isCustomFillStyle="false"/>
+<FillStyleName fillStyleName=""/>
+<isCustomFillStyle isCustomFillStyle="true"/>
 <ColorList>
-<OColor colvalue="-10243346"/>
-<OColor colvalue="-8988015"/>
-<OColor colvalue="-472193"/>
-<OColor colvalue="-486008"/>
-<OColor colvalue="-8595761"/>
-<OColor colvalue="-7236949"/>
-<OColor colvalue="-8873759"/>
-<OColor colvalue="-1071514"/>
-<OColor colvalue="-1188474"/>
-<OColor colvalue="-6715442"/>
-<OColor colvalue="-10243346"/>
-<OColor colvalue="-8988015"/>
-<OColor colvalue="-472193"/>
-<OColor colvalue="-486008"/>
-<OColor colvalue="-8595761"/>
-<OColor colvalue="-7236949"/>
-<OColor colvalue="-8873759"/>
-<OColor colvalue="-1071514"/>
-<OColor colvalue="-1188474"/>
-<OColor colvalue="-6715442"/>
-<OColor colvalue="-10243346"/>
-<OColor colvalue="-8988015"/>
-<OColor colvalue="-472193"/>
-<OColor colvalue="-486008"/>
-<OColor colvalue="-8595761"/>
-<OColor colvalue="-7236949"/>
-<OColor colvalue="-8873759"/>
-<OColor colvalue="-1071514"/>
-<OColor colvalue="-1188474"/>
-<OColor colvalue="-6715442"/>
-<OColor colvalue="-10243346"/>
-<OColor colvalue="-8988015"/>
+<OColor colvalue="-15118441"/>
+<OColor colvalue="-11184811"/>
+<OColor colvalue="-4363512"/>
+<OColor colvalue="-16750485"/>
+<OColor colvalue="-3658447"/>
+<OColor colvalue="-10331231"/>
+<OColor colvalue="-7763575"/>
+<OColor colvalue="-6514688"/>
+<OColor colvalue="-16744620"/>
+<OColor colvalue="-6187579"/>
+<OColor colvalue="-15714713"/>
+<OColor colvalue="-945550"/>
+<OColor colvalue="-4092928"/>
+<OColor colvalue="-13224394"/>
+<OColor colvalue="-12423245"/>
+<OColor colvalue="-10043521"/>
+<OColor colvalue="-406154"/>
+<OColor colvalue="-13031292"/>
+<OColor colvalue="-16732559"/>
+<OColor colvalue="-7099690"/>
+<OColor colvalue="-11991199"/>
+<OColor colvalue="-331445"/>
+<OColor colvalue="-6991099"/>
+<OColor colvalue="-16686527"/>
+<OColor colvalue="-9205567"/>
+<OColor colvalue="-7397856"/>
+<OColor colvalue="-406154"/>
+<OColor colvalue="-2712831"/>
+<OColor colvalue="-4737097"/>
+<OColor colvalue="-11460720"/>
+<OColor colvalue="-6696775"/>
+<OColor colvalue="-3685632"/>
 </ColorList>
 </AttrFillStyle>
 </newPlotFillStyle>
@@ -6670,6 +6830,26 @@ group by category order by '金额' desc ]]></Query>
 <Attr alpha="1.0"/>
 </AttrAlpha>
 </Attr>
+<Attr class="com.fr.plugin.chart.base.VanChartAttrTrendLine">
+<TrendLine>
+<Attr trendLineName="" trendLineType="exponential" prePeriod="0" afterPeriod="0"/>
+<LineStyleInfo>
+<AttrAlpha>
+<Attr alpha="1.0"/>
+</AttrAlpha>
+<AttrColor>
+<Attr/>
+</AttrColor>
+<AttrLineStyle>
+<newAttr lineStyle="0"/>
+</AttrLineStyle>
+<AttrBorder>
+<Attr lineStyle="0" isRoundBorder="false" roundRadius="0"/>
+<newColor borderColor="-16777216"/>
+</AttrBorder>
+</LineStyleInfo>
+</TrendLine>
+</Attr>
 </AttrList>
 </ConditionAttr>
 </DefaultAttr>
@@ -6716,41 +6896,41 @@ group by category order by '金额' desc ]]></Query>
 <newPlotFillStyle>
 <AttrFillStyle>
 <AFStyle colorStyle="1"/>
-<FillStyleName fillStyleName="新特性"/>
-<isCustomFillStyle isCustomFillStyle="false"/>
+<FillStyleName fillStyleName=""/>
+<isCustomFillStyle isCustomFillStyle="true"/>
 <ColorList>
-<OColor colvalue="-10243346"/>
-<OColor colvalue="-8988015"/>
-<OColor colvalue="-472193"/>
-<OColor colvalue="-486008"/>
-<OColor colvalue="-8595761"/>
-<OColor colvalue="-7236949"/>
-<OColor colvalue="-8873759"/>
-<OColor colvalue="-1071514"/>
-<OColor colvalue="-1188474"/>
-<OColor colvalue="-6715442"/>
-<OColor colvalue="-10243346"/>
-<OColor colvalue="-8988015"/>
-<OColor colvalue="-472193"/>
-<OColor colvalue="-486008"/>
-<OColor colvalue="-8595761"/>
-<OColor colvalue="-7236949"/>
-<OColor colvalue="-8873759"/>
-<OColor colvalue="-1071514"/>
-<OColor colvalue="-1188474"/>
-<OColor colvalue="-6715442"/>
-<OColor colvalue="-10243346"/>
-<OColor colvalue="-8988015"/>
-<OColor colvalue="-472193"/>
-<OColor colvalue="-486008"/>
-<OColor colvalue="-8595761"/>
-<OColor colvalue="-7236949"/>
-<OColor colvalue="-8873759"/>
-<OColor colvalue="-1071514"/>
-<OColor colvalue="-1188474"/>
-<OColor colvalue="-6715442"/>
-<OColor colvalue="-10243346"/>
-<OColor colvalue="-8988015"/>
+<OColor colvalue="-15118441"/>
+<OColor colvalue="-11184811"/>
+<OColor colvalue="-4363512"/>
+<OColor colvalue="-16750485"/>
+<OColor colvalue="-3658447"/>
+<OColor colvalue="-10331231"/>
+<OColor colvalue="-7763575"/>
+<OColor colvalue="-6514688"/>
+<OColor colvalue="-16744620"/>
+<OColor colvalue="-6187579"/>
+<OColor colvalue="-15714713"/>
+<OColor colvalue="-945550"/>
+<OColor colvalue="-4092928"/>
+<OColor colvalue="-13224394"/>
+<OColor colvalue="-12423245"/>
+<OColor colvalue="-10043521"/>
+<OColor colvalue="-406154"/>
+<OColor colvalue="-13031292"/>
+<OColor colvalue="-16732559"/>
+<OColor colvalue="-7099690"/>
+<OColor colvalue="-11991199"/>
+<OColor colvalue="-331445"/>
+<OColor colvalue="-6991099"/>
+<OColor colvalue="-16686527"/>
+<OColor colvalue="-9205567"/>
+<OColor colvalue="-7397856"/>
+<OColor colvalue="-406154"/>
+<OColor colvalue="-2712831"/>
+<OColor colvalue="-4737097"/>
+<OColor colvalue="-11460720"/>
+<OColor colvalue="-6696775"/>
+<OColor colvalue="-3685632"/>
 </ColorList>
 </AttrFillStyle>
 </newPlotFillStyle>
@@ -6955,7 +7135,7 @@ group by category order by '金额' desc ]]></Query>
 <widgetValue>
 <O t="Formula" class="Formula">
 <Attributes>
-<![CDATA[=month(today())-1]]></Attributes>
+<![CDATA[=month(today())]]></Attributes>
 </O>
 </widgetValue>
 </InnerWidget>
@@ -7014,19 +7194,17 @@ group by category order by '金额' desc ]]></Query>
 <BoundsAttr x="450" y="25" width="80" height="21"/>
 </Widget>
 <Sorted sorted="false"/>
-<MobileWidgetList>
-<Widget widgetName="year"/>
-<Widget widgetName="month"/>
-<Widget widgetName="Search"/>
-</MobileWidgetList>
 <Display display="true"/>
 <DelayDisplayContent delay="false"/>
 <Position position="0"/>
 <Design_Width design_width="960"/>
+<MobileWidgetList>
+<Widget widgetName="year"/>
+<Widget widgetName="month"/>
+</MobileWidgetList>
 <WidgetNameTagMap>
 <NameTag name="month" tag="月份：:"/>
 <NameTag name="year" tag="年份："/>
-<NameTag name="Search" tag="month:"/>
 </WidgetNameTagMap>
 </Layout>
 <DesignAttr width="960" height="80"/>

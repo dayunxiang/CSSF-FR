@@ -20,7 +20,7 @@
 <![CDATA[FR]]></DatabaseName>
 </Connection>
 <Query>
-<![CDATA[select month(date) as yue,category,sub_category,sum(expense) as total_expense,controllable from dbo.WT_maintenance_fee_allinone where 1=1 and year(date)='${year}' ${if(len(sec)==0,"","and section_office='"+sec+"'")}
+<![CDATA[select month(date) as yue,category,sub_category,sum(expense) as total_expense,controllable from dbo.WT_maintenance_fee_allinone where 1=1 and year(date)='${year}' ${if(len(sec)==0,"","and section_office='"+sec+"'")} and section_office != '董浜污水厂'
 group by month(date),sub_category, category,controllable order by charindex(category,'劳务,职安健,年度检测,IT,技防,泵站,仪表,自控,配电系统,工艺管路系统,格栅系统,旋流沉砂系统,生化系统,加药系统,消毒系统,潜水泵机组,反冲回用系统,曝气系统,污泥处理,物料,环境,其他,除臭系统')]]></Query>
 </TableData>
 <TableData name="ds2" class="com.fr.data.impl.DBTableData">
@@ -596,9 +596,9 @@ group by month(date),sub_category, category,controllable order by charindex(cate
 <ColumnPrivilegeControl/>
 <RowPrivilegeControl/>
 <RowHeight defaultValue="723900">
-<![CDATA[1181100,800100,723900,1066800,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900]]></RowHeight>
+<![CDATA[1181100,800100,723900,1066800,723900,723900,723900,723900,723900,723900,723900]]></RowHeight>
 <ColumnWidth defaultValue="2743200">
-<![CDATA[2743200,2743200,2895600,4229100,2743200,2743200,2743200,2743200,2743200,2743200,2743200,2743200,2743200,2743200,2743200,2743200,2743200,2743200,2743200,2743200,2743200,2743200]]></ColumnWidth>
+<![CDATA[2743200,2743200,2895600,4229100,2743200,2743200,2743200,2743200,2743200,2743200,2743200]]></ColumnWidth>
 <CellElementList>
 <C c="1" r="0" cs="3" s="5">
 <O t="Formula" class="Formula">
@@ -1115,9 +1115,9 @@ group by month(date),sub_category, category,controllable order by charindex(cate
 <ColumnPrivilegeControl/>
 <RowPrivilegeControl/>
 <RowHeight defaultValue="723900">
-<![CDATA[1219200,952500,835200,1143000,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900]]></RowHeight>
+<![CDATA[1219200,952500,835200,1143000,723900,723900,723900,723900,723900,723900,723900]]></RowHeight>
 <ColumnWidth defaultValue="2743200">
-<![CDATA[2743200,4305300,2743200,2743200,4953000,2743200,2743200,2743200,2743200,2743200,2743200,2743200,2743200,2743200,2743200,2743200,2743200,2743200,2743200,2743200,2743200]]></ColumnWidth>
+<![CDATA[2743200,4305300,2743200,2743200,4953000,2743200,2743200,2743200,2743200,2743200,2743200]]></ColumnWidth>
 <CellElementList>
 <C c="0" r="0">
 <PrivilegeControl/>
@@ -1672,15 +1672,15 @@ group by month(date),sub_category, category,controllable order by charindex(cate
 <BoundsAttr x="451" y="25" width="80" height="21"/>
 </Widget>
 <Sorted sorted="false"/>
+<Display display="true"/>
+<DelayDisplayContent delay="false"/>
+<Position position="0"/>
+<Design_Width design_width="960"/>
 <MobileWidgetList>
 <Widget widgetName="year"/>
 <Widget widgetName="sec"/>
 <Widget widgetName="Search"/>
 </MobileWidgetList>
-<Display display="true"/>
-<DelayDisplayContent delay="false"/>
-<Position position="0"/>
-<Design_Width design_width="960"/>
 <WidgetNameTagMap>
 <NameTag name="sec" tag="部 门："/>
 <NameTag name="year" tag="年 份："/>
@@ -1739,12 +1739,7 @@ group by month(date),sub_category, category,controllable order by charindex(cate
 <Style horizontal_alignment="0" imageLayout="1">
 <FRFont name="微软雅黑" style="1" size="96"/>
 <Background name="NullBackground"/>
-<Border>
-<Top color="-16777216"/>
-<Bottom color="-16777216"/>
-<Left color="-16777216"/>
-<Right color="-16777216"/>
-</Border>
+<Border/>
 </Style>
 <Style horizontal_alignment="0" imageLayout="1">
 <FRFont name="SimSun" style="0" size="72"/>

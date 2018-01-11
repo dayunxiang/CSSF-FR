@@ -6126,9 +6126,9 @@ distinct * from
 <ColumnPrivilegeControl/>
 <RowPrivilegeControl/>
 <RowHeight defaultValue="723900">
-<![CDATA[0,0,0,0,0,0,0,0,1752600,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,0,0,723900]]></RowHeight>
+<![CDATA[0,0,0,0,0,0,0,0,0,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,0,0,723900]]></RowHeight>
 <ColumnWidth defaultValue="2743200">
-<![CDATA[2743200,2743200,2743200,2743200,2743200,2743200,2743200,2895600,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2743200]]></ColumnWidth>
+<![CDATA[2743200,2743200,2743200,2743200,2743200,2743200,2743200,2743200,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2743200]]></ColumnWidth>
 <CellElementList>
 <C c="0" r="0" s="7">
 <O>
@@ -9292,8 +9292,6 @@ distinct * from
 <Attributes dsName="配水电耗LastYear_Table" columnName="rq"/>
 <Complex/>
 <RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
-<Result>
-<![CDATA[tointeger(right($$$,2))]]></Result>
 <Parameters/>
 </O>
 <PrivilegeControl/>
@@ -9496,7 +9494,7 @@ distinct * from
 <C c="1" r="58" s="8">
 <O t="Formula" class="Formula">
 <Attributes>
-<![CDATA[=G57]]></Attributes>
+<![CDATA[=G52]]></Attributes>
 </O>
 <PrivilegeControl/>
 <Expand/>
@@ -9504,7 +9502,7 @@ distinct * from
 <C c="2" r="58" s="8">
 <O t="Formula" class="Formula">
 <Attributes>
-<![CDATA[=G52]]></Attributes>
+<![CDATA[=G57]]></Attributes>
 </O>
 <PrivilegeControl/>
 <Expand/>
@@ -9518,7 +9516,7 @@ distinct * from
 <C c="1" r="59" s="8">
 <O t="Formula" class="Formula">
 <Attributes>
-<![CDATA[=L57]]></Attributes>
+<![CDATA[=L52]]></Attributes>
 </O>
 <PrivilegeControl/>
 <Expand/>
@@ -9526,7 +9524,7 @@ distinct * from
 <C c="2" r="59" s="8">
 <O t="Formula" class="Formula">
 <Attributes>
-<![CDATA[=L52]]></Attributes>
+<![CDATA[=L57]]></Attributes>
 </O>
 <PrivilegeControl/>
 <Expand/>
@@ -9540,7 +9538,7 @@ distinct * from
 <C c="1" r="60" s="8">
 <O t="Formula" class="Formula">
 <Attributes>
-<![CDATA[=Q57]]></Attributes>
+<![CDATA[=Q52]]></Attributes>
 </O>
 <PrivilegeControl/>
 <Expand/>
@@ -9548,7 +9546,7 @@ distinct * from
 <C c="2" r="60" s="8">
 <O t="Formula" class="Formula">
 <Attributes>
-<![CDATA[=Q52]]></Attributes>
+<![CDATA[=Q57]]></Attributes>
 </O>
 <PrivilegeControl/>
 <Expand/>
@@ -9994,7 +9992,6 @@ distinct * from
 <![CDATA[="   " + $year + "年1~" + $month + "月，供水部整体电耗为" + F88 + "kWh/km3，同比去年同期" + F87 + "kWh/km3增长" + round((F88 - F87) * 100 / F87, 2) + "%。"]]></Attributes>
 </O>
 <PrivilegeControl/>
-<Expand/>
 </C>
 <C c="0" r="74" cs="2" rs="3" s="3">
 <O>
@@ -10196,7 +10193,6 @@ distinct * from
 <![CDATA[=F79[B79:!1]A]]></Attributes>
 </O>
 <PrivilegeControl/>
-<Expand/>
 </C>
 <C c="5" r="87">
 <O t="Formula" class="Formula">
@@ -10204,7 +10200,6 @@ distinct * from
 <![CDATA[=F79[B79:!2]A]]></Attributes>
 </O>
 <PrivilegeControl/>
-<Expand/>
 </C>
 <C c="0" r="88" cs="8" rs="10">
 <O t="CC">
@@ -10647,7 +10642,7 @@ distinct * from
 <Expand/>
 </C>
 </CellElementList>
-<PECBAttr blockName="block4" x="1143000" y="155905200" width="24841200" height="56769000"/>
+<PECBAttr blockName="block4" x="1143000" y="155905200" width="21945600" height="55016400"/>
 </Block>
 <PrivilegeControl/>
 </Report>

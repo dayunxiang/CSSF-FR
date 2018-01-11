@@ -116,7 +116,7 @@
 <PrivilegeControl/>
 <Expand leftParentDefault="false"/>
 </C>
-<C c="0" r="1" rs="3" s="1">
+<C c="0" r="1" rs="3" s="0">
 <O t="DSColumn">
 <Attributes dsName="ds1" columnName="SECTION_OFFICE"/>
 <Complex/>
@@ -126,13 +126,13 @@
 <PrivilegeControl/>
 <Expand dir="0"/>
 </C>
-<C c="1" r="1" s="2">
+<C c="1" r="1" s="1">
 <O>
 <![CDATA[外包费用]]></O>
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="2" r="1" s="2">
+<C c="2" r="1" s="1">
 <O t="DSColumn">
 <Attributes dsName="ds1" columnName="eq_per_month"/>
 <Complex/>
@@ -164,7 +164,7 @@
 </HighlightList>
 <Expand dir="0"/>
 </C>
-<C c="3" r="1" s="2">
+<C c="3" r="1" s="1">
 <O t="Formula" class="Formula">
 <Attributes>
 <![CDATA[=sum(C2)]]></Attributes>
@@ -172,13 +172,13 @@
 <PrivilegeControl/>
 <Expand leftParentDefault="false" left="A2"/>
 </C>
-<C c="1" r="2" s="3">
+<C c="1" r="2" s="2">
 <O>
 <![CDATA[物料消耗]]></O>
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="2" r="2" s="3">
+<C c="2" r="2" s="2">
 <O t="DSColumn">
 <Attributes dsName="ds1" columnName="cons_per_month"/>
 <Complex/>
@@ -210,7 +210,7 @@
 </HighlightList>
 <Expand dir="0"/>
 </C>
-<C c="3" r="2" s="3">
+<C c="3" r="2" s="2">
 <O t="Formula" class="Formula">
 <Attributes>
 <![CDATA[=sum(C3)]]></Attributes>
@@ -218,13 +218,13 @@
 <PrivilegeControl/>
 <Expand leftParentDefault="false" left="A2"/>
 </C>
-<C c="1" r="3" s="4">
+<C c="1" r="3" s="3">
 <O>
 <![CDATA[科室月合计]]></O>
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="2" r="3" s="4">
+<C c="2" r="3" s="3">
 <O t="Formula" class="Formula">
 <Attributes>
 <![CDATA[=sum(C2+C3)]]></Attributes>
@@ -232,7 +232,7 @@
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="3" r="3" s="4">
+<C c="3" r="3" s="3">
 <O t="Formula" class="Formula">
 <Attributes>
 <![CDATA[=sum(D2+D3)]]></Attributes>
@@ -240,19 +240,19 @@
 <PrivilegeControl/>
 <Expand leftParentDefault="false" left="A2"/>
 </C>
-<C c="0" r="4" rs="3" s="5">
+<C c="0" r="4" rs="3" s="4">
 <O>
 <![CDATA[污水厂]]></O>
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="1" r="4" s="5">
+<C c="1" r="4" s="4">
 <O>
 <![CDATA[外包费用]]></O>
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="2" r="4" s="5">
+<C c="2" r="4" s="4">
 <O t="Formula" class="Formula">
 <Attributes>
 <![CDATA[=sum(C2)]]></Attributes>
@@ -260,7 +260,7 @@
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="3" r="4" s="5">
+<C c="3" r="4" s="4">
 <O t="Formula" class="Formula">
 <Attributes>
 <![CDATA[=sum(C5)]]></Attributes>
@@ -268,13 +268,13 @@
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="1" r="5" s="5">
+<C c="1" r="5" s="4">
 <O>
 <![CDATA[物料消耗]]></O>
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="2" r="5" s="5">
+<C c="2" r="5" s="4">
 <O t="Formula" class="Formula">
 <Attributes>
 <![CDATA[=sum(C3)]]></Attributes>
@@ -282,7 +282,7 @@
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="3" r="5" s="5">
+<C c="3" r="5" s="4">
 <O t="Formula" class="Formula">
 <Attributes>
 <![CDATA[=sum(C6)]]></Attributes>
@@ -290,13 +290,13 @@
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="1" r="6" s="5">
+<C c="1" r="6" s="4">
 <O>
 <![CDATA[合计]]></O>
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="2" r="6" s="5">
+<C c="2" r="6" s="4">
 <O t="Formula" class="Formula">
 <Attributes>
 <![CDATA[=sum(C5+C6)]]></Attributes>
@@ -304,7 +304,7 @@
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="3" r="6" s="5">
+<C c="3" r="6" s="4">
 <O t="Formula" class="Formula">
 <Attributes>
 <![CDATA[=sum(C7)]]></Attributes>
@@ -347,7 +347,7 @@
 <ColumnWidth defaultValue="2743200">
 <![CDATA[17106900,16992600,2971800,2971800,2743200,2743200,2743200,2743200,2743200,2743200,2743200]]></ColumnWidth>
 <CellElementList>
-<C c="0" r="0" s="6">
+<C c="0" r="0" s="5">
 <O t="CC">
 <LayoutAttr selectedIndex="0"/>
 <ChangeAttr enable="false" changeType="button" timeInterval="5" buttonColor="-8421505" carouselColor="-8421505">
@@ -744,7 +744,7 @@
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="1" r="0" s="6">
+<C c="1" r="0" s="5">
 <O t="CC">
 <LayoutAttr selectedIndex="0"/>
 <ChangeAttr enable="false" changeType="button" timeInterval="5" buttonColor="-8421505" carouselColor="-8421505">
@@ -1298,14 +1298,14 @@
 <BoundsAttr x="222" y="25" width="80" height="21"/>
 </Widget>
 <Sorted sorted="false"/>
-<MobileWidgetList>
-<Widget widgetName="year"/>
-<Widget widgetName="Search"/>
-</MobileWidgetList>
 <Display display="true"/>
 <DelayDisplayContent delay="false"/>
 <Position position="0"/>
 <Design_Width design_width="960"/>
+<MobileWidgetList>
+<Widget widgetName="year"/>
+<Widget widgetName="Search"/>
+</MobileWidgetList>
 <WidgetNameTagMap>
 <NameTag name="year" tag="年 份："/>
 </WidgetNameTagMap>
@@ -1315,63 +1315,53 @@
 </ReportParameterAttr>
 <StyleList>
 <Style horizontal_alignment="0" imageLayout="1">
-<FRFont name="微软雅黑" style="0" size="80" foreground="-1"/>
-<Background name="ColorBackground" color="-13531493"/>
-<Border>
-<Top style="1" color="-2171170"/>
-<Bottom style="1" color="-2171170"/>
-<Left style="1" color="-2171170"/>
-<Right style="1" color="-2171170"/>
-</Border>
-</Style>
-<Style horizontal_alignment="0" imageLayout="1">
 <FRFont name="微软雅黑" style="0" size="80"/>
 <Background name="ColorBackground" color="-1"/>
 <Border>
-<Top color="-2171170"/>
-<Bottom style="2" color="-2171170"/>
-<Left color="-2171170"/>
-<Right color="-2171170"/>
+<Top style="1"/>
+<Bottom style="1"/>
+<Left style="1"/>
+<Right style="1"/>
 </Border>
 </Style>
 <Style horizontal_alignment="0" imageLayout="1">
 <FRFont name="微软雅黑" style="0" size="80"/>
-<Background name="NullBackground"/>
+<Background name="ColorBackground" color="-103"/>
 <Border>
-<Top color="-2171170"/>
-<Bottom color="-2171170"/>
-<Left color="-2171170"/>
-<Right color="-2171170"/>
+<Top style="1"/>
+<Bottom style="1"/>
+<Left style="1"/>
+<Right style="1"/>
 </Border>
 </Style>
 <Style horizontal_alignment="0" imageLayout="1">
 <FRFont name="微软雅黑" style="0" size="80"/>
-<Background name="ColorBackground" color="-1510145"/>
+<Background name="ColorBackground" color="-16724737"/>
 <Border>
-<Top color="-2171170"/>
-<Bottom color="-2171170"/>
-<Left color="-2171170"/>
-<Right color="-2171170"/>
+<Top style="1"/>
+<Bottom style="1"/>
+<Left style="1"/>
+<Right style="1"/>
 </Border>
 </Style>
 <Style horizontal_alignment="0" imageLayout="1">
 <FRFont name="微软雅黑" style="0" size="80"/>
-<Background name="ColorBackground" color="-4333825"/>
+<Background name="ColorBackground" color="-26164"/>
 <Border>
-<Top color="-2171170"/>
-<Bottom style="2" color="-2171170"/>
-<Left color="-2171170"/>
-<Right color="-2171170"/>
+<Top style="1"/>
+<Bottom style="1"/>
+<Left style="1"/>
+<Right style="1"/>
 </Border>
 </Style>
 <Style horizontal_alignment="0" imageLayout="1">
-<FRFont name="微软雅黑" style="0" size="80"/>
-<Background name="ColorBackground" color="-3342337"/>
+<FRFont name="微软雅黑" style="0" size="80" foreground="-1"/>
+<Background name="ColorBackground" color="-16744320"/>
 <Border>
-<Top color="-2171170"/>
-<Bottom style="2" color="-2171170"/>
-<Left color="-2171170"/>
-<Right color="-2171170"/>
+<Top style="1"/>
+<Bottom style="1"/>
+<Left style="1"/>
+<Right style="1"/>
 </Border>
 </Style>
 <Style imageLayout="1">
