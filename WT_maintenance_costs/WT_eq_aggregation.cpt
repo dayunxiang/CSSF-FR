@@ -42,7 +42,7 @@ group by month(date),sub_category, category,controllable order by charindex(cate
 <![CDATA[FR]]></DatabaseName>
 </Connection>
 <Query>
-<![CDATA[select category, sum(expense) as total_expense from dbo.WT_maintenance_fee_allinone  where 1=1 and  year(date)='${year}' ${if(len(sec)==0,"","and section_office='"+sec+"'")}  group by category order by total_expense desc ]]></Query>
+<![CDATA[select category, sum(expense) as total_expense from dbo.WT_maintenance_fee_allinone  where 1=1 and  year(date)='${year}' ${if(len(sec)==0,"","and section_office='"+sec+"'")} and section_office != '董浜污水厂' group by category order by total_expense desc ]]></Query>
 </TableData>
 <TableData name="不可控" class="com.fr.data.impl.DBTableData">
 <Parameters>
@@ -63,7 +63,7 @@ group by month(date),sub_category, category,controllable order by charindex(cate
 <![CDATA[FR]]></DatabaseName>
 </Connection>
 <Query>
-<![CDATA[select sub_category,sum(expense) as total,controllable from dbo.WT_maintenance_fee_allinone where 1=1 and year(date)='${year}'and controllable='不可控' ${if(len(sec)==0,"","and section_office='"+sec+"'")}  group by sub_category,controllable order by total desc]]></Query>
+<![CDATA[select sub_category,sum(expense) as total,controllable from dbo.WT_maintenance_fee_allinone where 1=1 and year(date)='${year}'and controllable='不可控' ${if(len(sec)==0,"","and section_office='"+sec+"'")}  and section_office != '董浜污水厂' group by sub_category,controllable order by total desc]]></Query>
 </TableData>
 <TableData name="可控" class="com.fr.data.impl.DBTableData">
 <Parameters>
@@ -84,7 +84,7 @@ group by month(date),sub_category, category,controllable order by charindex(cate
 <![CDATA[FR]]></DatabaseName>
 </Connection>
 <Query>
-<![CDATA[select sub_category,sum(expense) as total,controllable from dbo.WT_maintenance_fee_allinone where 1=1 and  year(date)='${year}'and controllable='可控' ${if(len(sec)==0,"","and section_office='"+sec+"'")}  group by sub_category,controllable order by total desc ]]></Query>
+<![CDATA[select sub_category,sum(expense) as total,controllable from dbo.WT_maintenance_fee_allinone where 1=1 and  year(date)='${year}'and controllable='可控' ${if(len(sec)==0,"","and section_office='"+sec+"'")}  and section_office != '董浜污水厂' group by sub_category,controllable order by total desc ]]></Query>
 </TableData>
 </TableDataMap>
 <Report class="com.fr.report.poly.PolyWorkSheet" name="sheet1">
@@ -105,7 +105,7 @@ group by month(date),sub_category, category,controllable order by charindex(cate
 <RowHeight defaultValue="723900">
 <![CDATA[1485900,1181100,914400,1143000,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,6438900,723900,1181100,800100,723900,1066800,723900]]></RowHeight>
 <ColumnWidth defaultValue="2743200">
-<![CDATA[2743200,2895600,4229100,2743200,3886200,4038600,2743200,2743200,2743200,2743200,2743200]]></ColumnWidth>
+<![CDATA[2743200,2895600,3771900,2743200,3162300,3810000,2743200,2743200,2743200,2743200,2743200]]></ColumnWidth>
 <CellElementList>
 <C c="0" r="0" cs="6" s="0">
 <O t="Formula" class="Formula">
@@ -584,7 +584,7 @@ group by month(date),sub_category, category,controllable order by charindex(cate
 <Expand leftParentDefault="false" upParentDefault="false"/>
 </C>
 </CellElementList>
-<PECBAttr blockName="block1" x="1219200" y="876300" width="26022300" height="22745700"/>
+<PECBAttr blockName="block1" x="1219200" y="876300" width="24612600" height="22745700"/>
 </Block>
 <Block class="com.fr.report.poly.PolyECBlock">
 <ReportPageAttr>

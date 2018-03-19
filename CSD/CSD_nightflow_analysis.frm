@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Form xmlVersion="20151125" releaseVersion="8.0.0">
+<Form xmlVersion="20170715" releaseVersion="8.0.0">
 <TableDataMap>
 <TableData name="ds1" class="com.fr.data.impl.DBTableData">
 <Parameters>
@@ -220,9 +220,18 @@
 <InnerWidget class="com.fr.form.ui.FreeButton">
 <Listener event="click">
 <JavaScript class="com.fr.js.JavaScriptImpl">
-<Parameters/>
+<Parameters>
+<Parameter>
+<Attributes name="aaa"/>
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=sessionID]]></Attributes>
+</O>
+</Parameter>
+</Parameters>
 <Content>
-<![CDATA[window.parent.FS.tabPane.addItem({title:"小区列表维护",src:"${servletURL}?reportlet=CSSF_FR/CSD/CSD_NightFlow/CSD_communityList_modify.cpt&op=write"})]]></Content>
+<![CDATA[var REPORT_URL='http://192.168.1.178:8080/FR/ReportServer?formlet=CSSF_FR/CSD/CSD_NightFlow/CSD_nightflow_analysis.frm&op=export&format=excel&sessionID='+aaa;  
+window.location=(FR.cjkEncode(REPORT_URL));]]></Content>
 </JavaScript>
 </Listener>
 <WidgetName name="button0"/>
@@ -230,7 +239,7 @@
 <PrivilegeControl/>
 </WidgetAttr>
 <Text>
-<![CDATA[小区列表维护]]></Text>
+<![CDATA[导出Excel]]></Text>
 </InnerWidget>
 <BoundsAttr x="851" y="25" width="80" height="21"/>
 </Widget>
@@ -240,15 +249,14 @@
 <Widget widgetName="endtime"/>
 <Widget widgetName="district"/>
 <Widget widgetName="threshold"/>
-<Widget widgetName="Search"/>
 <Widget widgetName="button0"/>
 </MobileWidgetList>
 <Display display="true"/>
 <DelayDisplayContent delay="true"/>
 <Position position="0"/>
 <Design_Width design_width="960"/>
+<NameTagModified/>
 <WidgetNameTagMap>
-<NameTag name="Search" tag="district:"/>
 <NameTag name="district" tag="区域:"/>
 <NameTag name="endtime" tag="结束日期:"/>
 <NameTag name="threshold" tag="阈值(吨):"/>
@@ -565,7 +573,7 @@
 </Border>
 </Style>
 <Style horizontal_alignment="0" imageLayout="1">
-<Format class="java.text.SimpleDateFormat">
+<Format class="com.fr.base.SimpleDateFormatThreadSafe">
 <![CDATA[yyyy-MM-dd HH:mm:ss]]></Format>
 <FRFont name="微软雅黑" style="0" size="80"/>
 <Background name="ColorBackground" color="-853252"/>
@@ -589,9 +597,9 @@
 </Border>
 </Style>
 </StyleList>
-<showToolbar showtoolbar="false"/>
 <heightRestrict heightrestrict="false"/>
 <heightPercent heightpercent="0.75"/>
+<isShared isshared="false"/>
 <ElementCaseMobileAttrProvider horizontal="1" vertical="0" zoom="true" refresh="false" isUseHTML="false"/>
 </InnerWidget>
 <BoundsAttr x="0" y="0" width="960" height="540"/>
@@ -859,7 +867,7 @@
 </Border>
 </Style>
 <Style horizontal_alignment="0" imageLayout="1">
-<Format class="java.text.SimpleDateFormat">
+<Format class="com.fr.base.SimpleDateFormatThreadSafe">
 <![CDATA[yyyy-MM-dd HH:mm:ss]]></Format>
 <FRFont name="SimSun" style="0" size="72"/>
 <Background name="NullBackground"/>
@@ -883,9 +891,9 @@
 </Border>
 </Style>
 </StyleList>
-<showToolbar showtoolbar="false"/>
 <heightRestrict heightrestrict="false"/>
 <heightPercent heightpercent="0.75"/>
+<isShared isshared="false"/>
 <ElementCaseMobileAttrProvider horizontal="1" vertical="0" zoom="true" refresh="false" isUseHTML="false"/>
 </body>
 </InnerWidget>
@@ -904,4 +912,5 @@
 </Layout>
 <DesignerVersion DesignerVersion="IAA"/>
 <PreviewType PreviewType="0"/>
+<TemplateID/>
 </Form>
