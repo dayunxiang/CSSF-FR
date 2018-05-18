@@ -196,12 +196,12 @@ where 1=1  ${if(len(starttime)==0,"","and Date>='"+ starttime + "'")} ${if(len(e
 <Parameter>
 <Attributes name="endtime"/>
 <O>
-<![CDATA[]]></O>
+<![CDATA[2018-04-13]]></O>
 </Parameter>
 <Parameter>
 <Attributes name="starttime"/>
 <O>
-<![CDATA[]]></O>
+<![CDATA[2018-04-04]]></O>
 </Parameter>
 </Parameters>
 <Attributes maxMemRowCount="-1"/>
@@ -820,6 +820,29 @@ where 1=1  ${if(len(starttime)==0,"","and Date>='"+ starttime + "'")} ${if(len(e
 <Query>
 <![CDATA[select * from dbo.CSD_wwz_daily where 1=1  ${if(len(starttime)==0,"","and Date>='"+ starttime + "'")} ${if(len(endtime)==0,"","and Date <='"+ endtime  +"'")} and tagname='cs120_ljll']]></Query>
 </TableData>
+<TableData name="莫城DMA" class="com.fr.data.impl.DBTableData">
+<Parameters>
+<Parameter>
+<Attributes name="endtime"/>
+<O>
+<![CDATA[2018-04-13]]></O>
+</Parameter>
+<Parameter>
+<Attributes name="starttime"/>
+<O>
+<![CDATA[2018-04-04]]></O>
+</Parameter>
+</Parameters>
+<Attributes maxMemRowCount="-1"/>
+<Connection class="com.fr.data.impl.NameDatabaseConnection">
+<DatabaseName>
+<![CDATA[FR]]></DatabaseName>
+</Connection>
+<Query>
+<![CDATA[select (a.a_sum-b.b_sum) as mc_dma,a.date from 
+(select sum(value) as a_sum,date from dbo.CSD_wwz_daily where  tagname in ('cs41_ljll','cs94_ljll') group by date) a left join
+(select value as b_sum,date from dbo.CSD_wwz_daily where tagname in ('cs122_ljll') ) b on a.date=b.date  where 1=1  ${if(len(starttime)==0,"","and a.Date>='"+ starttime + "'")} ${if(len(endtime)==0,"","and a.Date <='"+ endtime  +"'")}]]></Query>
+</TableData>
 </TableDataMap>
 <Report class="com.fr.report.worksheet.WorkSheet" name="sheet1">
 <ReportPageAttr>
@@ -832,9 +855,9 @@ where 1=1  ${if(len(starttime)==0,"","and Date>='"+ starttime + "'")} ${if(len(e
 <ColumnPrivilegeControl/>
 <RowPrivilegeControl/>
 <RowHeight defaultValue="723900">
-<![CDATA[723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,876300,0,0,0,0,723900,1143000,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,0,0,723900,723900,723900,723900,0,723900,0,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,0,723900]]></RowHeight>
+<![CDATA[723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,876300,0,0,0,0,723900,1143000,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,0,0,723900,723900,723900,723900,0,723900,0,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,723900,0,723900]]></RowHeight>
 <ColumnWidth defaultValue="2743200">
-<![CDATA[4076700,3429000,2743200,3733800,2743200,2743200,2743200,2743200,2743200,2743200,2743200]]></ColumnWidth>
+<![CDATA[4076700,3429000,3429000,3733800,2743200,2743200,2743200,2743200,2743200,2743200,2743200]]></ColumnWidth>
 <CellElementList>
 <C c="0" r="0" cs="3" s="0">
 <O>
@@ -1392,21 +1415,94 @@ where 1=1  ${if(len(starttime)==0,"","and Date>='"+ starttime + "'")} ${if(len(e
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="0" r="21" s="2">
+<C c="0" r="21" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="1" r="21" s="2">
+<C c="1" r="21" s="1">
+<O>
+<![CDATA[莫城DMA]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="21" s="1">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="21" s="1">
+<O t="DSColumn">
+<Attributes dsName="莫城DMA" columnName="mc_dma"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[0]]></CNUMBER>
+<CNAME>
+<![CDATA[date]]></CNAME>
+<Compare op="0">
+<ColumnRow column="3" row="0"/>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<HighlightList>
+<Highlight class="com.fr.report.cell.cellattr.highlight.DefaultHighlight">
+<Name>
+<![CDATA[条件属性1]]></Name>
+<Condition class="com.fr.data.condition.ObjectCondition">
+<Compare op="0">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=NULL]]></Attributes>
+</O>
+</Compare>
+</Condition>
+<HighlightAction class="com.fr.report.cell.cellattr.highlight.ValueHighlightAction">
+<O t="I">
+<![CDATA[0]]></O>
+</HighlightAction>
+</Highlight>
+</HighlightList>
+<Expand dir="1" upParentDefault="false" up="D1"/>
+</C>
+<C c="0" r="22" s="1">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="22" s="1">
+<O>
+<![CDATA[剩余西南DMA]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="22" s="1">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="22" s="1">
+<O t="Formula" class="Formula">
+<Attributes>
+<![CDATA[=D21-D22]]></Attributes>
+</O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="0" r="23" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="23" s="1">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="23" s="2">
 <O>
 <![CDATA[练塘流量]]></O>
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="2" r="21" s="2">
-<PrivilegeControl/>
-<Expand/>
-</C>
-<C c="3" r="21" s="1">
+<C c="3" r="23" s="1">
 <O t="DSColumn">
 <Attributes dsName="练塘流量" columnName="value"/>
 <Condition class="com.fr.data.condition.CommonCondition">
@@ -1427,21 +1523,20 @@ where 1=1  ${if(len(starttime)==0,"","and Date>='"+ starttime + "'")} ${if(len(e
 <PrivilegeControl/>
 <Expand dir="1" upParentDefault="false" up="D1"/>
 </C>
-<C c="0" r="22" s="2">
+<C c="0" r="24" s="2">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="1" r="22" s="2">
+<C c="1" r="24" s="1">
+<PrivilegeControl/>
+</C>
+<C c="2" r="24" s="2">
 <O>
 <![CDATA[张桥流量]]></O>
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="2" r="22" s="2">
-<PrivilegeControl/>
-<Expand/>
-</C>
-<C c="3" r="22" s="1">
+<C c="3" r="24" s="1">
 <O t="DSColumn">
 <Attributes dsName="张桥流量" columnName="value"/>
 <Condition class="com.fr.data.condition.CommonCondition">
@@ -1462,109 +1557,43 @@ where 1=1  ${if(len(starttime)==0,"","and Date>='"+ starttime + "'")} ${if(len(e
 <PrivilegeControl/>
 <Expand dir="1" upParentDefault="false" up="D1"/>
 </C>
-<C c="0" r="23" s="3">
+<C c="0" r="25" s="3">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="1" r="23" s="3">
+<C c="1" r="25" s="3">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="2" r="23" s="3">
+<C c="2" r="25" s="3">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="0" r="24" s="5">
+<C c="0" r="26" s="5">
 <O>
 <![CDATA[东南DMA]]></O>
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="1" r="24" s="5">
+<C c="1" r="26" s="5">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="2" r="24" s="5">
+<C c="2" r="26" s="5">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="3" r="24" s="6">
+<C c="3" r="26" s="6">
 <O t="Formula" class="Formula">
 <Attributes>
-<![CDATA[=D27 - D28 - D29]]></Attributes>
+<![CDATA[=D29 - D30 - D31]]></Attributes>
 </O>
 <PrivilegeControl/>
 <Expand dir="1"/>
 </C>
-<C c="15" r="24">
+<C c="15" r="26">
 <PrivilegeControl/>
 <Expand/>
-</C>
-<C c="0" r="25" s="2">
-<PrivilegeControl/>
-<Expand/>
-</C>
-<C c="1" r="25" s="2">
-<PrivilegeControl/>
-<Expand/>
-</C>
-<C c="2" r="25" s="2">
-<PrivilegeControl/>
-<Expand/>
-</C>
-<C c="3" r="25" s="6">
-<O t="DSColumn">
-<Attributes dsName="沙唐线" columnName="st"/>
-<Condition class="com.fr.data.condition.CommonCondition">
-<CNUMBER>
-<![CDATA[0]]></CNUMBER>
-<CNAME>
-<![CDATA[date]]></CNAME>
-<Compare op="0">
-<ColumnRow column="3" row="0"/>
-</Compare>
-</Condition>
-<Complex/>
-<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
-<Result>
-<![CDATA[$$$]]></Result>
-<Parameters/>
-</O>
-<PrivilegeControl/>
-<Expand dir="1"/>
-</C>
-<C c="0" r="26" s="2">
-<PrivilegeControl/>
-<Expand/>
-</C>
-<C c="1" r="26" s="2">
-<PrivilegeControl/>
-<Expand/>
-</C>
-<C c="2" r="26" s="2">
-<PrivilegeControl/>
-<Expand/>
-</C>
-<C c="3" r="26" s="7">
-<O t="DSColumn">
-<Attributes dsName="东南DMA" columnName="dndma"/>
-<Condition class="com.fr.data.condition.CommonCondition">
-<CNUMBER>
-<![CDATA[0]]></CNUMBER>
-<CNAME>
-<![CDATA[date]]></CNAME>
-<Compare op="0">
-<ColumnRow column="3" row="0"/>
-</Compare>
-</Condition>
-<Complex/>
-<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
-<Result>
-<![CDATA[$$$]]></Result>
-<Parameters/>
-</O>
-<PrivilegeControl/>
-<Expand dir="1" upParentDefault="false" up="D1"/>
 </C>
 <C c="0" r="27" s="2">
 <PrivilegeControl/>
@@ -1580,7 +1609,7 @@ where 1=1  ${if(len(starttime)==0,"","and Date>='"+ starttime + "'")} ${if(len(e
 </C>
 <C c="3" r="27" s="6">
 <O t="DSColumn">
-<Attributes dsName="富春江路" columnName="fcj"/>
+<Attributes dsName="沙唐线" columnName="st"/>
 <Condition class="com.fr.data.condition.CommonCondition">
 <CNUMBER>
 <![CDATA[0]]></CNUMBER>
@@ -1611,7 +1640,73 @@ where 1=1  ${if(len(starttime)==0,"","and Date>='"+ starttime + "'")} ${if(len(e
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="3" r="28" s="6">
+<C c="3" r="28" s="7">
+<O t="DSColumn">
+<Attributes dsName="东南DMA" columnName="dndma"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[0]]></CNUMBER>
+<CNAME>
+<![CDATA[date]]></CNAME>
+<Compare op="0">
+<ColumnRow column="3" row="0"/>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="1" upParentDefault="false" up="D1"/>
+</C>
+<C c="0" r="29" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="29" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="29" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="29" s="6">
+<O t="DSColumn">
+<Attributes dsName="富春江路" columnName="fcj"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[0]]></CNUMBER>
+<CNAME>
+<![CDATA[date]]></CNAME>
+<Compare op="0">
+<ColumnRow column="3" row="0"/>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="1"/>
+</C>
+<C c="0" r="30" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="30" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="30" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="30" s="6">
 <O t="DSColumn">
 <Attributes dsName="白茆周家村" columnName="zjc"/>
 <Condition class="com.fr.data.condition.CommonCondition">
@@ -1632,25 +1727,25 @@ where 1=1  ${if(len(starttime)==0,"","and Date>='"+ starttime + "'")} ${if(len(e
 <PrivilegeControl/>
 <Expand dir="1"/>
 </C>
-<C c="5" r="28">
+<C c="5" r="30">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="0" r="29" s="5">
+<C c="0" r="31" s="5">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="1" r="29" s="5">
+<C c="1" r="31" s="5">
 <O>
 <![CDATA[白雪路流量]]></O>
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="2" r="29" s="5">
+<C c="2" r="31" s="5">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="3" r="29" s="7">
+<C c="3" r="31" s="7">
 <O t="DSColumn">
 <Attributes dsName="白雪路流量" columnName="value"/>
 <Condition class="com.fr.data.condition.CommonCondition">
@@ -1671,24 +1766,26 @@ where 1=1  ${if(len(starttime)==0,"","and Date>='"+ starttime + "'")} ${if(len(e
 <PrivilegeControl/>
 <Expand dir="1"/>
 </C>
-<C c="0" r="30" s="5">
+<C c="0" r="32" s="5">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="1" r="30" s="5">
+<C c="1" r="32" s="5">
 <O>
 <![CDATA[沙家浜南桥流量]]></O>
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="2" r="30" s="5">
+<C c="2" r="32" s="5">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="3" r="30" s="7">
+<C c="3" r="32" s="7">
 <O t="DSColumn">
 <Attributes dsName="沙家浜南桥流量" columnName="value"/>
 <Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[0]]></CNUMBER>
 <CNAME>
 <![CDATA[date]]></CNAME>
 <Compare op="0">
@@ -1704,51 +1801,51 @@ where 1=1  ${if(len(starttime)==0,"","and Date>='"+ starttime + "'")} ${if(len(e
 <PrivilegeControl/>
 <Expand dir="1"/>
 </C>
-<C c="12" r="30">
+<C c="12" r="32">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="13" r="30">
+<C c="13" r="32">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="14" r="30">
+<C c="14" r="32">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="0" r="31" s="5">
+<C c="0" r="33" s="5">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="1" r="31" s="5">
+<C c="1" r="33" s="5">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="2" r="31" s="5">
+<C c="2" r="33" s="5">
 <O>
 <![CDATA[东南住宅DMA]]></O>
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="3" r="31" s="7">
+<C c="3" r="33" s="7">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="0" r="32" s="5">
+<C c="0" r="34" s="5">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="1" r="32" s="5">
+<C c="1" r="34" s="5">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="2" r="32" s="5">
+<C c="2" r="34" s="5">
 <O>
 <![CDATA[东南大表]]></O>
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="3" r="32" s="7">
+<C c="3" r="34" s="7">
 <O t="DSColumn">
 <Attributes dsName="东南大表" columnName="value"/>
 <Condition class="com.fr.data.condition.CommonCondition">
@@ -1769,28 +1866,30 @@ where 1=1  ${if(len(starttime)==0,"","and Date>='"+ starttime + "'")} ${if(len(e
 <PrivilegeControl/>
 <Expand dir="1" upParentDefault="false" up="D1"/>
 </C>
-<C c="6" r="32">
+<C c="6" r="34">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="0" r="33" s="1">
+<C c="0" r="35" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="1" r="33" s="5">
+<C c="1" r="35" s="5">
 <O>
 <![CDATA[沙家浜加油站]]></O>
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="2" r="33" s="1">
+<C c="2" r="35" s="1">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="3" r="33" s="7">
+<C c="3" r="35" s="7">
 <O t="DSColumn">
 <Attributes dsName="沙家浜加油站" columnName="value"/>
 <Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[0]]></CNUMBER>
 <CNAME>
 <![CDATA[date]]></CNAME>
 <Compare op="0">
@@ -1804,37 +1903,37 @@ where 1=1  ${if(len(starttime)==0,"","and Date>='"+ starttime + "'")} ${if(len(e
 <PrivilegeControl/>
 <Expand dir="0"/>
 </C>
-<C c="0" r="34" s="3">
+<C c="0" r="36" s="3">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="1" r="34" s="3">
+<C c="1" r="36" s="3">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="2" r="34" s="3">
+<C c="2" r="36" s="3">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="3" r="34" s="8">
+<C c="3" r="36" s="8">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="0" r="35" s="2">
+<C c="0" r="37" s="2">
 <O>
 <![CDATA[梅北DMA]]></O>
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="1" r="35" s="2">
+<C c="1" r="37" s="2">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="2" r="35" s="2">
+<C c="2" r="37" s="2">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="3" r="35" s="6">
+<C c="3" r="37" s="6">
 <O t="DSColumn">
 <Attributes dsName="梅北DMA" columnName="mb_dma"/>
 <Condition class="com.fr.data.condition.CommonCondition">
@@ -1855,21 +1954,21 @@ where 1=1  ${if(len(starttime)==0,"","and Date>='"+ starttime + "'")} ${if(len(e
 <PrivilegeControl/>
 <Expand dir="1" upParentDefault="false" up="D1"/>
 </C>
-<C c="0" r="36" s="2">
+<C c="0" r="38" s="2">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="1" r="36" s="2">
+<C c="1" r="38" s="2">
 <O>
 <![CDATA[王市河口流量]]></O>
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="2" r="36" s="2">
+<C c="2" r="38" s="2">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="3" r="36" s="6">
+<C c="3" r="38" s="6">
 <O t="DSColumn">
 <Attributes dsName="王市河口流量" columnName="value"/>
 <Condition class="com.fr.data.condition.CommonCondition">
@@ -1890,25 +1989,25 @@ where 1=1  ${if(len(starttime)==0,"","and Date>='"+ starttime + "'")} ${if(len(e
 <PrivilegeControl/>
 <Expand dir="1"/>
 </C>
-<C c="8" r="36">
+<C c="8" r="38">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="0" r="37" s="2">
+<C c="0" r="39" s="2">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="1" r="37" s="2">
+<C c="1" r="39" s="2">
 <O>
 <![CDATA[海虞人民路流量]]></O>
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="2" r="37" s="2">
+<C c="2" r="39" s="2">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="3" r="37" s="6">
+<C c="3" r="39" s="6">
 <O t="DSColumn">
 <Attributes dsName="海虞人民路流量" columnName="value"/>
 <Condition class="com.fr.data.condition.CommonCondition">
@@ -1929,21 +2028,21 @@ where 1=1  ${if(len(starttime)==0,"","and Date>='"+ starttime + "'")} ${if(len(e
 <PrivilegeControl/>
 <Expand dir="1"/>
 </C>
-<C c="0" r="38" s="2">
+<C c="0" r="40" s="2">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="1" r="38" s="2">
+<C c="1" r="40" s="2">
 <O>
 <![CDATA[福山流量]]></O>
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="2" r="38" s="2">
+<C c="2" r="40" s="2">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="3" r="38" s="6">
+<C c="3" r="40" s="6">
 <O t="DSColumn">
 <Attributes dsName="福山聚福" columnName="value"/>
 <Condition class="com.fr.data.condition.CommonCondition">
@@ -1964,61 +2063,61 @@ where 1=1  ${if(len(starttime)==0,"","and Date>='"+ starttime + "'")} ${if(len(e
 <PrivilegeControl/>
 <Expand dir="1"/>
 </C>
-<C c="13" r="38">
+<C c="13" r="40">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="0" r="39" s="3">
+<C c="0" r="41" s="3">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="1" r="39" s="3">
+<C c="1" r="41" s="3">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="2" r="39" s="3">
+<C c="2" r="41" s="3">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="3" r="39" s="8">
+<C c="3" r="41" s="8">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="0" r="40" s="2">
+<C c="0" r="42" s="2">
 <O>
 <![CDATA[城区DMA]]></O>
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="1" r="40" s="2">
+<C c="1" r="42" s="2">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="2" r="40" s="2">
+<C c="2" r="42" s="2">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="3" r="40" s="6">
+<C c="3" r="42" s="6">
 <O t="Formula" class="Formula">
 <Attributes>
-<![CDATA[=D42 + D5 + D28 - D43 - D26]]></Attributes>
+<![CDATA[=D44 + D5 + D30 - D45 - D28]]></Attributes>
 </O>
 <PrivilegeControl/>
 <Expand dir="1" upParentDefault="false" up="D1"/>
 </C>
-<C c="0" r="41" s="2">
+<C c="0" r="43" s="2">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="1" r="41" s="2">
+<C c="1" r="43" s="2">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="2" r="41" s="2">
+<C c="2" r="43" s="2">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="3" r="41" s="6">
+<C c="3" r="43" s="6">
 <O t="DSColumn">
 <Attributes dsName="城区DMA(除了二水厂,富春江,沙唐线,四环路)" columnName="result"/>
 <Condition class="com.fr.data.condition.CommonCondition">
@@ -2039,43 +2138,43 @@ where 1=1  ${if(len(starttime)==0,"","and Date>='"+ starttime + "'")} ${if(len(e
 <PrivilegeControl/>
 <Expand dir="1" upParentDefault="false" up="D1"/>
 </C>
-<C c="0" r="42" s="2">
+<C c="0" r="44" s="2">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="1" r="42" s="2">
+<C c="1" r="44" s="2">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="2" r="42" s="2">
+<C c="2" r="44" s="2">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="3" r="42" s="6">
+<C c="3" r="44" s="6">
 <O t="I">
 <![CDATA[5000]]></O>
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="5" r="42">
+<C c="5" r="44">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="0" r="43" s="2">
+<C c="0" r="45" s="2">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="1" r="43" s="2">
+<C c="1" r="45" s="2">
 <O>
 <![CDATA[城区大表]]></O>
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="2" r="43" s="2">
+<C c="2" r="45" s="2">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="3" r="43" s="6">
+<C c="3" r="45" s="6">
 <O t="DSColumn">
 <Attributes dsName="城区大表" columnName="value"/>
 <Condition class="com.fr.data.condition.CommonCondition">
@@ -2096,25 +2195,25 @@ where 1=1  ${if(len(starttime)==0,"","and Date>='"+ starttime + "'")} ${if(len(e
 <PrivilegeControl/>
 <Expand dir="1" upParentDefault="false" up="D1"/>
 </C>
-<C c="5" r="43">
+<C c="5" r="45">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="0" r="44" s="2">
+<C c="0" r="46" s="2">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="1" r="44" s="2">
+<C c="1" r="46" s="2">
 <O>
 <![CDATA[城区住宅DMA]]></O>
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="2" r="44" s="2">
+<C c="2" r="46" s="2">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="3" r="44" s="6">
+<C c="3" r="46" s="6">
 <O t="DSColumn">
 <Attributes dsName="城区住宅" columnName="value"/>
 <Condition class="com.fr.data.condition.CommonCondition">
@@ -2135,57 +2234,57 @@ where 1=1  ${if(len(starttime)==0,"","and Date>='"+ starttime + "'")} ${if(len(e
 <PrivilegeControl/>
 <Expand dir="1"/>
 </C>
-<C c="0" r="45" s="3">
+<C c="0" r="47" s="3">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="1" r="45" s="3">
+<C c="1" r="47" s="3">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="2" r="45" s="3">
+<C c="2" r="47" s="3">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="3" r="45" s="8">
+<C c="3" r="47" s="8">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="0" r="46" s="2">
+<C c="0" r="48" s="2">
 <O>
 <![CDATA[东部DMA]]></O>
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="1" r="46" s="2">
+<C c="1" r="48" s="2">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="2" r="46" s="2">
+<C c="2" r="48" s="2">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="3" r="46" s="6">
+<C c="3" r="48" s="6">
 <O t="Formula" class="Formula">
 <Attributes>
-<![CDATA[=D48 + D16]]></Attributes>
+<![CDATA[=D50 + D16]]></Attributes>
 </O>
 <PrivilegeControl/>
 <Expand dir="1" upParentDefault="false" up="D1"/>
 </C>
-<C c="0" r="47" s="2">
+<C c="0" r="49" s="2">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="1" r="47" s="2">
+<C c="1" r="49" s="2">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="2" r="47" s="2">
+<C c="2" r="49" s="2">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="3" r="47" s="6">
+<C c="3" r="49" s="6">
 <O t="DSColumn">
 <Attributes dsName="东部DMA除滨江线" columnName="result"/>
 <Condition class="com.fr.data.condition.CommonCondition">
@@ -2206,41 +2305,41 @@ where 1=1  ${if(len(starttime)==0,"","and Date>='"+ starttime + "'")} ${if(len(e
 <PrivilegeControl/>
 <Expand dir="1" upParentDefault="false" up="D1"/>
 </C>
-<C c="0" r="48" s="2">
+<C c="0" r="50" s="2">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="1" r="48" s="2">
+<C c="1" r="50" s="2">
 <O>
 <![CDATA[东1DMA]]></O>
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="2" r="48" s="2">
+<C c="2" r="50" s="2">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="3" r="48" s="6">
+<C c="3" r="50" s="6">
 <O t="Formula" class="Formula">
 <Attributes>
-<![CDATA[=D16 - D50]]></Attributes>
+<![CDATA[=D16 - D52]]></Attributes>
 </O>
 <PrivilegeControl/>
 <Expand dir="1" upParentDefault="false" up="D1"/>
 </C>
-<C c="0" r="49" s="2">
+<C c="0" r="51" s="2">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="1" r="49" s="2">
+<C c="1" r="51" s="2">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="2" r="49" s="2">
+<C c="2" r="51" s="2">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="3" r="49" s="6">
+<C c="3" r="51" s="6">
 <O t="DSColumn">
 <Attributes dsName="徐市曹家桥" columnName="value"/>
 <Condition class="com.fr.data.condition.CommonCondition">
@@ -2261,91 +2360,91 @@ where 1=1  ${if(len(starttime)==0,"","and Date>='"+ starttime + "'")} ${if(len(e
 <PrivilegeControl/>
 <Expand dir="1" upParentDefault="false" up="D1"/>
 </C>
-<C c="4" r="49">
+<C c="4" r="51">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="5" r="49">
+<C c="5" r="51">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="6" r="49">
+<C c="6" r="51">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="7" r="49">
+<C c="7" r="51">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="8" r="49">
+<C c="8" r="51">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="9" r="49">
+<C c="9" r="51">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="10" r="49">
+<C c="10" r="51">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="11" r="49">
+<C c="11" r="51">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="12" r="49">
+<C c="12" r="51">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="13" r="49">
+<C c="13" r="51">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="14" r="49">
+<C c="14" r="51">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="15" r="49">
+<C c="15" r="51">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="0" r="50" s="2">
+<C c="0" r="52" s="2">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="1" r="50" s="2">
+<C c="1" r="52" s="2">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="2" r="50" s="2">
+<C c="2" r="52" s="2">
 <O>
 <![CDATA[港区住宅DMA]]></O>
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="3" r="50" s="6">
+<C c="3" r="52" s="6">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="12" r="50">
+<C c="12" r="52">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="0" r="51" s="2">
+<C c="0" r="53" s="2">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="1" r="51" s="2">
+<C c="1" r="53" s="2">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="2" r="51" s="2">
+<C c="2" r="53" s="2">
 <O>
 <![CDATA[港区大表]]></O>
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="3" r="51" s="6">
+<C c="3" r="53" s="6">
 <O t="DSColumn">
 <Attributes dsName="港区大表" columnName="value"/>
 <Condition class="com.fr.data.condition.CommonCondition">
@@ -2366,85 +2465,7 @@ where 1=1  ${if(len(starttime)==0,"","and Date>='"+ starttime + "'")} ${if(len(e
 <PrivilegeControl/>
 <Expand dir="1" upParentDefault="false" up="D1"/>
 </C>
-<C c="13" r="51">
-<PrivilegeControl/>
-<Expand/>
-</C>
-<C c="0" r="52" s="2">
-<PrivilegeControl/>
-<Expand/>
-</C>
-<C c="1" r="52" s="2">
-<O>
-<![CDATA[东2DMA]]></O>
-<PrivilegeControl/>
-<Expand/>
-</C>
-<C c="2" r="52" s="2">
-<PrivilegeControl/>
-<Expand/>
-</C>
-<C c="3" r="52" s="6">
-<O t="DSColumn">
-<Attributes dsName="东2DMA" columnName="result"/>
-<Condition class="com.fr.data.condition.CommonCondition">
-<CNUMBER>
-<![CDATA[0]]></CNUMBER>
-<CNAME>
-<![CDATA[date]]></CNAME>
-<Compare op="0">
-<ColumnRow column="3" row="0"/>
-</Compare>
-</Condition>
-<Complex/>
-<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
-<Result>
-<![CDATA[$$$]]></Result>
-<Parameters/>
-</O>
-<PrivilegeControl/>
-<Expand dir="1" upParentDefault="false" up="D1"/>
-</C>
-<C c="0" r="53" s="2">
-<PrivilegeControl/>
-<Expand/>
-</C>
-<C c="1" r="53" s="2">
-<PrivilegeControl/>
-<Expand/>
-</C>
-<C c="2" r="53" s="2">
-<O>
-<![CDATA[支东流量]]></O>
-<PrivilegeControl/>
-<Expand/>
-</C>
-<C c="3" r="53" s="6">
-<O t="DSColumn">
-<Attributes dsName="支东流量" columnName="value"/>
-<Condition class="com.fr.data.condition.CommonCondition">
-<CNUMBER>
-<![CDATA[0]]></CNUMBER>
-<CNAME>
-<![CDATA[date]]></CNAME>
-<Compare op="0">
-<ColumnRow column="3" row="0"/>
-</Compare>
-</Condition>
-<Complex/>
-<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
-<Result>
-<![CDATA[$$$]]></Result>
-<Parameters/>
-</O>
-<PrivilegeControl/>
-<Expand dir="1"/>
-</C>
-<C c="4" r="53">
-<PrivilegeControl/>
-<Expand/>
-</C>
-<C c="14" r="53">
+<C c="13" r="53">
 <PrivilegeControl/>
 <Expand/>
 </C>
@@ -2454,7 +2475,7 @@ where 1=1  ${if(len(starttime)==0,"","and Date>='"+ starttime + "'")} ${if(len(e
 </C>
 <C c="1" r="54" s="2">
 <O>
-<![CDATA[东3DMA]]></O>
+<![CDATA[东2DMA]]></O>
 <PrivilegeControl/>
 <Expand/>
 </C>
@@ -2464,7 +2485,7 @@ where 1=1  ${if(len(starttime)==0,"","and Date>='"+ starttime + "'")} ${if(len(e
 </C>
 <C c="3" r="54" s="6">
 <O t="DSColumn">
-<Attributes dsName="东3DMA" columnName="result"/>
+<Attributes dsName="东2DMA" columnName="result"/>
 <Condition class="com.fr.data.condition.CommonCondition">
 <CNUMBER>
 <![CDATA[0]]></CNUMBER>
@@ -2493,11 +2514,89 @@ where 1=1  ${if(len(starttime)==0,"","and Date>='"+ starttime + "'")} ${if(len(e
 </C>
 <C c="2" r="55" s="2">
 <O>
-<![CDATA[任阳DMA]]></O>
+<![CDATA[支东流量]]></O>
 <PrivilegeControl/>
 <Expand/>
 </C>
 <C c="3" r="55" s="6">
+<O t="DSColumn">
+<Attributes dsName="支东流量" columnName="value"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[0]]></CNUMBER>
+<CNAME>
+<![CDATA[date]]></CNAME>
+<Compare op="0">
+<ColumnRow column="3" row="0"/>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="1"/>
+</C>
+<C c="4" r="55">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="14" r="55">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="0" r="56" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="56" s="2">
+<O>
+<![CDATA[东3DMA]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="56" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="56" s="6">
+<O t="DSColumn">
+<Attributes dsName="东3DMA" columnName="result"/>
+<Condition class="com.fr.data.condition.CommonCondition">
+<CNUMBER>
+<![CDATA[0]]></CNUMBER>
+<CNAME>
+<![CDATA[date]]></CNAME>
+<Compare op="0">
+<ColumnRow column="3" row="0"/>
+</Compare>
+</Condition>
+<Complex/>
+<RG class="com.fr.report.cell.cellattr.core.group.FunctionGrouper"/>
+<Result>
+<![CDATA[$$$]]></Result>
+<Parameters/>
+</O>
+<PrivilegeControl/>
+<Expand dir="1" upParentDefault="false" up="D1"/>
+</C>
+<C c="0" r="57" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="1" r="57" s="2">
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="2" r="57" s="2">
+<O>
+<![CDATA[任阳DMA]]></O>
+<PrivilegeControl/>
+<Expand/>
+</C>
+<C c="3" r="57" s="6">
 <O t="DSColumn">
 <Attributes dsName="任阳陈泾" columnName="value"/>
 <Condition class="com.fr.data.condition.CommonCondition">
@@ -2518,21 +2617,21 @@ where 1=1  ${if(len(starttime)==0,"","and Date>='"+ starttime + "'")} ${if(len(e
 <PrivilegeControl/>
 <Expand dir="1"/>
 </C>
-<C c="0" r="56" s="2">
+<C c="0" r="58" s="2">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="1" r="56" s="2">
+<C c="1" r="58" s="2">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="2" r="56" s="2">
+<C c="2" r="58" s="2">
 <O>
 <![CDATA[紫芙流量]]></O>
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="3" r="56" s="6">
+<C c="3" r="58" s="6">
 <O t="DSColumn">
 <Attributes dsName="紫芙流量" columnName="value"/>
 <Condition class="com.fr.data.condition.CommonCondition">
@@ -2553,21 +2652,21 @@ where 1=1  ${if(len(starttime)==0,"","and Date>='"+ starttime + "'")} ${if(len(e
 <PrivilegeControl/>
 <Expand dir="1"/>
 </C>
-<C c="0" r="57" s="2">
+<C c="0" r="59" s="2">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="1" r="57" s="2">
+<C c="1" r="59" s="2">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="2" r="57" s="2">
+<C c="2" r="59" s="2">
 <O>
 <![CDATA[康诺流量]]></O>
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="3" r="57" s="6">
+<C c="3" r="59" s="6">
 <O t="DSColumn">
 <Attributes dsName="康诺流量" columnName="value"/>
 <Condition class="com.fr.data.condition.CommonCondition">
@@ -2588,37 +2687,37 @@ where 1=1  ${if(len(starttime)==0,"","and Date>='"+ starttime + "'")} ${if(len(e
 <PrivilegeControl/>
 <Expand dir="1"/>
 </C>
-<C c="0" r="58" s="3">
+<C c="0" r="60" s="3">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="1" r="58" s="3">
+<C c="1" r="60" s="3">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="2" r="58" s="3">
+<C c="2" r="60" s="3">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="3" r="58" s="8">
+<C c="3" r="60" s="8">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="0" r="59" s="2">
+<C c="0" r="61" s="2">
 <O>
 <![CDATA[梅古线剩余]]></O>
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="1" r="59" s="2">
+<C c="1" r="61" s="2">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="2" r="59" s="2">
+<C c="2" r="61" s="2">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="3" r="59" s="6">
+<C c="3" r="61" s="6">
 <O t="DSColumn">
 <Attributes dsName="梅古线" columnName="result"/>
 <Condition class="com.fr.data.condition.CommonCondition">
@@ -2639,21 +2738,21 @@ where 1=1  ${if(len(starttime)==0,"","and Date>='"+ starttime + "'")} ${if(len(e
 <PrivilegeControl/>
 <Expand dir="1" upParentDefault="false" up="D1"/>
 </C>
-<C c="0" r="60" s="2">
+<C c="0" r="62" s="2">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="1" r="60" s="2">
+<C c="1" r="62" s="2">
 <O>
 <![CDATA[淼泉大表]]></O>
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="2" r="60" s="2">
+<C c="2" r="62" s="2">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="3" r="60" s="6">
+<C c="3" r="62" s="6">
 <O t="DSColumn">
 <Attributes dsName="淼泉考核" columnName="value"/>
 <Condition class="com.fr.data.condition.CommonCondition">
@@ -2674,73 +2773,73 @@ where 1=1  ${if(len(starttime)==0,"","and Date>='"+ starttime + "'")} ${if(len(e
 <PrivilegeControl/>
 <Expand dir="1"/>
 </C>
-<C c="13" r="60">
+<C c="13" r="62">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="0" r="61" s="3">
+<C c="0" r="63" s="3">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="1" r="61" s="3">
+<C c="1" r="63" s="3">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="2" r="61" s="3">
+<C c="2" r="63" s="3">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="3" r="61" s="8">
+<C c="3" r="63" s="8">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="4" r="61">
+<C c="4" r="63">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="10" r="61">
+<C c="10" r="63">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="0" r="62" s="2">
+<C c="0" r="64" s="2">
 <O>
 <![CDATA[通港DMA]]></O>
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="1" r="62" s="2">
+<C c="1" r="64" s="2">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="2" r="62" s="2">
+<C c="2" r="64" s="2">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="3" r="62" s="6">
+<C c="3" r="64" s="6">
 <O t="Formula" class="Formula">
 <Attributes>
-<![CDATA[=D10 + D11 + D12 - D64]]></Attributes>
+<![CDATA[=D10 + D11 + D12 - D66]]></Attributes>
 </O>
 <PrivilegeControl/>
 <Expand dir="1" upParentDefault="false" up="D1"/>
 </C>
-<C c="12" r="62">
+<C c="12" r="64">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="0" r="63" s="2">
+<C c="0" r="65" s="2">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="1" r="63" s="2">
+<C c="1" r="65" s="2">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="2" r="63" s="2">
+<C c="2" r="65" s="2">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="3" r="63" s="6">
+<C c="3" r="65" s="6">
 <O t="DSColumn">
 <Attributes dsName="通港DMA(除三水厂)" columnName="result"/>
 <Condition class="com.fr.data.condition.CommonCondition">
@@ -2761,21 +2860,21 @@ where 1=1  ${if(len(starttime)==0,"","and Date>='"+ starttime + "'")} ${if(len(e
 <PrivilegeControl/>
 <Expand dir="1" upParentDefault="false" up="D1"/>
 </C>
-<C c="0" r="64" s="2">
+<C c="0" r="66" s="2">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="1" r="64" s="2">
+<C c="1" r="66" s="2">
 <O>
 <![CDATA[淼泉流量]]></O>
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="2" r="64" s="2">
+<C c="2" r="66" s="2">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="3" r="64" s="6">
+<C c="3" r="66" s="6">
 <O t="DSColumn">
 <Attributes dsName="淼泉流量" columnName="value"/>
 <Condition class="com.fr.data.condition.CommonCondition">
@@ -2796,62 +2895,62 @@ where 1=1  ${if(len(starttime)==0,"","and Date>='"+ starttime + "'")} ${if(len(e
 <PrivilegeControl/>
 <Expand dir="1"/>
 </C>
-<C c="0" r="65" s="3">
+<C c="0" r="67" s="3">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="1" r="65" s="3">
+<C c="1" r="67" s="3">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="2" r="65" s="3">
+<C c="2" r="67" s="3">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="3" r="65" s="8">
+<C c="3" r="67" s="8">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="0" r="66" s="2">
+<C c="0" r="68" s="2">
 <O>
 <![CDATA[通港区剩余]]></O>
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="1" r="66" s="2">
+<C c="1" r="68" s="2">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="2" r="66" s="2">
+<C c="2" r="68" s="2">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="3" r="66" s="6">
+<C c="3" r="68" s="6">
 <O t="Formula" class="Formula">
 <Attributes>
-<![CDATA[=D3 - D19 - D21 - D25 - D36 - D41 - D47 - D63]]></Attributes>
+<![CDATA[=D3 - D19 - D21 - D27 - D38 - D43 - D49 - D65]]></Attributes>
 </O>
 <PrivilegeControl/>
 <Expand dir="1" upParentDefault="false" up="D1"/>
 </C>
-<C c="0" r="67" s="2">
+<C c="0" r="69" s="2">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="1" r="67" s="2">
+<C c="1" r="69" s="2">
 <O>
 <![CDATA[一级NRW]]></O>
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="2" r="67" s="2">
+<C c="2" r="69" s="2">
 <PrivilegeControl/>
 <Expand/>
 </C>
-<C c="3" r="67" s="6">
+<C c="3" r="69" s="6">
 <O t="Formula" class="Formula">
 <Attributes>
-<![CDATA[=round(D67 / D3, 4) * 100 + "%"]]></Attributes>
+<![CDATA[=round(D69 / D3, 4) * 100 + "%"]]></Attributes>
 </O>
 <PrivilegeControl/>
 <Expand dir="1"/>
